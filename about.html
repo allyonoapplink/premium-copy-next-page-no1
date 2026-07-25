@@ -23,7 +23,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ---- PREMIUM FIXED HEADER ---- */
     .premium-header {
       position: sticky;
       top: 0;
@@ -60,7 +59,6 @@
       display: none;
     }
 
-    /* LED CLOSE — white glow */
     .close-led {
       width: 44px;
       height: 44px;
@@ -93,14 +91,12 @@
       box-shadow: 0 0 45px #b0ffd0;
     }
 
-    /* ---- MAIN ---- */
     .about-container {
       max-width: 680px;
       margin: 0 auto;
       padding: 18px 18px 40px;
     }
 
-    /* glass cards */
     .glass-card {
       background: rgba(18, 28, 24, 0.5);
       backdrop-filter: blur(10px);
@@ -144,7 +140,6 @@
       letter-spacing: -0.3px;
     }
 
-    /* ---- PREMIUM LED COLOR ICONS (no emoji) ---- */
     .led-icon-green {
       display: inline-block;
       width: 12px;
@@ -181,6 +176,15 @@
       box-shadow: 0 0 18px #c084fc66;
       flex-shrink: 0;
     }
+    .led-icon-gold {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #fbbf24;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #fbbf2466;
+      flex-shrink: 0;
+    }
     .led-icon-glow {
       display: inline-block;
       width: 10px;
@@ -191,7 +195,6 @@
       margin-right: 6px;
     }
 
-    /* ---- Premium Tag Cloud - SEO style ---- */
     .tag-cloud {
       display: flex;
       flex-wrap: wrap;
@@ -222,7 +225,6 @@
       transform: translateY(-2px);
     }
 
-    /* LED icon variants inside tags */
     .tag-icon-green {
       display: inline-block;
       width: 10px;
@@ -352,7 +354,6 @@
       margin: 28px 0 24px;
     }
 
-    /* ---- Back to Top ---- */
     .back-to-top {
       position: fixed;
       bottom: 28px;
@@ -404,24 +405,23 @@
       font-weight: 200;
     }
 
-    /* ---- BOTTOM ICONS SECTION - only icons, no text ---- */
+    /* ---- 5 Premium CSS LED Icons with different colors ---- */
     .icon-showcase {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 28px 36px;
-      padding: 16px 0 4px 0;
+      gap: 32px 40px;
+      padding: 10px 0 4px 0;
     }
 
     .icon-wrap {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
     }
 
-    /* Premium CSS LED Icons - no emoji, no text */
     .icon-shield {
       display: inline-block;
       width: 28px;
@@ -533,56 +533,6 @@
       box-shadow: 0 0 32px #c084fc66;
     }
 
-    .icon-diamond {
-      display: inline-block;
-      width: 26px;
-      height: 26px;
-      background: transparent;
-      border: 2.5px solid #60b0ff;
-      transform: rotate(45deg);
-      box-shadow: 0 0 30px #60b0ff66, inset 0 0 20px #60b0ff22;
-      flex-shrink: 0;
-      animation: glowBlue 2.0s infinite alternate-reverse;
-    }
-
-    .icon-crown {
-      display: inline-block;
-      width: 30px;
-      height: 22px;
-      background: transparent;
-      border-bottom: 2.5px solid #fbbf24;
-      border-radius: 0 0 6px 6px;
-      box-shadow: 0 0 34px #fbbf2466;
-      flex-shrink: 0;
-      position: relative;
-      animation: glowGold 2.6s infinite alternate;
-    }
-    .icon-crown::before {
-      content: '';
-      position: absolute;
-      top: -12px;
-      left: 2px;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-bottom: 14px solid #fbbf24;
-      box-shadow: 0 0 34px #fbbf2466;
-    }
-    .icon-crown::after {
-      content: '';
-      position: absolute;
-      top: -12px;
-      right: 2px;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-bottom: 14px solid #fbbf24;
-      box-shadow: 0 0 34px #fbbf2466;
-    }
-
-    /* Glow animations */
     @keyframes glowGreen {
       0% { filter: drop-shadow(0 0 6px #70f0a044); }
       100% { filter: drop-shadow(0 0 30px #70f0a0aa); }
@@ -604,7 +554,6 @@
       100% { filter: drop-shadow(0 0 30px #fbbf24aa); }
     }
 
-    /* responsive */
     @media (max-width: 480px) {
       .brand-name {
         font-size: 19px;
@@ -635,7 +584,7 @@
         padding: 4px 14px;
       }
       .icon-showcase {
-        gap: 20px 28px;
+        gap: 24px 30px;
       }
     }
 
@@ -663,7 +612,6 @@
       animation: floatGlow 2.4s infinite ease-in-out;
     }
 
-    /* author credit — Baharul only */
     .author-credit {
       margin-top: 12px;
       padding-top: 16px;
@@ -680,7 +628,6 @@
 </head>
 <body>
 
-<!-- ====== HEADER ====== -->
 <header class="premium-header">
   <div class="header-left">
     <span class="brand-name">Unlimited YONO GAMES</span>
@@ -690,10 +637,8 @@
   </div>
 </header>
 
-<!-- ====== ABOUT CONTENT ====== -->
 <main class="about-container">
 
-  <!-- 1. About YONO GAMES -->
   <div class="glass-card">
     <div class="badge-glow"><span class="led-icon-glow"></span> ABOUT · Unlimited YONO GAMES</div>
     <h1>About Unlimited YONO GAMES</h1>
@@ -702,7 +647,6 @@
     <p>This is not a "get-rich-quick" portal. It is a research-driven system designed to demystify apps, explain how reward structures move, and help users understand exactly what they are engaging with. If you are trying to avoid blind decisions and impulse-driven guesswork, you are in the right place.</p>
   </div>
 
-  <!-- 2. Why Unlimited YONO GAMES Exists -->
   <div class="glass-card">
     <h2><span class="led-icon-green"></span> Why Unlimited YONO GAMES Exists</h2>
     <p>Most users in the gaming and earning space lose momentum early and it rarely happens because they chose the wrong app. It happens because they don't understand pricing and probability.</p>
@@ -710,14 +654,12 @@
     <p>Unlimited YONO GAMES exists to fix that gap. Our focus isn't on telling users what to play; it's on showing how the ecosystem functions so your decisions improve over time.</p>
   </div>
 
-  <!-- 3. Who We Are -->
   <div class="glass-card">
     <h2><span class="led-icon-blue"></span> Who We Are</h2>
     <p>Unlimited YONO GAMES is built by a team that has worked closely with gaming platforms, product architecture, and user behavior analytics. We've seen how users interact with digital rewards, where confusion happens, and how small misunderstandings turn into consistent losses.</p>
     <p>That exposure shaped our structure. Instead of focusing on "luck," we focus on transparency, probability, and informed decision-making. We aren't here to position ourselves as gurus or claim perfect insight. Our goal is to translate complex gaming systems into a format that is clear, practical, and usable for the everyday user.</p>
   </div>
 
-  <!-- 4. Data Integrity & Two-Step Verification -->
   <div class="glass-card">
     <h2><span class="led-icon-cyan"></span> Data Integrity &amp; Two-Step Verification</h2>
     <p>Transparency is our core metric. Every insight published on Unlimited YONO GAMES undergoes a rigorous Two-Step Verification Process:</p>
@@ -728,7 +670,6 @@
     <p>We maintain an Internal Performance Database where we track "Platform Scenarios" to monitor long-term variance. This ensures our methodology remains accurate before any information reaches our users.</p>
   </div>
 
-  <!-- 5. Editorial Standards -->
   <div class="glass-card">
     <h2><span class="led-icon-purple"></span> The Unlimited YONO GAMES Editorial Standards</h2>
     <ul class="check-list">
@@ -738,7 +679,6 @@
     </ul>
   </div>
 
-  <!-- 6. Our Approach to Content -->
   <div class="glass-card">
     <h2><span class="led-icon-green"></span> Our Approach to Content</h2>
     <p>Digital engagement is a probability system, not a guessing exercise.</p>
@@ -746,7 +686,6 @@
     <p>Our content is structured around logic, not emotion. Variance is part of the system; understanding the difference between a "good decision" and a "lucky outcome" is critical for long-term control.</p>
   </div>
 
-  <!-- 7. Commitment to Responsible Wagering -->
   <div class="glass-card">
     <h2><span class="led-icon-blue"></span> Our Commitment to Responsible Wagering</h2>
     <p>At Unlimited YONO GAMES, we believe gaming should remain a form of entertainment, not a financial strategy. We strictly align our operations with global consumer protection standards.</p>
@@ -756,7 +695,6 @@
     </ul>
   </div>
 
-  <!-- 8. Responsible Gaming (detailed) -->
   <div class="glass-card">
     <h2><span class="led-icon-cyan"></span> Our Commitment to Responsible Gaming</h2>
     <p>At Unlimited YONO GAMES, we believe that digital gaming should be a source of entertainment, not a source of stress or a financial strategy. Because we operate in a space involving real-money apps, we recognize our responsibility to protect our community from the risks associated with compulsive behavior.</p>
@@ -787,13 +725,11 @@
     <p>Unlimited YONO GAMES is strictly for individuals aged 18 or older. We advocate for parental control software (such as Net Nanny or CyberPatrol) and respect regional laws, including restrictions in states like Telangana or Odisha.</p>
   </div>
 
-  <!-- 9. Affiliate Disclosure -->
   <div class="glass-card">
     <h2><span class="led-icon-purple"></span> Affiliate Disclosure</h2>
     <p>Unlimited YONO GAMES may earn a commission when users sign up through certain links on our platform. However, this does not influence how platforms are presented. Our objective remains the same: provide clear, structured information so users can decide independently. Users are always free to choose any platform they wish.</p>
   </div>
 
-  <!-- 10. Who This Platform Is For -->
   <div class="glass-card">
     <h2><span class="led-icon-green"></span> Who This Platform Is For</h2>
     <p>Unlimited YONO GAMES is designed for users who want structure in how they approach digital apps.</p>
@@ -802,29 +738,25 @@
     <p>It is not built for shortcuts. Users looking for "guaranteed wins" or instant profits will not find that here.</p>
   </div>
 
-  <!-- 11. Why Trust Unlimited YONO GAMES -->
   <div class="glass-card">
     <h2><span class="led-icon-blue"></span> Why Trust Unlimited YONO GAMES</h2>
     <p>Clarity is the focus. Structure drives everything. We don't overcomplicate simple ideas, and we don't oversell outcomes. Information is presented so it can actually be used.</p>
     <p>Unlimited YONO GAMES is built on a simple principle: Better understanding leads to better decisions. Not perfect results—but better decisions. And over time, that difference compounds.</p>
   </div>
 
-  <!-- 12. Welcome text -->
   <div class="glass-card">
     <p>Welcome to our platform, a comprehensive hub dedicated to enhancing digital experiences for everyone. At the heart of our mission lies the commitment to empower users with access to a wide range of applications, mirroring the global accessibility of platforms like the renowned app marketplaces, but with a unique focus on Indian users.</p>
     <p>Our journey began with a simple yet powerful vision: to revolutionize the way people discover and download apps. We recognize the evolving needs of the digital age and strive to meet them by offering an extensive selection of applications. From utility and productivity apps to entertainment and lifestyle options, our platform is a one-stop destination for all your app needs.</p>
     <p>We are not just about providing access to apps; we are about fostering a community where knowledge about the latest digital tools is shared and celebrated. Our platform is designed to be user-friendly, ensuring a seamless experience for everyone, from tech-savvy individuals to those just starting their digital journey.</p>
     <p>Our focus on Indian applications sets us apart, reflecting our dedication to cater to the unique needs and preferences of our audience. We believe in the power of local solutions for local challenges, and our platform is a testament to this belief.</p>
     <p>Join us in our endeavor to bring the best of digital innovations to your fingertips. Explore, download, and stay ahead in the ever-evolving world of apps with us.</p>
-
-    <!-- Author credit — Baharul only -->
     <div class="author-credit">
       <span class="led-icon-glow" style="display:inline-block; margin-right:6px;"></span> 
       <strong>Baharul – Unlimited YONO GAMES</strong>
     </div>
   </div>
 
-  <!-- ====== PREMIUM TAGS SECTION - SEO STYLE ====== -->
+  <!-- ====== SEO TAGS SECTION ====== -->
   <div class="glass-card" style="text-align:center;">
     <h2 style="justify-content:center;"><span class="led-icon-gold" style="display:inline-block; width:14px; height:14px; background:#fbbf24; border-radius:50%; box-shadow:0 0 24px #fbbf24aa;"></span> SEO Tags</h2>
     <div class="tag-cloud">
@@ -863,30 +795,26 @@
     </div>
   </div>
 
-  <!-- ====== BOTTOM ICONS SECTION - only icons, no text ====== -->
+  <!-- ====== 5 PREMIUM LED ICONS (no text, only icons) ====== -->
   <div class="glass-card" style="text-align:center;">
-    <h2 style="justify-content:center;"><span class="led-icon-glow" style="display:inline-block; width:14px; height:14px; background:#a0f0c0; border-radius:50%; box-shadow:0 0 28px #70f0a088;"></span> LED Icons</h2>
+    <h2 style="justify-content:center;"><span class="led-icon-glow" style="display:inline-block; width:14px; height:14px; background:#a0f0c0; border-radius:50%; box-shadow:0 0 28px #70f0a088;"></span> Premium Icons</h2>
     <div class="icon-showcase">
       <div class="icon-wrap"><span class="icon-shield"></span></div>
       <div class="icon-wrap"><span class="icon-lock"></span></div>
       <div class="icon-wrap"><span class="icon-check"></span></div>
       <div class="icon-wrap"><span class="icon-star"></span></div>
       <div class="icon-wrap"><span class="icon-lightning"></span></div>
-      <div class="icon-wrap"><span class="icon-diamond"></span></div>
-      <div class="icon-wrap"><span class="icon-crown"></span></div>
     </div>
   </div>
 
 </main>
 
-<!-- ====== BACK TO TOP ====== -->
 <div class="back-to-top" id="backToTopBtn" aria-label="Back to top">
   <span class="arrow-up">▲</span>
 </div>
 
 <script>
   (function() {
-    // ---- Close LED: history.back() ----
     const closeBtn = document.getElementById('closeLedBtn');
     if (closeBtn) {
       closeBtn.addEventListener('click', function(e) {
@@ -907,7 +835,6 @@
       }, { passive: true });
     }
 
-    // ---- Back to Top ----
     const backBtn = document.getElementById('backToTopBtn');
     window.addEventListener('scroll', function() {
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
