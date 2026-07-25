@@ -1,38 +1,61 @@
+<div class="topbar">
+  <h2>Contact - Yono Games Site</h2>
+
+  <button class="menu-btn" onclick="toggleMenu()">⋮</button>
+
+  <div id="menu" class="menu">
+    <a href="javascript:history.back()">✖️ Close</a>
+  </div>
+</div>
+
 <h1>Contact Yono Games Site</h1>
 
 <p>
-At <strong>Yono Games Site</strong>, we prioritize open communication and transparency.
-Whether you have a technical question about an app we’ve reviewed, need clarification
-about our platform, or want to report an issue, our team is here to help.
+At <b>Yono Games Site</b>, we prioritize open communication and transparency.
+Whether you have a technical question about an app we've reviewed, need clarification
+about our data verification process, or want to report a discrepancy, our team is here to help.
 </p>
 
 <p>
-We aim to respond to all legitimate inquiries within 24 to 48 hours.
+We aim to respond to all legitimate inquiries within <b>24 to 48 hours.</b>
 </p>
 
 <h2>How Can We Assist You?</h2>
 
 <ul>
-<li><strong>General Inquiries:</strong> Questions about our platform, content, or website.</li>
-<li><strong>App Verification & Feedback:</strong> Report app issues, withdrawal delays, or technical bugs.</li>
-<li><strong>Partnerships & Business:</strong> Contact us for collaborations or business inquiries.</li>
-<li><strong>Responsible Gaming Support:</strong> Need help with responsible gaming resources.</li>
+<li><b>General Inquiries:</b> Questions about our platform, content, or how we use data.</li>
+
+<li><b>App Verification & Feedback:</b> If you have experienced issues with an app listed on our site (such as withdrawal delays or technical bugs), let us know so our Research Lab can investigate.</li>
+
+<li><b>Partnerships & Business:</b> For verified operators looking to discuss licensing standards or collaborations.</li>
+
+<li><b>Responsible Gaming Support:</b> If you need help finding resources for self-exclusion or gaming control.</li>
 </ul>
 
 <h2>Important Notice</h2>
 
 <p>
-<strong>Yono Games Site</strong> is an independent information and app-sharing platform.
-We do not manage user accounts, payments, deposits, withdrawals, or customer support
-for third-party apps.
+Regarding Third-Party Apps: <b>Yono Games Site</b> is an independent research and distribution hub.
+We do not manage accounts, payments, or internal technical support for the applications listed on our site.
 </p>
 
 <p>
-If you face login, payment, or withdrawal issues, please contact the official support
-team of the respective app.
+If you are facing a payment or login issue within a specific app, please contact that app's official support team directly.
 </p>
 
 <p>
-If you believe any platform is acting unfairly, please report it to us so we can review
-and update our platform information.
+However, if you believe a platform is acting unfairly, please report it to us so we can update our Trust Index for the community.
 </p>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+document.addEventListener("click", function(e) {
+  if (!e.target.closest(".topbar")) {
+    document.getElementById("menu").style.display = "none";
+  }
+});
+</script>
