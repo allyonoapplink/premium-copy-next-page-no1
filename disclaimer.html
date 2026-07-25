@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>YONO GAMES · Contact & Disclaimer</title>
-  <!-- Font & Icons -->
+  <title>Unlimited YONO GAMES · Disclaimer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -17,23 +15,22 @@
     }
 
     body {
-      background: #0b0f0e;
+      background: #080c0b;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      padding: 0 0 40px 0;
-      color: #e6f0ec;
-      line-height: 1.5;
+      padding: 0 0 80px 0;
+      color: #e2efe8;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ---- PREMIUM FIXED HEADER (YONO GAMES + LED CLOSE) ---- */
     .premium-header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(11, 15, 14, 0.82);
+      z-index: 60;
+      background: rgba(8, 12, 11, 0.82);
       backdrop-filter: blur(14px) saturate(180%);
       -webkit-backdrop-filter: blur(14px) saturate(180%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       padding: 14px 20px;
       display: flex;
       align-items: center;
@@ -44,12 +41,7 @@
     .header-left {
       display: flex;
       align-items: center;
-      gap: 8px;
-    }
-
-    .brand-icon {
-      font-size: 28px;
-      filter: drop-shadow(0 0 8px rgba(180, 255, 200, 0.5));
+      gap: 6px;
     }
 
     .brand-name {
@@ -64,44 +56,33 @@
     }
 
     .brand-badge {
-      background: rgba(0, 255, 170, 0.15);
-      border: 1px solid rgba(0, 255, 170, 0.3);
-      color: #9affc0;
-      font-size: 9px;
-      font-weight: 700;
-      padding: 2px 10px;
-      border-radius: 40px;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      margin-left: 4px;
-      backdrop-filter: blur(4px);
+      display: none;
     }
 
-    /* LED CLOSE ICON — white glow, black background */
     .close-led {
       width: 44px;
       height: 44px;
       border-radius: 50%;
       background: #0d1210;
-      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 26px;
       font-weight: 300;
       color: #ffffff;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2), inset 0 0 8px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.15), inset 0 0 8px rgba(255, 255, 255, 0.03);
       transition: all 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.2);
       cursor: pointer;
       backdrop-filter: blur(4px);
       line-height: 1;
-      text-shadow: 0 0 18px rgba(255, 255, 240, 0.6);
+      text-shadow: 0 0 18px rgba(255, 255, 240, 0.5);
     }
 
     .close-led:hover {
       transform: rotate(90deg) scale(1.02);
-      border-color: rgba(255, 255, 255, 0.6);
-      box-shadow: 0 0 30px rgba(200, 255, 220, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 30px rgba(200, 255, 220, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.15);
       background: #111b17;
     }
 
@@ -110,32 +91,29 @@
       box-shadow: 0 0 45px #b0ffd0;
     }
 
-    /* ---- MAIN CONTAINER (mobile-first, glassmorphism) ---- */
-    .contact-container {
-      max-width: 600px;
+    .disclaimer-container {
+      max-width: 680px;
       margin: 0 auto;
       padding: 18px 18px 40px;
     }
 
-    /* glass cards */
     .glass-card {
-      background: rgba(20, 30, 27, 0.5);
+      background: rgba(18, 28, 24, 0.5);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-radius: 32px;
       padding: 24px 22px;
       margin-bottom: 28px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.04);
       box-shadow: 0 20px 40px -18px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 255, 180, 0.02) inset;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
     .glass-card:hover {
-      box-shadow: 0 24px 48px -18px rgba(0, 255, 180, 0.15), 0 0 0 1px rgba(0, 255, 180, 0.08) inset;
+      box-shadow: 0 24px 48px -18px rgba(0, 255, 180, 0.10), 0 0 0 1px rgba(0, 255, 180, 0.06) inset;
     }
 
-    /* headings */
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
       font-weight: 600;
       letter-spacing: -0.02em;
     }
@@ -143,7 +121,7 @@
     h1 {
       font-size: 32px;
       font-weight: 800;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       background: linear-gradient(145deg, #e5ffee, #b0f7d0);
       -webkit-background-clip: text;
       background-clip: text;
@@ -158,14 +136,63 @@
       color: #d4fae6;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       letter-spacing: -0.3px;
     }
 
-    h2 i {
-      color: #80f0b0;
-      font-size: 22px;
-      filter: drop-shadow(0 0 6px #80f0b066);
+    .led-icon-green {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #70f0a0;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #70f0a066;
+      flex-shrink: 0;
+    }
+    .led-icon-blue {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #60b0ff;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #60b0ff66;
+      flex-shrink: 0;
+    }
+    .led-icon-cyan {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #40e0d0;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #40e0d066;
+      flex-shrink: 0;
+    }
+    .led-icon-purple {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #c084fc;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #c084fc66;
+      flex-shrink: 0;
+    }
+    .led-icon-gold {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #fbbf24;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #fbbf2466;
+      flex-shrink: 0;
+    }
+    .led-icon-glow {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #a0f0c0;
+      border-radius: 50%;
+      box-shadow: 0 0 24px #70f0a088;
+      margin-right: 6px;
     }
 
     h3 {
@@ -189,11 +216,10 @@
       color: #e2f5eb;
       border-left: 3px solid #50d68a;
       padding-left: 16px;
-      background: rgba(0, 255, 150, 0.03);
+      background: rgba(0, 255, 150, 0.02);
       border-radius: 0 12px 12px 0;
     }
 
-    /* lists */
     ul, ol {
       padding-left: 22px;
       margin: 12px 0 18px 0;
@@ -223,17 +249,17 @@
     }
 
     .check-list li::before {
-      content: "✦";
+      content: "◆";
       position: absolute;
       left: 0;
       color: #70f0a0;
-      font-size: 18px;
+      font-size: 14px;
       text-shadow: 0 0 12px #70f0a066;
     }
 
     .badge-glow {
-      background: rgba(0, 255, 170, 0.08);
-      border: 1px solid rgba(0, 255, 170, 0.15);
+      background: rgba(0, 255, 170, 0.06);
+      border: 1px solid rgba(0, 255, 170, 0.12);
       color: #b0f5cf;
       padding: 2px 14px;
       border-radius: 60px;
@@ -245,125 +271,67 @@
       letter-spacing: 0.3px;
     }
 
-    .tag-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 18px 0 6px;
-    }
-
-    .tag-item {
-      background: rgba(0, 20, 12, 0.6);
-      border: 1px solid rgba(0, 255, 170, 0.15);
-      padding: 6px 18px;
-      border-radius: 60px;
-      font-size: 13px;
-      font-weight: 500;
-      color: #c2f0d6;
-      backdrop-filter: blur(4px);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      letter-spacing: 0.2px;
-      transition: all 0.2s;
-    }
-
-    .tag-item i {
-      color: #70f0a0;
-      font-size: 14px;
-    }
-
-    .tag-item:hover {
-      border-color: rgba(0, 255, 170, 0.4);
-      background: rgba(0, 40, 25, 0.5);
-      box-shadow: 0 0 20px rgba(0, 255, 170, 0.05);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 20px 0 8px;
-    }
-
-    .stat-item {
-      background: rgba(0, 0, 0, 0.25);
-      border-radius: 20px;
-      padding: 16px 12px;
-      text-align: center;
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255, 255, 255, 0.03);
-    }
-
-    .stat-number {
-      font-size: 26px;
-      font-weight: 800;
-      color: #b5ffd0;
-      text-shadow: 0 0 20px #4ae08a55;
-      display: block;
-    }
-
-    .stat-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      color: #94b3a8;
-      font-weight: 500;
-      margin-top: 4px;
-    }
-
     hr {
       border: none;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(0, 255, 180, 0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 180, 0.15), transparent);
       margin: 28px 0 24px;
     }
 
-    .footer-note {
-      text-align: center;
-      font-size: 14px;
-      color: #7f9b90;
-      border-top: 1px solid rgba(255, 255, 255, 0.03);
-      padding-top: 28px;
-      margin-top: 20px;
-    }
-
-    .footer-note i {
-      color: #80f0b0;
-      margin: 0 4px;
-    }
-
-    .contact-email {
-      background: rgba(0, 255, 170, 0.04);
-      border-radius: 20px;
-      padding: 16px 20px;
-      border: 1px solid rgba(0, 255, 170, 0.08);
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #0d1a14;
+      border: 1.5px solid rgba(0, 255, 170, 0.4);
+      box-shadow: 0 0 24px rgba(0, 255, 170, 0.25), inset 0 0 12px rgba(0, 255, 170, 0.05);
+      color: #b5ffd0;
+      font-size: 28px;
+      font-weight: 300;
       display: flex;
       align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 8px;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px) scale(0.9);
+      text-shadow: 0 0 24px #70f0a088;
+      line-height: 1;
     }
 
-    .contact-email i {
-      font-size: 24px;
-      color: #70f0a0;
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
     }
 
-    .contact-email span {
-      font-size: 18px;
-      font-weight: 500;
-      color: #d4fae6;
-      word-break: break-all;
+    .back-to-top:hover {
+      transform: scale(1.06);
+      border-color: #70f0a0;
+      box-shadow: 0 0 40px rgba(0, 255, 170, 0.4);
+      background: #11261e;
     }
 
-    /* responsive */
+    .back-to-top:active {
+      transform: scale(0.92);
+    }
+
+    .back-to-top .arrow-up {
+      display: inline-block;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 200;
+    }
+
     @media (max-width: 480px) {
       .brand-name {
         font-size: 19px;
-      }
-      .brand-icon {
-        font-size: 24px;
       }
       .close-led {
         width: 40px;
@@ -379,16 +347,12 @@
       h2 {
         font-size: 22px;
       }
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-      .tag-item {
-        font-size: 12px;
-        padding: 4px 14px;
-      }
-      .contact-email span {
-        font-size: 16px;
+      .back-to-top {
+        width: 46px;
+        height: 46px;
+        font-size: 24px;
+        bottom: 20px;
+        right: 16px;
       }
     }
 
@@ -406,215 +370,187 @@
       100% { box-shadow: 0 0 20px #fff, 0 0 60px #b0ffd0; }
     }
 
-    /* disclaimer special style */
-    .disclaimer-box {
-      background: rgba(40, 30, 20, 0.3);
-      border: 1px solid rgba(255, 200, 100, 0.12);
-      border-radius: 24px;
-      padding: 20px 22px;
-      margin-top: 12px;
+    @keyframes floatGlow {
+      0% { box-shadow: 0 0 20px rgba(0, 255, 170, 0.2); }
+      50% { box-shadow: 0 0 40px rgba(0, 255, 170, 0.35); }
+      100% { box-shadow: 0 0 20px rgba(0, 255, 170, 0.2); }
     }
 
-    .disclaimer-box strong {
-      color: #f5d07a;
+    .back-to-top.visible {
+      animation: floatGlow 2.4s infinite ease-in-out;
+    }
+
+    .author-credit {
+      margin-top: 12px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      font-size: 15px;
+      color: #8fb3a5;
+      letter-spacing: 0.3px;
+    }
+    .author-credit strong {
+      color: #b5ffd0;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
 
-<!-- ====== FIXED HEADER ====== -->
 <header class="premium-header">
   <div class="header-left">
-    <span class="brand-icon">🎮</span>
-    <span class="brand-name">YONO GAMES</span>
-    <span class="brand-badge">HD</span>
+    <span class="brand-name">Unlimited YONO GAMES</span>
   </div>
   <div class="close-led" id="closeLedBtn" aria-label="Close and go back">
     ✖
   </div>
 </header>
 
-<!-- ====== CONTACT + DISCLAIMER CONTENT ====== -->
-<main class="contact-container">
+<main class="disclaimer-container">
 
-  <!-- Hero contact card -->
   <div class="glass-card">
-    <div class="badge-glow"><i class="fas fa-circle" style="color: #70f0a0; font-size: 8px; margin-right: 6px;"></i> CONTACT · YONO GAMES</div>
-    <h1>Contact Us</h1>
-    <p class="lead" style="margin-top: 8px;">
-      <i class="fas fa-bolt" style="color: #80f0b0; margin-right: 8px;"></i> 
-      Open communication, transparency, and clarity — we're here to help.
-    </p>
-    <p style="margin-top: 12px; font-size: 15px; color: #b5d5c8;">
-      <i class="fas fa-clock" style="color: #70f0a0; margin-right: 6px;"></i> Response within <strong style="color: #d4fae6;">24–48 hours</strong> for legitimate inquiries.
-    </p>
-    <!-- All tags: contact, support, verification, etc -->
-    <div class="tag-group">
-      <span class="tag-item"><i class="fas fa-envelope"></i> general</span>
-      <span class="tag-item"><i class="fas fa-check-circle"></i> verification</span>
-      <span class="tag-item"><i class="fas fa-handshake"></i> partnerships</span>
-      <span class="tag-item"><i class="fas fa-heart"></i> responsible gaming</span>
-      <span class="tag-item"><i class="fas fa-database"></i> trust index</span>
-      <span class="tag-item"><i class="fas fa-shield-alt"></i> data integrity</span>
-      <span class="tag-item"><i class="fas fa-flag"></i> report issue</span>
-    </div>
+    <div class="badge-glow"><span class="led-icon-glow"></span> DISCLAIMER · Unlimited YONO GAMES</div>
+    <h1>Disclaimer</h1>
+    <p class="lead" style="margin-top:6px;">Last Updated: <span style="color:#b5ffd0;">Unlimited YONO GAMES</span></p>
+    <p>Welcome to Unlimited YONO GAMES. This Disclaimer constitutes a legally binding agreement between you and the platform. By accessing our website and utilizing the information or links provided for third-party applications—including but not limited to Poker, Rummy, Ludo, Fantasy Sports, and various Earning or Investment platforms—you acknowledge that you have read, understood, and voluntarily agreed to the terms outlined below.</p>
   </div>
 
-  <!-- How can we assist? -->
+  <!-- 1. Nature of Service -->
   <div class="glass-card">
-    <h2><i class="fas fa-question-circle"></i> How Can We Assist You?</h2>
-    <p>To help direct your inquiry to the right department, please specify the nature of your message:</p>
+    <h2><span class="led-icon-blue"></span> 1. Nature of Service: Digital Intermediary Notice</h2>
+    <p>Unlimited YONO GAMES operates exclusively as a digital distribution and informational directory. We serve as a bridge between users and third-party software developers.</p>
     <ul class="check-list">
-      <li><strong>General Inquiries</strong> — questions about our platform, content, or data usage.</li>
-      <li><strong>App Verification & Feedback</strong> — issues with an app listed on our site (withdrawal delays, bugs). Our Research Lab investigates.</li>
-      <li><strong>Partnerships & Business</strong> — for verified operators interested in licensing standards or collaborations.</li>
-      <li><strong>Responsible Gaming Support</strong> — resources for self‑exclusion or gaming control.</li>
+      <li><strong>Non-Affiliation:</strong> We do not develop, own, operate, or maintain any of the Apps listed on this site. Each application is the intellectual property and responsibility of its respective third-party owner.</li>
+      <li><strong>No Administrative Control:</strong> Unlimited YONO GAMES has no authority over the internal mechanics of these Apps, including their payout structures, reward systems, account management, or technical stability.</li>
     </ul>
-    <div class="tag-group" style="margin-top: 12px;">
-      <span class="tag-item"><i class="fas fa-microscope"></i> research lab</span>
-      <span class="tag-item"><i class="fas fa-chart-pie"></i> performance data</span>
-      <span class="tag-item"><i class="fas fa-user-check"></i> SME review</span>
-    </div>
   </div>
 
-  <!-- Important Notice -->
-  <div class="glass-card" style="border-left: 3px solid #f0b56b;">
-    <h2><i class="fas fa-exclamation-triangle" style="color: #f0b56b;"></i> Important Notice</h2>
-    <p><strong style="color: #f5d07a;">Regarding Third‑Party Apps:</strong> YONO GAMES is an independent research and distribution hub. We do not manage accounts, payments, or internal technical support for the applications listed on our site.</p>
-    <p>If you are facing a payment or login issue within a specific app, please contact that app’s official support team directly.</p>
-    <p>However, if you believe a platform is acting unfairly, <strong style="color: #b5ffd0;">report it to us</strong> so we can update our Trust Index for the community.</p>
-    <div class="tag-group">
-      <span class="tag-item"><i class="fas fa-building"></i> independent hub</span>
-      <span class="tag-item"><i class="fas fa-balance-scale"></i> fair play</span>
-      <span class="tag-item"><i class="fas fa-star"></i> trust index</span>
-      <span class="tag-item"><i class="fas fa-edit"></i> report discrepancy</span>
-    </div>
-  </div>
-
-  <!-- Contact email / direct -->
+  <!-- 2. Financial Risk -->
   <div class="glass-card">
-    <h2><i class="fas fa-paper-plane"></i> Reach Out</h2>
-    <p>For any inquiry, feedback, or to report a platform issue:</p>
-    <div class="contact-email">
-      <i class="fas fa-envelope"></i>
-      <span>support@yonogames.com</span>
-    </div>
-    <p style="font-size: 14px; color: #96b8ab; margin-top: 12px;"><i class="fas fa-lock" style="color: #70f0a0;"></i> All communications are confidential.</p>
-    <div class="tag-group">
-      <span class="tag-item"><i class="fas fa-headset"></i> 24/7 support</span>
-      <span class="tag-item"><i class="fas fa-file-alt"></i> feedback</span>
-      <span class="tag-item"><i class="fas fa-bug"></i> technical</span>
-    </div>
-  </div>
-
-  <!-- ====== DISCLAIMER SECTION (dedicated) ====== -->
-  <div class="glass-card" style="border-color: rgba(255, 200, 100, 0.15);">
-    <h2><i class="fas fa-scale-balanced" style="color: #f5d07a;"></i> Disclaimer</h2>
-    <div class="disclaimer-box">
-      <p><strong>Informational Purposes Only:</strong> The content on YONO GAMES is for educational and informational purposes only. We do not provide financial, legal, or professional advice.</p>
-      <p><strong>No Guarantees:</strong> While we strive for accuracy, we do not guarantee the completeness, reliability, or timeliness of any information. Platforms and RTPs may change without notice.</p>
-      <p><strong>Third-Party Links:</strong> YONO GAMES may contain links to external sites. We are not responsible for the content or practices of those platforms.</p>
-      <p><strong>Responsibility:</strong> You are solely responsible for your decisions. Always verify information independently and consult official sources before engaging with any gaming or earning app.</p>
-      <p><strong>Age Restriction:</strong> YONO GAMES is intended for users aged 18 and above. We do not target or collect data from minors.</p>
-    </div>
-    <!-- disclaimer tags -->
-    <div class="tag-group">
-      <span class="tag-item"><i class="fas fa-info-circle"></i> educational</span>
-      <span class="tag-item"><i class="fas fa-exclamation-circle"></i> no guarantee</span>
-      <span class="tag-item"><i class="fas fa-external-link-alt"></i> third-party</span>
-      <span class="tag-item"><i class="fas fa-user-check"></i> 18+ only</span>
-      <span class="tag-item"><i class="fas fa-gavel"></i> legal notice</span>
-    </div>
-  </div>
-
-  <!-- Data integrity & verification -->
-  <div class="glass-card">
-    <h2><i class="fas fa-shield-alt"></i> Our Verification Process</h2>
-    <p>Every app insight on YONO GAMES undergoes a rigorous <strong style="color: #b5ffd0;">Two‑Step Verification</strong>:</p>
+    <h2><span class="led-icon-green"></span> 2. Financial Risk &amp; Personal Responsibility</h2>
+    <p>Participation in any app involving real-money stakes, wagering, or financial investment carries an inherent and significant risk of capital loss.</p>
     <ul class="check-list">
-      <li><strong>Quantitative Filter</strong> — historical data & platform mechanics.</li>
-      <li><strong>Manual SME Review</strong> — experts check withdrawal speeds, license validity, and technical stability.</li>
+      <li><strong>User Assumption of Risk:</strong> You agree that any financial transaction or "add cash" activity is performed at your own risk. Unlimited YONO GAMES is not responsible for money lost due to gameplay, failed investments, or platform-side technical errors.</li>
+      <li><strong>No Guarantee of Earnings:</strong> While many apps are marketed as "earning platforms," Unlimited YONO GAMES makes no guarantee of profit. Results vary based on skill, chance, and individual platform algorithms.</li>
+      <li><strong>Due Diligence:</strong> We strongly urge users to verify the credibility, withdrawal speed, and user reviews of any App before committing personal funds.</li>
     </ul>
-    <p><i class="fas fa-database" style="color: #70f0a0; margin-right: 6px;"></i> We maintain an Internal Performance Database to track long‑term variance.</p>
-    <div class="tag-group">
-      <span class="tag-item"><i class="fas fa-check-double"></i> integrity criteria</span>
-      <span class="tag-item"><i class="fas fa-user-tie"></i> SME approved</span>
-      <span class="tag-item"><i class="fas fa-chart-bar"></i> performance tracking</span>
-    </div>
   </div>
 
-  <!-- Responsible gaming -->
+  <!-- 3. Professional Advice -->
   <div class="glass-card">
-    <h2><i class="fas fa-heart" style="color: #80f0b0;"></i> Responsible Gaming</h2>
-    <p>We believe gaming should remain entertainment, not a financial strategy. We support self‑exclusion, deposit limits, and national helplines.</p>
-    <p><strong style="color: #b5ffd0;">Tools for control:</strong> deposit limits, session timers, cool‑off periods, self‑exclusion.</p>
-    <p style="background: #0a1a13; border-radius: 16px; padding: 10px 16px; font-size: 15px; border: 1px solid #2b5a44;"><i class="fas fa-lock" style="color: #70f0a0; margin-right: 8px;"></i> YONO GAMES is strictly for individuals aged 18+.</p>
-    <div class="tag-group">
-      <span class="tag-item"><i class="fas fa-phone-alt"></i> helplines</span>
-      <span class="tag-item"><i class="fas fa-sliders-h"></i> deposit limits</span>
-      <span class="tag-item"><i class="fas fa-clock"></i> session timers</span>
-      <span class="tag-item"><i class="fas fa-user-slash"></i> self‑exclusion</span>
-    </div>
+    <h2><span class="led-icon-cyan"></span> 3. Professional Advice Disclaimer</h2>
+    <p>The content provided on Unlimited YONO GAMES is for entertainment and informational purposes only.</p>
+    <ul class="check-list">
+      <li><strong>Not Financial Advice:</strong> We do not offer investment, legal, or financial counseling. Information found on this site should not be viewed as a recommendation to invest or gamble.</li>
+      <li><strong>Independent Verification:</strong> Before engaging in high-stakes financial activities, we recommend consulting with a certified financial advisor or legal professional.</li>
+    </ul>
   </div>
 
-  <!-- Partnerships & business -->
+  <!-- 4. Jurisdiction -->
   <div class="glass-card">
-    <h2><i class="fas fa-handshake"></i> Partnerships & Business</h2>
-    <p>For verified operators looking to discuss licensing standards, collaborations, or data partnerships:</p>
-    <div class="contact-email" style="background: rgba(0, 200, 150, 0.04);">
-      <i class="fas fa-briefcase"></i>
-      <span>partners@yonogames.com</span>
-    </div>
-    <div class="tag-group">
-      <span class="tag-item"><i class="fas fa-certificate"></i> licensing</span>
-      <span class="tag-item"><i class="fas fa-users-cog"></i> B2B</span>
-      <span class="tag-item"><i class="fas fa-chart-line"></i> analytics</span>
-    </div>
+    <h2><span class="led-icon-purple"></span> 4. Jurisdiction &amp; Regional Legal Restrictions</h2>
+    <p>Gaming laws vary significantly by region. In India, several states have classified certain "Games of Skill" as restricted or prohibited when played for stakes.</p>
+    <ul class="check-list">
+      <li><strong>Restricted States:</strong> Assam, Odisha, Telangana, Nagaland, Sikkim, Andhra Pradesh, and Meghalaya may prohibit real-money gaming.</li>
+      <li><strong>Self-Compliance:</strong> It is your responsibility to ensure your use of these Apps complies with your local laws. Unlimited YONO GAMES disclaims all liability for violations.</li>
+    </ul>
   </div>
 
-  <!-- Affiliate disclosure -->
+  <!-- 5. Ethical Gaming -->
   <div class="glass-card">
-    <h2><i class="fas fa-info-circle"></i> Affiliate Disclosure</h2>
-    <p>YONO GAMES may earn a commission through certain links, but this does not influence how platforms are presented. Our objective remains clear, structured information for independent decisions.</p>
-    <div class="tag-group">
-      <span class="tag-item"><i class="fas fa-balance-scale"></i> commercial independence</span>
-      <span class="tag-item"><i class="fas fa-database"></i> trust index</span>
-      <span class="tag-item"><i class="fas fa-eye"></i> transparency</span>
-    </div>
+    <h2><span class="led-icon-gold"></span> 5. Ethical Gaming &amp; Addiction Awareness</h2>
+    <p>We advocate for a safe and healthy gaming environment.</p>
+    <ul class="check-list">
+      <li><strong>Responsible Use:</strong> Set limits on time and money spent. Do not treat gaming as a primary income source.</li>
+      <li><strong>Support Systems:</strong> If you experience compulsive behavior, seek professional help or contact organizations like GamCare or BeGambleAware.</li>
+    </ul>
   </div>
 
-  <div class="footer-note">
-    <i class="fas fa-circle" style="font-size: 8px; vertical-align: middle;"></i> YONO GAMES · HD research hub · contact & transparency <i class="fas fa-circle" style="font-size: 8px; vertical-align: middle;"></i>
+  <!-- 6. Integrity of Gameplay -->
+  <div class="glass-card">
+    <h2><span class="led-icon-blue"></span> 6. Integrity of Gameplay (Fair Play &amp; RNG)</h2>
+    <ul class="check-list">
+      <li><strong>Algorithm Transparency:</strong> We do not guarantee fairness of RNG systems used in third-party Apps.</li>
+      <li><strong>Technical Liability:</strong> We are not responsible for losses caused by server issues, lag, or account bans.</li>
+    </ul>
+  </div>
+
+  <!-- 7. Limitation of Liability -->
+  <div class="glass-card">
+    <h2><span class="led-icon-green"></span> 7. Limitation of Liability &amp; Indemnification</h2>
+    <p>To the maximum extent permitted by law, Unlimited YONO GAMES, its owners, and affiliates shall not be liable for any direct or indirect damages, including loss of profits, data, or personal grievances arising from third-party Apps. By using this platform, you agree to indemnify and hold Unlimited YONO GAMES harmless from any claims or legal fees.</p>
+  </div>
+
+  <!-- 8. Third-Party Links -->
+  <div class="glass-card">
+    <h2><span class="led-icon-cyan"></span> Third-Party Links &amp; Content</h2>
+    <p>Our website contains links to external sites not operated by us. We are not responsible for their content,</p>
+  </div>
+
+  <!-- 9. Policy Amendments -->
+  <div class="glass-card">
+    <h2><span class="led-icon-purple"></span> Policy Amendments</h2>
+    <p>Unlimited YONO GAMES reserves the right to update this Disclaimer at any time. Continued use of the site after updates means you accept the revised terms.</p>
+  </div>
+
+  <!-- 10. Contact -->
+  <div class="glass-card">
+    <h2><span class="led-icon-gold"></span> Contact Us</h2>
+    <p>For any queries regarding this Disclaimer, please visit our About</p>
+  </div>
+
+  <!-- 11. Acknowledgment -->
+  <div class="glass-card">
+    <h2><span class="led-icon-green"></span> Acknowledgment</h2>
+    <p>By using this site, you confirm that you are at least 18 years old and accept that your use of any gaming or earning app is entirely at your own risk.</p>
+    <div class="author-credit">
+      <span class="led-icon-glow" style="display:inline-block; margin-right:6px;"></span> 
+      <strong>Unlimited YONO GAMES</strong>
+    </div>
   </div>
 
 </main>
 
+<div class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+  <span class="arrow-up">▲</span>
+</div>
+
 <script>
   (function() {
     const closeBtn = document.getElementById('closeLedBtn');
-
     if (closeBtn) {
       closeBtn.addEventListener('click', function(e) {
         e.stopPropagation();
-
         this.classList.add('clicked');
-        setTimeout(() => {
-          this.classList.remove('clicked');
-        }, 200);
-
+        setTimeout(() => { this.classList.remove('clicked'); }, 200);
         if (window.history && window.history.length > 1) {
           window.history.back();
         } else {
           window.location.href = '/';
         }
       });
-
       closeBtn.addEventListener('touchstart', function() {
         this.style.transform = 'scale(0.92)';
       }, { passive: true });
       closeBtn.addEventListener('touchend', function() {
         this.style.transform = '';
       }, { passive: true });
+    }
+
+    const backBtn = document.getElementById('backToTopBtn');
+    window.addEventListener('scroll', function() {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > 300) {
+        backBtn.classList.add('visible');
+      } else {
+        backBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    if (backBtn) {
+      backBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     }
   })();
 </script>
