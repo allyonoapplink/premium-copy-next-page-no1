@@ -23,7 +23,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ---- PREMIUM FIXED HEADER (YONO GAMES + LED CLOSE) ---- */
+    /* ---- PREMIUM FIXED HEADER ---- */
     .premium-header {
       position: sticky;
       top: 0;
@@ -70,7 +70,7 @@
       backdrop-filter: blur(4px);
     }
 
-    /* LED CLOSE ICON — white glow, black background */
+    /* LED CLOSE — white glow */
     .close-led {
       width: 44px;
       height: 44px;
@@ -103,7 +103,7 @@
       box-shadow: 0 0 45px #b0ffd0;
     }
 
-    /* ---- MAIN CONTAINER ---- */
+    /* ---- MAIN ---- */
     .about-container {
       max-width: 680px;
       margin: 0 auto;
@@ -127,7 +127,6 @@
       box-shadow: 0 24px 48px -18px rgba(0, 255, 180, 0.10), 0 0 0 1px rgba(0, 255, 180, 0.06) inset;
     }
 
-    /* headings */
     h1, h2, h3, h4 {
       font-weight: 600;
       letter-spacing: -0.02em;
@@ -151,18 +150,29 @@
       color: #d4fae6;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       letter-spacing: -0.3px;
     }
 
-    h2 .led-icon {
+    /* CSS LED icon (no emoji) */
+    .led-icon {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #70f0a0;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #70f0a066;
+      flex-shrink: 0;
+    }
+
+    .led-icon-glow {
       display: inline-block;
       width: 10px;
       height: 10px;
-      background: #70f0a0;
+      background: #a0f0c0;
       border-radius: 50%;
-      box-shadow: 0 0 16px #70f0a066;
-      flex-shrink: 0;
+      box-shadow: 0 0 24px #70f0a088;
+      margin-right: 6px;
     }
 
     h3 {
@@ -190,7 +200,6 @@
       border-radius: 0 12px 12px 0;
     }
 
-    /* lists */
     ul, ol {
       padding-left: 22px;
       margin: 12px 0 18px 0;
@@ -249,7 +258,7 @@
       margin: 28px 0 24px;
     }
 
-    /* ---- Back to Top (glowing LED arrow, fixed) ---- */
+    /* ---- Back to Top (glowing LED arrow) ---- */
     .back-to-top {
       position: fixed;
       bottom: 28px;
@@ -296,7 +305,6 @@
 
     .back-to-top .arrow-up {
       display: inline-block;
-      transform: rotate(0deg);
       font-size: 30px;
       line-height: 1;
       font-weight: 200;
@@ -344,7 +352,6 @@
       100% { box-shadow: 0 0 20px #fff, 0 0 60px #b0ffd0; }
     }
 
-    /* floating animation for back-to-top */
     @keyframes floatGlow {
       0% { box-shadow: 0 0 20px rgba(0, 255, 170, 0.2); }
       50% { box-shadow: 0 0 40px rgba(0, 255, 170, 0.35); }
@@ -354,11 +361,25 @@
     .back-to-top.visible {
       animation: floatGlow 2.4s infinite ease-in-out;
     }
+
+    /* author credit — only my name */
+    .author-credit {
+      margin-top: 12px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      font-size: 15px;
+      color: #8fb3a5;
+      letter-spacing: 0.3px;
+    }
+    .author-credit strong {
+      color: #b5ffd0;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
 
-<!-- ====== FIXED HEADER ====== -->
+<!-- ====== HEADER ====== -->
 <header class="premium-header">
   <div class="header-left">
     <span class="brand-name">YONO GAMES</span>
@@ -372,9 +393,9 @@
 <!-- ====== ABOUT CONTENT ====== -->
 <main class="about-container">
 
-  <!-- 1. About YONO GAMES: Empowering Users -->
+  <!-- 1. About YONO GAMES -->
   <div class="glass-card">
-    <div class="badge-glow"><span style="display:inline-block; width:8px; height:8px; background:#70f0a0; border-radius:50%; box-shadow:0 0 12px #70f0a0; margin-right:8px;"></span> ABOUT · YONO GAMES</div>
+    <div class="badge-glow"><span class="led-icon-glow"></span> ABOUT · YONO GAMES</div>
     <h1>About YONO GAMES</h1>
     <p class="lead" style="margin-top:6px;">Empowering Users Through Transparency</p>
     <p>YONO GAMES is built to help players navigate the digital gaming and earning landscape with structured information, not marketing noise. Our platform focuses on platform mechanics, market behavior, and performance comparisons across the gaming industry. The goal is simple: to show how digital systems work and where true value exists so our users can act with total clarity.</p>
@@ -435,7 +456,7 @@
     </ul>
   </div>
 
-  <!-- 8. Commitment to Responsible Gaming (detailed) -->
+  <!-- 8. Responsible Gaming (detailed) -->
   <div class="glass-card">
     <h2><span class="led-icon"></span> Our Commitment to Responsible Gaming</h2>
     <p>At YONO GAMES, we believe that digital gaming should be a source of entertainment, not a source of stress or a financial strategy. Because we operate in a space involving real-money apps, we recognize our responsibility to protect our community from the risks associated with compulsive behavior.</p>
@@ -488,18 +509,24 @@
     <p>YONO GAMES is built on a simple principle: Better understanding leads to better decisions. Not perfect results—but better decisions. And over time, that difference compounds.</p>
   </div>
 
-  <!-- 12. Welcome / about-yono-games-store (exact copy) -->
+  <!-- 12. Welcome text (exact copy, no Rani Slots / Yono Games Store) -->
   <div class="glass-card">
-    <p>Welcome to our platform, about-yono-games-store a comprehensive hub created on 31 May 2025, dedicated to enhancing digital experiences for everyone. At the heart of our mission lies the commitment to empower users with access to a wide range of applications, mirroring the global accessibility of platforms like the renowned app marketplaces, but with a unique focus on Indian users about-yono-games-store.</p>
+    <p>Welcome to our platform, a comprehensive hub created on 31 May 2025, dedicated to enhancing digital experiences for everyone. At the heart of our mission lies the commitment to empower users with access to a wide range of applications, mirroring the global accessibility of platforms like the renowned app marketplaces, but with a unique focus on Indian users.</p>
     <p>Our journey began with a simple yet powerful vision: to revolutionize the way people discover and download apps. We recognize the evolving needs of the digital age and strive to meet them by offering an extensive selection of applications. From utility and productivity apps to entertainment and lifestyle options, our platform is a one-stop destination for all your app needs.</p>
     <p>We are not just about providing access to apps; we are about fostering a community where knowledge about the latest digital tools is shared and celebrated. Our platform is designed to be user-friendly, ensuring a seamless experience for everyone, from tech-savvy individuals to those just starting their digital journey.</p>
     <p>Our focus on Indian applications sets us apart, reflecting our dedication to cater to the unique needs and preferences of our audience. We believe in the power of local solutions for local challenges, and our platform is a testament to this belief.</p>
-    <p>Join us in our endeavor to bring the best of digital innovations to your fingertips. Explore, download, and stay ahead in the ever-evolving world of apps with us about unlimited yono games</p>
+    <p>Join us in our endeavor to bring the best of digital innovations to your fingertips. Explore, download, and stay ahead in the ever-evolving world of apps with us.</p>
+    
+    <!-- Author credit — only my name -->
+    <div class="author-credit">
+      <span class="led-icon-glow" style="display:inline-block; margin-right:6px;"></span> 
+      <strong>Designed by Aman Verma</strong> · YONO GAMES
+    </div>
   </div>
 
 </main>
 
-<!-- ====== BACK TO TOP (glowing LED arrow, fixed) ====== -->
+<!-- ====== BACK TO TOP ====== -->
 <div class="back-to-top" id="backToTopBtn" aria-label="Back to top">
   <span class="arrow-up">▲</span>
 </div>
@@ -527,10 +554,8 @@
       }, { passive: true });
     }
 
-    // ---- Back to Top: show/hide + scroll ----
+    // ---- Back to Top ----
     const backBtn = document.getElementById('backToTopBtn');
-    let lastScroll = 0;
-
     window.addEventListener('scroll', function() {
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
       if (currentScroll > 300) {
@@ -538,7 +563,6 @@
       } else {
         backBtn.classList.remove('visible');
       }
-      lastScroll = currentScroll;
     }, { passive: true });
 
     if (backBtn) {
