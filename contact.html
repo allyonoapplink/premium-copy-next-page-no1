@@ -1,167 +1,38 @@
-<!DOCTYPE html>
-<style>
-/* PREMIUM MOBILE HEADER */
-.premium-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(145deg, #0a1f0a, #1a3a1a);
-    padding: 12px 16px;
-    border-bottom: 2px solid #00ff88;
-    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
-    position: relative;
-    z-index: 999;
-}
+<h1>Contact Yono Games Site</h1>
 
-/* ---- LEFT: Yono Games Shop ---- */
-.shop-brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+<p>
+At <strong>Yono Games Site</strong>, we prioritize open communication and transparency.
+Whether you have a technical question about an app we’ve reviewed, need clarification
+about our platform, or want to report an issue, our team is here to help.
+</p>
 
-.brand-icon {
-    font-size: 28px;
-    filter: drop-shadow(0 0 6px #00ff88);
-}
+<p>
+We aim to respond to all legitimate inquiries within 24 to 48 hours.
+</p>
 
-.brand-name {
-    font-size: 22px;
-    font-weight: 900;
-    color: #ffffff;
-    letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-}
+<h2>How Can We Assist You?</h2>
 
-.brand-badge {
-    background: #00ff88;
-    color: #0a1f0a;
-    font-size: 10px;
-    font-weight: 800;
-    padding: 2px 10px;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 0 15px #00ff88;
-}
+<ul>
+<li><strong>General Inquiries:</strong> Questions about our platform, content, or website.</li>
+<li><strong>App Verification & Feedback:</strong> Report app issues, withdrawal delays, or technical bugs.</li>
+<li><strong>Partnerships & Business:</strong> Contact us for collaborations or business inquiries.</li>
+<li><strong>Responsible Gaming Support:</strong> Need help with responsible gaming resources.</li>
+</ul>
 
-/* ---- CENTER: LED Indicator ---- */
-.led-indicator {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 4px 14px 4px 10px;
-    border-radius: 30px;
-    border: 1px solid #00ff8866;
-}
+<h2>Important Notice</h2>
 
-.led-dot {
-    width: 12px;
-    height: 12px;
-    background: #00ff88;
-    border-radius: 50%;
-    display: inline-block;
-    box-shadow: 0 0 20px #00ff88;
-    animation: pulse-led 1.5s ease-in-out infinite;
-}
+<p>
+<strong>Yono Games Site</strong> is an independent information and app-sharing platform.
+We do not manage user accounts, payments, deposits, withdrawals, or customer support
+for third-party apps.
+</p>
 
-@keyframes pulse-led {
-    0% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
-}
+<p>
+If you face login, payment, or withdrawal issues, please contact the official support
+team of the respective app.
+</p>
 
-.led-label {
-    color: #00ff88;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-/* ---- RIGHT: Black Close Icon ---- */
-.close-btn-black {
-    background: #000000;
-    color: #ffffff;
-    border: 2px solid #333;
-    width: 44px;
-    height: 44px;
-    font-size: 24px;
-    font-weight: 300;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
-}
-
-.close-btn-black:hover {
-    background: #1a1a1a;
-    transform: rotate(90deg);
-    border-color: #00ff88;
-}
-
-.close-btn-black:active {
-    transform: scale(0.9);
-}
-
-/* ---- GREEN BACKGROUND TAGS (premium) ---- */
-.green-tag {
-    background: #00ff88;
-    color: #000;
-    font-weight: 800;
-    padding: 4px 16px;
-    border-radius: 30px;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    box-shadow: 0 0 25px #00ff8866;
-    display: inline-block;
-}
-</style>
-
-<!-- ====== ACTUAL HEADER HTML ====== -->
-<header class="premium-header">
-
-    <!-- LEFT: Yono Games Shop -->
-    <div class="shop-brand">
-        <span class="brand-icon">🎮</span>
-        <span class="brand-name">Yono Games</span>
-        <span class="brand-badge">HD</span>
-    </div>
-
-    <!-- CENTER: LED Icon -->
-    <div class="led-indicator">
-        <span class="led-dot"></span>
-        <span class="led-label">LIVE</span>
-    </div>
-
-    <!-- RIGHT: Black Close Icon -->
-    <button class="close-btn-black" onclick="closeCurrentView()">✖</button>
-
-</header>
-
-<!-- ====== JAVASCRIPT FOR CLOSE FUNCTION ====== -->
-<script>
-function closeCurrentView() {
-    // This closes the current overlay/popup or goes back
-    // Option 1: Go back in history
-    window.history.back();
-
-    // Option 2: If you have a specific overlay, hide it
-    // document.getElementById('your-overlay-id').style.display = 'none';
-
-    // Option 3: Close current page/tab (if allowed)
-    // window.close();
-
-    console.log('✖ Black close button clicked — going back.');
-}
-</script>
-
-<!-- ====== GREEN BACKGROUND TAGS (example) ====== -->
-<div style="padding: 20px; background: #0a1f0a; text-align: center; border-top: 1px solid #00ff8844;">
-    <span class="green-tag">#PREMIUM</span>
-    <span class="green-tag" style="margin-left:10px;">#HD</span>
-    <span class="green-tag" style="margin-left:10px;">#LIVE</span>
-</div>
+<p>
+If you believe any platform is acting unfairly, please report it to us so we can review
+and update our platform information.
+</p>
