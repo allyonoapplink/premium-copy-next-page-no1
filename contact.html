@@ -1,1 +1,336 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Rani Slots · Contact</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: #0b0a0f;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+    }
+
+    /* premium mobile card */
+    .contact-card {
+      max-width: 420px;
+      width: 100%;
+      background: linear-gradient(145deg, #12111a 0%, #1a1825 100%);
+      border-radius: 36px;
+      padding: 24px 20px 32px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 215, 0, 0.08);
+      border: 1px solid rgba(255, 215, 0, 0.06);
+      position: relative;
+      transition: all 0.2s;
+    }
+
+    /* ---- HEADER with Yono Games Shop & LED close ---- */
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* LED icon (small glowing dot) */
+    .led-icon {
+      width: 14px;
+      height: 14px;
+      background: #ffd966;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #ffd966, 0 0 30px rgba(255, 215, 0, 0.3);
+      animation: pulse-led 1.8s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse-led {
+      0%, 100% { opacity: 0.6; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(to right, #f5e6b0, #ffd966);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+    }
+
+    .brand-name small {
+      font-size: 11px;
+      font-weight: 400;
+      -webkit-text-fill-color: #8888aa;
+      background: none;
+      margin-left: 4px;
+    }
+
+    /* ---- ✖️ BLACK LED CLOSE (top-right side, medel mein) ---- */
+    .close-led {
+      width: 44px;
+      height: 44px;
+      background: #0f0e14;
+      border: 1.5px solid #2a2738;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 300;
+      color: #111;
+      text-shadow: 0 0 6px rgba(0,0,0,0.8);
+      box-shadow: 
+        0 0 12px rgba(0, 0, 0, 0.9),
+        inset 0 0 12px rgba(255, 255, 255, 0.02);
+      cursor: default;
+      transition: 0.2s;
+      /* black LED effect */
+      background: radial-gradient(circle at 30% 30%, #222, #050505);
+      border-color: #333;
+      position: relative;
+    }
+
+    .close-led::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 35%, #2a2a2a, #000 80%);
+      z-index: 0;
+      opacity: 0.7;
+    }
+
+    .close-led span {
+      position: relative;
+      z-index: 1;
+      color: #1a1a1a;
+      font-size: 28px;
+      line-height: 1;
+      text-shadow: 0 0 6px #555, 0 0 20px rgba(255,215,0,0.1);
+      filter: drop-shadow(0 0 4px #222);
+    }
+
+    /* dark ✖️ */
+    .close-led .x-sign {
+      color: #1a1a1a;
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+
+    /* ---- divider ---- */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #ffd96633, #ffd96655, #ffd96633, transparent);
+      margin: 16px 0 18px;
+    }
+
+    /* ---- content ---- */
+    .page-title {
+      color: #ece7f0;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin-bottom: 6px;
+    }
+    .page-title span {
+      color: #ffd966;
+    }
+
+    .subhead {
+      color: #9999bb;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      border-left: 3px solid #ffd96644;
+      padding-left: 14px;
+    }
+
+    .info-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 18px 0 10px;
+    }
+
+    .info-item {
+      background: #14121e;
+      border-radius: 18px;
+      padding: 14px 16px;
+      border: 1px solid #252235;
+      transition: 0.15s;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .info-item .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #7777aa;
+      margin-bottom: 4px;
+    }
+
+    .info-item .value {
+      color: #e4def0;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .badge-note {
+      margin-top: 12px;
+      background: #1b182b;
+      border-radius: 30px;
+      padding: 10px 16px;
+      border-left: 4px solid #ffd96688;
+      color: #bbbbdd;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .badge-note strong {
+      color: #ffd966;
+    }
+
+    .response-time {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #7f7fa3;
+      font-size: 13px;
+      background: #0e0d16;
+      padding: 10px 14px;
+      border-radius: 60px;
+      border: 1px solid #22223a;
+    }
+
+    .response-time .dot {
+      width: 8px;
+      height: 8px;
+      background: #2ecc71;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #2ecc7199;
+      animation: pulse-led 2.2s infinite;
+    }
+
+    /* ---- extra LED indicator (bottom) ---- */
+    .footer-led {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 18px;
+      gap: 8px;
+    }
+
+    .mini-led {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffd966;
+      box-shadow: 0 0 20px #ffd96655;
+      opacity: 0.7;
+    }
+
+    .mini-led.off {
+      background: #333;
+      box-shadow: none;
+      opacity: 0.3;
+    }
+
+    /* responsive fine-tune */
+    @media (max-width: 400px) {
+      .brand-name { font-size: 17px; }
+      .close-led { width: 40px; height: 40px; }
+      .close-led span { font-size: 24px; }
+      .contact-card { padding: 18px 14px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="contact-card">
+
+  <!-- HEADER: Yono Games Shop + LED icon + ✖️ black LED close (top-right side medel) -->
+  <div class="header-row">
+    <div class="brand-area">
+      <span class="led-icon"></span>   <!-- LED glow icon -->
+      <span class="brand-name">
+        Yono Games Shop
+        <small>· Rani</small>
+      </span>
+    </div>
+
+    <!-- ✖️ BLACK LED CLOSE ICON — top right side, "medel mein" -->
+    <div class="close-led">
+      <span class="x-sign">✖</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- main contact content -->
+  <h1 class="page-title">Contact <span>Rani</span> Slots</h1>
+  <div class="subhead">
+    Open communication · Transparency · Trust Index
+  </div>
+
+  <div class="info-grid">
+    <div class="info-item">
+      <div class="label">📌 General Inquiries</div>
+      <div class="value">Platform, content & data usage</div>
+    </div>
+    <div class="info-item">
+      <div class="label">🔍 App Verification & Feedback</div>
+      <div class="value">Withdrawal delays · Bugs · Report</div>
+    </div>
+    <div class="info-item">
+      <div class="label">🤝 Partnerships & Business</div>
+      <div class="value">Licensing · Collaborations</div>
+    </div>
+    <div class="info-item">
+      <div class="label">🎯 Responsible Gaming</div>
+      <div class="value">Self-exclusion · Control resources</div>
+    </div>
+  </div>
+
+  <div class="badge-note">
+    <strong>⚠️ Third-party apps:</strong> We don’t manage payments or logins.  
+    Contact the app’s support directly for account issues.  
+    Report unfair platforms → we update the Trust Index.
+  </div>
+
+  <div class="response-time">
+    <span class="dot"></span>
+    Response within <strong style="color:#fff;">24–48 hours</strong> · all legitimate inquiries
+  </div>
+
+  <!-- extra LED decoration (bottom) -->
+  <div class="footer-led">
+    <span class="mini-led"></span>
+    <span class="mini-led"></span>
+    <span class="mini-led off"></span>
+    <span class="mini-led"></span>
+  </div>
+
+</div>
+
+</body>
+</html>
