@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Unlimited YONO Games · About</title>
+  <title>Baharul · Unlimited YONO GAMES</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
@@ -154,8 +154,8 @@
       letter-spacing: -0.3px;
     }
 
-    /* CSS LED icon (no emoji) */
-    .led-icon {
+    /* ---- PREMIUM LED COLOR ICONS (no emoji) ---- */
+    .led-icon-green {
       display: inline-block;
       width: 12px;
       height: 12px;
@@ -164,7 +164,33 @@
       box-shadow: 0 0 18px #70f0a066;
       flex-shrink: 0;
     }
-
+    .led-icon-blue {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #60b0ff;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #60b0ff66;
+      flex-shrink: 0;
+    }
+    .led-icon-cyan {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #40e0d0;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #40e0d066;
+      flex-shrink: 0;
+    }
+    .led-icon-purple {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #c084fc;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #c084fc66;
+      flex-shrink: 0;
+    }
     .led-icon-glow {
       display: inline-block;
       width: 10px;
@@ -175,22 +201,174 @@
       margin-right: 6px;
     }
 
-    /* Premium colorful LED icons for tags */
-    .tag-icon {
+    /* ---- Premium Tag Cloud ---- */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
+      margin: 18px 0 6px;
+      justify-content: center;
+    }
+    .tag-item {
+      background: rgba(10, 22, 18, 0.7);
+      border: 1px solid rgba(0, 255, 170, 0.12);
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #c2f0d6;
+      backdrop-filter: blur(4px);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.2px;
+      transition: all 0.2s;
+      box-shadow: 0 0 12px rgba(0,255,170,0.02);
+    }
+    .tag-item:hover {
+      border-color: rgba(0, 255, 170, 0.35);
+      background: rgba(0, 40, 25, 0.5);
+      box-shadow: 0 0 24px rgba(0, 255, 170, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* LED icon variants inside tags */
+    .tag-icon-green {
       display: inline-block;
       width: 10px;
       height: 10px;
+      background: #70f0a0;
       border-radius: 50%;
-      margin-right: 8px;
+      box-shadow: 0 0 14px #70f0a0aa;
       flex-shrink: 0;
     }
-    .tag-icon-gold { background: #f5c542; box-shadow: 0 0 16px #f5c54288; }
-    .tag-icon-blue { background: #4aa8f0; box-shadow: 0 0 16px #4aa8f088; }
-    .tag-icon-pink { background: #f07ab0; box-shadow: 0 0 16px #f07ab088; }
-    .tag-icon-green { background: #50d68a; box-shadow: 0 0 16px #50d68a88; }
-    .tag-icon-purple { background: #b07af0; box-shadow: 0 0 16px #b07af088; }
-    .tag-icon-orange { background: #f0a050; box-shadow: 0 0 16px #f0a05088; }
-    .tag-icon-cyan { background: #50d0f0; box-shadow: 0 0 16px #50d0f088; }
+    .tag-icon-blue {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #60b0ff;
+      border-radius: 50%;
+      box-shadow: 0 0 14px #60b0ffaa;
+      flex-shrink: 0;
+    }
+    .tag-icon-cyan {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #40e0d0;
+      border-radius: 50%;
+      box-shadow: 0 0 14px #40e0d0aa;
+      flex-shrink: 0;
+    }
+    .tag-icon-purple {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #c084fc;
+      border-radius: 50%;
+      box-shadow: 0 0 14px #c084fcaa;
+      flex-shrink: 0;
+    }
+    .tag-icon-gold {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #fbbf24;
+      border-radius: 50%;
+      box-shadow: 0 0 14px #fbbf24aa;
+      flex-shrink: 0;
+    }
+
+    /* shape icons (lock, shield, star, arrow, check) using CSS only */
+    .icon-shield {
+      display: inline-block;
+      width: 14px;
+      height: 16px;
+      background: transparent;
+      border: 2px solid #60b0ff;
+      border-radius: 4px 4px 10px 10px;
+      box-shadow: 0 0 12px #60b0ff44;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .icon-shield::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background: #60b0ff22;
+      border-radius: 2px 2px 6px 6px;
+    }
+    .icon-lock {
+      display: inline-block;
+      width: 12px;
+      height: 14px;
+      border: 2px solid #70f0a0;
+      border-radius: 4px 4px 0 0;
+      border-bottom: none;
+      box-shadow: 0 -4px 0 0 #70f0a0, 0 0 12px #70f0a044;
+      flex-shrink: 0;
+      position: relative;
+      margin-top: 2px;
+    }
+    .icon-lock::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 2px;
+      right: 2px;
+      height: 6px;
+      border: 2px solid #70f0a0;
+      border-top: none;
+      border-radius: 0 0 6px 6px;
+      box-shadow: 0 0 12px #70f0a044;
+    }
+    .icon-star {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 14px solid #fbbf24;
+      box-shadow: 0 0 20px #fbbf2466;
+      flex-shrink: 0;
+      position: relative;
+      transform: rotate(0deg);
+    }
+    .icon-star::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: -5px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 8px solid #fbbf24;
+      transform: rotate(180deg);
+      box-shadow: 0 0 20px #fbbf2466;
+    }
+    .icon-check {
+      display: inline-block;
+      width: 14px;
+      height: 8px;
+      border-bottom: 3px solid #40e0d0;
+      border-right: 3px solid #40e0d0;
+      transform: rotate(45deg);
+      box-shadow: 0 0 16px #40e0d066;
+      flex-shrink: 0;
+      margin-bottom: 2px;
+    }
+    .icon-arrow {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-top: 3px solid #c084fc;
+      border-right: 3px solid #c084fc;
+      transform: rotate(-45deg);
+      box-shadow: 0 0 16px #c084fc66;
+      flex-shrink: 0;
+    }
 
     h3 {
       font-size: 20px;
@@ -275,35 +453,6 @@
       margin: 28px 0 24px;
     }
 
-    /* ---- Tag Cloud Premium ---- */
-    .tag-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 12px;
-      margin: 16px 0 6px;
-    }
-    .tag-item {
-      background: rgba(18, 35, 28, 0.7);
-      border: 1px solid rgba(0, 255, 170, 0.08);
-      padding: 6px 16px 6px 12px;
-      border-radius: 60px;
-      font-size: 13px;
-      font-weight: 500;
-      color: #c8f0db;
-      backdrop-filter: blur(4px);
-      display: inline-flex;
-      align-items: center;
-      letter-spacing: 0.2px;
-      transition: all 0.25s ease;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
-    }
-    .tag-item:hover {
-      border-color: rgba(0, 255, 170, 0.3);
-      background: rgba(0, 40, 28, 0.6);
-      box-shadow: 0 0 24px rgba(0, 255, 170, 0.06);
-      transform: translateY(-1px);
-    }
-
     /* ---- Back to Top ---- */
     .back-to-top {
       position: fixed;
@@ -384,7 +533,7 @@
       }
       .tag-item {
         font-size: 12px;
-        padding: 4px 12px 4px 10px;
+        padding: 4px 14px;
       }
     }
 
@@ -412,7 +561,7 @@
       animation: floatGlow 2.4s infinite ease-in-out;
     }
 
-    /* author credit */
+    /* author credit — only Baharul */
     .author-credit {
       margin-top: 12px;
       padding-top: 16px;
@@ -432,7 +581,7 @@
 <!-- ====== HEADER ====== -->
 <header class="premium-header">
   <div class="header-left">
-    <span class="brand-name">Unlimited YONO Games</span>
+    <span class="brand-name">Unlimited YONO GAMES</span>
     <span class="brand-badge">HD</span>
   </div>
   <div class="close-led" id="closeLedBtn" aria-label="Close and go back">
@@ -443,34 +592,34 @@
 <!-- ====== ABOUT CONTENT ====== -->
 <main class="about-container">
 
-  <!-- 1. About -->
+  <!-- 1. About YONO GAMES -->
   <div class="glass-card">
-    <div class="badge-glow"><span class="led-icon-glow"></span> ABOUT · UNLIMITED YONO GAMES</div>
-    <h1>About Unlimited YONO Games</h1>
+    <div class="badge-glow"><span class="led-icon-glow"></span> ABOUT · Unlimited YONO GAMES</div>
+    <h1>About Unlimited YONO GAMES</h1>
     <p class="lead" style="margin-top:6px;">Empowering Users Through Transparency</p>
-    <p>Unlimited YONO Games is built to help players navigate the digital gaming and earning landscape with structured information, not marketing noise. Our platform focuses on platform mechanics, market behavior, and performance comparisons across the gaming industry. The goal is simple: to show how digital systems work and where true value exists so our users can act with total clarity.</p>
+    <p>Unlimited YONO GAMES is built to help players navigate the digital gaming and earning landscape with structured information, not marketing noise. Our platform focuses on platform mechanics, market behavior, and performance comparisons across the gaming industry. The goal is simple: to show how digital systems work and where true value exists so our users can act with total clarity.</p>
     <p>This is not a "get-rich-quick" portal. It is a research-driven system designed to demystify apps, explain how reward structures move, and help users understand exactly what they are engaging with. If you are trying to avoid blind decisions and impulse-driven guesswork, you are in the right place.</p>
   </div>
 
-  <!-- 2. Why Unlimited YONO Games Exists -->
+  <!-- 2. Why Unlimited YONO GAMES Exists -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> Why Unlimited YONO Games Exists</h2>
+    <h2><span class="led-icon-green"></span> Why Unlimited YONO GAMES Exists</h2>
     <p>Most users in the gaming and earning space lose momentum early and it rarely happens because they chose the wrong app. It happens because they don't understand pricing and probability.</p>
     <p>Different platforms offer different Return to Player (RTP) percentages and reward margins for the same activities. These margins are often hidden. Beginners face a second problem: they jump in fast because a bonus looks attractive, and within a few sessions, their balance is gone. This isn't because success is impossible, but because the structure behind the system was never explained properly.</p>
-    <p>Unlimited YONO Games exists to fix that gap. Our focus isn't on telling users what to play; it's on showing how the ecosystem functions so your decisions improve over time.</p>
+    <p>Unlimited YONO GAMES exists to fix that gap. Our focus isn't on telling users what to play; it's on showing how the ecosystem functions so your decisions improve over time.</p>
   </div>
 
   <!-- 3. Who We Are -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> Who We Are</h2>
-    <p>Unlimited YONO Games is built by a team that has worked closely with gaming platforms, product architecture, and user behavior analytics. We've seen how users interact with digital rewards, where confusion happens, and how small misunderstandings turn into consistent losses.</p>
+    <h2><span class="led-icon-blue"></span> Who We Are</h2>
+    <p>Unlimited YONO GAMES is built by a team that has worked closely with gaming platforms, product architecture, and user behavior analytics. We've seen how users interact with digital rewards, where confusion happens, and how small misunderstandings turn into consistent losses.</p>
     <p>That exposure shaped our structure. Instead of focusing on "luck," we focus on transparency, probability, and informed decision-making. We aren't here to position ourselves as gurus or claim perfect insight. Our goal is to translate complex gaming systems into a format that is clear, practical, and usable for the everyday user.</p>
   </div>
 
   <!-- 4. Data Integrity & Two-Step Verification -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> Data Integrity &amp; Two-Step Verification</h2>
-    <p>Transparency is our core metric. Every insight published on Unlimited YONO Games undergoes a rigorous Two-Step Verification Process:</p>
+    <h2><span class="led-icon-cyan"></span> Data Integrity &amp; Two-Step Verification</h2>
+    <p>Transparency is our core metric. Every insight published on Unlimited YONO GAMES undergoes a rigorous Two-Step Verification Process:</p>
     <ul class="check-list">
       <li><strong>Quantitative Filter:</strong> Our system scans historical data and platform mechanics to ensure an app meets our strict "Integrity Criteria."</li>
       <li><strong>Manual SME Review:</strong> A Subject Matter Expert (SME) with years of industry experience reviews the "contextual variables" (withdrawal speeds, license validity, and technical stability) that data alone might miss.</li>
@@ -480,7 +629,7 @@
 
   <!-- 5. Editorial Standards -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> The Unlimited YONO Games Editorial Standards</h2>
+    <h2><span class="led-icon-purple"></span> The Unlimited YONO GAMES Editorial Standards</h2>
     <ul class="check-list">
       <li><strong>Collective Expertise:</strong> Analysis is authored by our Research Lab, composed of former risk management professionals and system analysts with decades of combined experience in global digital markets.</li>
       <li><strong>Role-Based Accountability:</strong> While we protect the privacy of our individual analysts—many of whom still consult within the industry—every piece of content is signed off by our Lead Strategy Officer or Head of Technical Research.</li>
@@ -490,16 +639,16 @@
 
   <!-- 6. Our Approach to Content -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> Our Approach to Content</h2>
+    <h2><span class="led-icon-green"></span> Our Approach to Content</h2>
     <p>Digital engagement is a probability system, not a guessing exercise.</p>
-    <p>Most platforms focus on outcomes. Unlimited YONO Games focuses on pricing. That shift changes how decisions are made. If you consistently choose platforms with better margins, your long-term results improve even if short-term outcomes fluctuate.</p>
+    <p>Most platforms focus on outcomes. Unlimited YONO GAMES focuses on pricing. That shift changes how decisions are made. If you consistently choose platforms with better margins, your long-term results improve even if short-term outcomes fluctuate.</p>
     <p>Our content is structured around logic, not emotion. Variance is part of the system; understanding the difference between a "good decision" and a "lucky outcome" is critical for long-term control.</p>
   </div>
 
   <!-- 7. Commitment to Responsible Wagering -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> Our Commitment to Responsible Wagering</h2>
-    <p>At Unlimited YONO Games, we believe gaming should remain a form of entertainment, not a financial strategy. We strictly align our operations with global consumer protection standards.</p>
+    <h2><span class="led-icon-blue"></span> Our Commitment to Responsible Wagering</h2>
+    <p>At Unlimited YONO GAMES, we believe gaming should remain a form of entertainment, not a financial strategy. We strictly align our operations with global consumer protection standards.</p>
     <ul class="check-list">
       <li><strong>Player Protection:</strong> We fully support and encourage the use of self-exclusion registers and deposit limits.</li>
       <li><strong>National Support:</strong> If you or someone you know is struggling with gaming habits, please reach out to recognized support organizations (such as Gambling Therapy or local 24/7 helplines) for free, confidential assistance.</li>
@@ -508,8 +657,8 @@
 
   <!-- 8. Responsible Gaming (detailed) -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> Our Commitment to Responsible Gaming</h2>
-    <p>At Unlimited YONO Games, we believe that digital gaming should be a source of entertainment, not a source of stress or a financial strategy. Because we operate in a space involving real-money apps, we recognize our responsibility to protect our community from the risks associated with compulsive behavior.</p>
+    <h2><span class="led-icon-cyan"></span> Our Commitment to Responsible Gaming</h2>
+    <p>At Unlimited YONO GAMES, we believe that digital gaming should be a source of entertainment, not a source of stress or a financial strategy. Because we operate in a space involving real-money apps, we recognize our responsibility to protect our community from the risks associated with compulsive behavior.</p>
     <h3>1. Understanding the House Edge</h3>
     <p>Every game—whether it is Rummy, Slots, or Fantasy Sports—is designed with a mathematical advantage for the operator. While skill can play a role, the "house" always maintains a margin.</p>
     <ul>
@@ -526,7 +675,7 @@
     </ul>
     <p>If you answered "yes" to any of these, it may be time to take a step back.</p>
     <h3>3. Practical Tools for Control</h3>
-    <p>We only list platforms that provide users with the tools necessary to maintain control. We strongly encourage every Unlimited YONO Games user to set the following limits before they start:</p>
+    <p>We only list platforms that provide users with the tools necessary to maintain control. We strongly encourage every Unlimited YONO GAMES user to set the following limits before they start:</p>
     <ul>
       <li><strong>Deposit Limits:</strong> Cap the amount you can transfer daily, weekly, or monthly.</li>
       <li><strong>Session Timers:</strong> Set alerts for play duration.</li>
@@ -534,29 +683,29 @@
       <li><strong>Self-Exclusion:</strong> Block access for long-term control.</li>
     </ul>
     <h3>4. Regional Compliance &amp; Underage Protection</h3>
-    <p>Unlimited YONO Games is strictly for individuals aged 18 or older. We advocate for parental control software (such as Net Nanny or CyberPatrol) and respect regional laws, including restrictions in states like Telangana or Odisha.</p>
+    <p>Unlimited YONO GAMES is strictly for individuals aged 18 or older. We advocate for parental control software (such as Net Nanny or CyberPatrol) and respect regional laws, including restrictions in states like Telangana or Odisha.</p>
   </div>
 
   <!-- 9. Affiliate Disclosure -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> Affiliate Disclosure</h2>
-    <p>Unlimited YONO Games may earn a commission when users sign up through certain links on our platform. However, this does not influence how platforms are presented. Our objective remains the same: provide clear, structured information so users can decide independently. Users are always free to choose any platform they wish.</p>
+    <h2><span class="led-icon-purple"></span> Affiliate Disclosure</h2>
+    <p>Unlimited YONO GAMES may earn a commission when users sign up through certain links on our platform. However, this does not influence how platforms are presented. Our objective remains the same: provide clear, structured information so users can decide independently. Users are always free to choose any platform they wish.</p>
   </div>
 
   <!-- 10. Who This Platform Is For -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> Who This Platform Is For</h2>
-    <p>Unlimited YONO Games is designed for users who want structure in how they approach digital apps.</p>
+    <h2><span class="led-icon-green"></span> Who This Platform Is For</h2>
+    <p>Unlimited YONO GAMES is designed for users who want structure in how they approach digital apps.</p>
     <p>If your goal is to understand reward mechanics, compare platform pricing, and make informed choices, we provide that framework.</p>
     <p>If you are willing to slow down, learn the system, and build consistency, the value becomes clear.</p>
     <p>It is not built for shortcuts. Users looking for "guaranteed wins" or instant profits will not find that here.</p>
   </div>
 
-  <!-- 11. Why Trust Unlimited YONO Games -->
+  <!-- 11. Why Trust Unlimited YONO GAMES -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> Why Trust Unlimited YONO Games</h2>
+    <h2><span class="led-icon-blue"></span> Why Trust Unlimited YONO GAMES</h2>
     <p>Clarity is the focus. Structure drives everything. We don't overcomplicate simple ideas, and we don't oversell outcomes. Information is presented so it can actually be used.</p>
-    <p>Unlimited YONO Games is built on a simple principle: Better understanding leads to better decisions. Not perfect results—but better decisions. And over time, that difference compounds.</p>
+    <p>Unlimited YONO GAMES is built on a simple principle: Better understanding leads to better decisions. Not perfect results—but better decisions. And over time, that difference compounds.</p>
   </div>
 
   <!-- 12. Welcome text -->
@@ -567,37 +716,41 @@
     <p>Our focus on Indian applications sets us apart, reflecting our dedication to cater to the unique needs and preferences of our audience. We believe in the power of local solutions for local challenges, and our platform is a testament to this belief.</p>
     <p>Join us in our endeavor to bring the best of digital innovations to your fingertips. Explore, download, and stay ahead in the ever-evolving world of apps with us.</p>
 
-    <!-- Author credit: Baharul · Unlimited YONO Games -->
+    <!-- Author credit — Baharul only -->
     <div class="author-credit">
-      <span class="led-icon-glow" style="display:inline-block; margin-right:6px;"></span>
-      <strong>Baharul</strong> · Unlimited YONO Games
+      <span class="led-icon-glow" style="display:inline-block; margin-right:6px;"></span> 
+      <strong>Baharul – Unlimited YONO GAMES</strong>
     </div>
   </div>
 
-  <!-- ====== PREMIUM TAG CLOUD (Unlimited YONO Games related) ====== -->
-  <div class="glass-card" style="border-color: rgba(0,255,180,0.08);">
-    <h2 style="margin-bottom:12px;"><span class="led-icon"></span> Explore Unlimited YONO Games</h2>
+  <!-- ====== PREMIUM TAGS SECTION (Top to Bottom) ====== -->
+  <div class="glass-card" style="text-align:center;">
+    <h2 style="justify-content:center;"><span class="led-icon-gold" style="display:inline-block; width:14px; height:14px; background:#fbbf24; border-radius:50%; box-shadow:0 0 24px #fbbf24aa;"></span> Premium Tags</h2>
     <div class="tag-cloud">
-      <span class="tag-item"><span class="tag-icon tag-icon-gold"></span>Unlimited Games</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-blue"></span>YONO HD</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-pink"></span>Premium Slots</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-green"></span>Live RTP</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-purple"></span>Trust Index</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-orange"></span>Reward Mechanics</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-cyan"></span>Data Integrity</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-gold"></span>Smart Play</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-blue"></span>App Verification</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-pink"></span>Responsible Gaming</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-green"></span>Performance Tracker</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-purple"></span>Licensing Standards</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-orange"></span>Self-Exclusion</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-cyan"></span>Deposit Limits</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-gold"></span>Session Timers</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-blue"></span>Cool-off Periods</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-pink"></span>House Edge</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-green"></span>Variance Control</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-purple"></span>Indian Apps</span>
-      <span class="tag-item"><span class="tag-icon tag-icon-orange"></span>Digital Ecosystem</span>
+      <span class="tag-item"><span class="tag-icon-green"></span> Unlimited YONO GAMES</span>
+      <span class="tag-item"><span class="tag-icon-blue"></span> Baharul</span>
+      <span class="tag-item"><span class="tag-icon-cyan"></span> Online Games</span>
+      <span class="tag-item"><span class="tag-icon-purple"></span> Gaming Platform</span>
+      <span class="tag-item"><span class="tag-icon-green"></span> Secure Access</span>
+      <span class="tag-item"><span class="tag-icon-blue"></span> Fast Updates</span>
+      <span class="tag-item"><span class="tag-icon-cyan"></span> Premium Experience</span>
+      <span class="tag-item"><span class="tag-icon-purple"></span> Daily Games</span>
+      <span class="tag-item"><span class="tag-icon-gold"></span> VIP Features</span>
+      <span class="tag-item"><span class="tag-icon-green"></span> HD Interface</span>
+      <span class="tag-item"><span class="tag-icon-blue"></span> Smart Gaming</span>
+      <span class="tag-item"><span class="tag-icon-cyan"></span> Trusted Platform</span>
+      <span class="tag-item"><span class="tag-icon-purple"></span> Latest Games</span>
+      <span class="tag-item"><span class="tag-icon-green"></span> Safe &amp; Secure</span>
+      <span class="tag-item"><span class="tag-icon-gold"></span> Unlimited Access</span>
+    </div>
+
+    <!-- extra shape icons display -->
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.04);">
+      <span style="display:flex; align-items:center; gap:8px; color:#b0f5cf; font-size:13px;"><span class="icon-shield"></span> Shield</span>
+      <span style="display:flex; align-items:center; gap:8px; color:#b0f5cf; font-size:13px;"><span class="icon-lock"></span> Lock</span>
+      <span style="display:flex; align-items:center; gap:8px; color:#b0f5cf; font-size:13px;"><span class="icon-star"></span> Star</span>
+      <span style="display:flex; align-items:center; gap:8px; color:#b0f5cf; font-size:13px;"><span class="icon-check"></span> Check</span>
+      <span style="display:flex; align-items:center; gap:8px; color:#b0f5cf; font-size:13px;"><span class="icon-arrow"></span> Arrow</span>
     </div>
   </div>
 
