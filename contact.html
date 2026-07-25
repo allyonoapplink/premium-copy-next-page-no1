@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>YONO GAMES · About</title>
+  <title>YONO GAMES · Contact</title>
   <!-- Font & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,7 +77,7 @@
       backdrop-filter: blur(4px);
     }
 
-    /* LED CLOSE ICON — white glow, black background, premium */
+    /* LED CLOSE ICON — white glow, black background */
     .close-led {
       width: 44px;
       height: 44px;
@@ -111,7 +111,7 @@
     }
 
     /* ---- MAIN CONTAINER (mobile-first, glassmorphism) ---- */
-    .about-container {
+    .contact-container {
       max-width: 600px;
       margin: 0 auto;
       padding: 18px 18px 40px;
@@ -203,7 +203,6 @@
       font-size: 15.5px;
       margin-bottom: 10px;
       color: #c7dbd2;
-      list-style-type: disc;
       padding-left: 6px;
     }
 
@@ -244,6 +243,40 @@
       backdrop-filter: blur(4px);
       margin-bottom: 8px;
       letter-spacing: 0.3px;
+    }
+
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 6px;
+    }
+
+    .tag-item {
+      background: rgba(0, 20, 12, 0.6);
+      border: 1px solid rgba(0, 255, 170, 0.15);
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #c2f0d6;
+      backdrop-filter: blur(4px);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.2px;
+      transition: all 0.2s;
+    }
+
+    .tag-item i {
+      color: #70f0a0;
+      font-size: 14px;
+    }
+
+    .tag-item:hover {
+      border-color: rgba(0, 255, 170, 0.4);
+      background: rgba(0, 40, 25, 0.5);
+      box-shadow: 0 0 20px rgba(0, 255, 170, 0.05);
     }
 
     .stats-grid {
@@ -300,7 +333,31 @@
       margin: 0 4px;
     }
 
-    /* responsive fine-tune */
+    .contact-email {
+      background: rgba(0, 255, 170, 0.04);
+      border-radius: 20px;
+      padding: 16px 20px;
+      border: 1px solid rgba(0, 255, 170, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .contact-email i {
+      font-size: 24px;
+      color: #70f0a0;
+    }
+
+    .contact-email span {
+      font-size: 18px;
+      font-weight: 500;
+      color: #d4fae6;
+      word-break: break-all;
+    }
+
+    /* responsive */
     @media (max-width: 480px) {
       .brand-name {
         font-size: 19px;
@@ -326,15 +383,20 @@
         grid-template-columns: 1fr 1fr;
         gap: 8px;
       }
+      .tag-item {
+        font-size: 12px;
+        padding: 4px 14px;
+      }
+      .contact-email span {
+        font-size: 16px;
+      }
     }
 
-    /* smooth scroll & selection */
     ::selection {
       background: #1f6040;
       color: #f0fff5;
     }
 
-    /* close icon click feedback */
     .close-led.clicked {
       animation: ledPulse 0.2s ease;
     }
@@ -342,11 +404,6 @@
     @keyframes ledPulse {
       0% { box-shadow: 0 0 10px #fff, 0 0 30px #b0ffd0; }
       100% { box-shadow: 0 0 20px #fff, 0 0 60px #b0ffd0; }
-    }
-
-    /* all tags visible, no cut-offs */
-    .visible-tag {
-      display: inline-block;
     }
   </style>
 </head>
@@ -364,110 +421,140 @@
   </div>
 </header>
 
-<!-- ====== ABOUT CONTENT ====== -->
-<main class="about-container">
+<!-- ====== CONTACT CONTENT ====== -->
+<main class="contact-container">
 
-  <!-- hero card -->
+  <!-- Hero contact card -->
   <div class="glass-card">
-    <div class="badge-glow"><i class="fas fa-circle" style="color: #70f0a0; font-size: 8px; margin-right: 6px;"></i> PREMIUM RESEARCH</div>
-    <h1>YONO GAMES</h1>
-    <p style="font-size: 18px; font-weight: 400; color: #ceeadc; margin-top: -2px;">Empowering users through transparency.</p>
-    <p class="lead" style="margin-top: 18px;">
+    <div class="badge-glow"><i class="fas fa-circle" style="color: #70f0a0; font-size: 8px; margin-right: 6px;"></i> CONTACT · YONO GAMES</div>
+    <h1>Contact Us</h1>
+    <p class="lead" style="margin-top: 8px;">
       <i class="fas fa-bolt" style="color: #80f0b0; margin-right: 8px;"></i> 
-      Built to help players navigate digital gaming with structured information — not marketing noise.
+      Open communication, transparency, and clarity — we're here to help.
     </p>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;">
-      <span style="background: #0f1f18; padding: 4px 14px; border-radius: 60px; border: 1px solid #2a5a44; font-size: 12px;">📊 data-driven</span>
-      <span style="background: #0f1f18; padding: 4px 14px; border-radius: 60px; border: 1px solid #2a5a44; font-size: 12px;">🔍 two-step verification</span>
-      <span style="background: #0f1f18; padding: 4px 14px; border-radius: 60px; border: 1px solid #2a5a44; font-size: 12px;">⚡ RTP analysis</span>
+    <p style="margin-top: 12px; font-size: 15px; color: #b5d5c8;">
+      <i class="fas fa-clock" style="color: #70f0a0; margin-right: 6px;"></i> Response within <strong style="color: #d4fae6;">24–48 hours</strong> for legitimate inquiries.
+    </p>
+    <!-- All tags: contact, support, verification, etc -->
+    <div class="tag-group">
+      <span class="tag-item"><i class="fas fa-envelope"></i> general</span>
+      <span class="tag-item"><i class="fas fa-check-circle"></i> verification</span>
+      <span class="tag-item"><i class="fas fa-handshake"></i> partnerships</span>
+      <span class="tag-item"><i class="fas fa-heart"></i> responsible gaming</span>
+      <span class="tag-item"><i class="fas fa-database"></i> trust index</span>
+      <span class="tag-item"><i class="fas fa-shield-alt"></i> data integrity</span>
+      <span class="tag-item"><i class="fas fa-flag"></i> report issue</span>
     </div>
   </div>
 
-  <!-- Why YONO GAMES exists -->
+  <!-- How can we assist? -->
   <div class="glass-card">
-    <h2><i class="fas fa-bullseye"></i> Why YONO GAMES Exists</h2>
-    <p>Most users lose momentum not because they chose the wrong app, but because they don’t understand pricing and probability. Different platforms offer different RTP percentages and reward margins — often hidden.</p>
-    <p><strong style="color: #b5ffd0;">We fix that gap.</strong> Our focus isn't on telling users what to play; it’s on showing how the ecosystem functions so your decisions improve over time.</p>
-    <div class="stats-grid">
-      <div class="stat-item"><span class="stat-number">94%</span><span class="stat-label">data integrity</span></div>
-      <div class="stat-item"><span class="stat-number">2‑step</span><span class="stat-label">verification</span></div>
-    </div>
-  </div>
-
-  <!-- Who we are -->
-  <div class="glass-card">
-    <h2><i class="fas fa-users"></i> Who We Are</h2>
-    <p>Built by a team with deep experience in gaming platforms, product architecture, and user behavior analytics. We’ve seen where confusion happens and how small misunderstandings turn into consistent losses.</p>
-    <p>Instead of "luck," we focus on <strong style="color: #b5ffd0;">transparency, probability, and informed decision-making</strong>. No gurus, no perfect insight — just clear, practical systems.</p>
-  </div>
-
-  <!-- Data integrity -->
-  <div class="glass-card">
-    <h2><i class="fas fa-shield-alt"></i> Data Integrity & Two‑Step Verification</h2>
-    <p>Every insight undergoes a rigorous process:</p>
+    <h2><i class="fas fa-question-circle"></i> How Can We Assist You?</h2>
+    <p>To help direct your inquiry to the right department, please specify the nature of your message:</p>
     <ul class="check-list">
-      <li><strong>Quantitative Filter</strong> — scans historical data & platform mechanics.</li>
-      <li><strong>Manual SME Review</strong> — experts verify withdrawal speeds, license validity, and technical stability.</li>
+      <li><strong>General Inquiries</strong> — questions about our platform, content, or data usage.</li>
+      <li><strong>App Verification & Feedback</strong> — issues with an app listed on our site (withdrawal delays, bugs). Our Research Lab investigates.</li>
+      <li><strong>Partnerships & Business</strong> — for verified operators interested in licensing standards or collaborations.</li>
+      <li><strong>Responsible Gaming Support</strong> — resources for self‑exclusion or gaming control.</li>
     </ul>
-    <p style="font-size: 15px; background: rgba(0,0,0,0.2); padding: 14px; border-radius: 20px; border-left: 3px solid #50d68a;">
-      <i class="fas fa-database" style="color: #70f0a0; margin-right: 8px;"></i> Internal Performance Database tracks long‑term variance.
-    </p>
-  </div>
-
-  <!-- Editorial standards -->
-  <div class="glass-card">
-    <h2><i class="fas fa-pen-fancy"></i> Editorial Standards</h2>
-    <ul style="list-style-type: none; padding-left: 0;">
-      <li style="padding-left: 28px; position: relative; margin-bottom: 14px;"><span style="position: absolute; left: 0; color: #70f0a0;">🧠</span> <strong>Collective Expertise</strong> — analysis by former risk management professionals.</li>
-      <li style="padding-left: 28px; position: relative; margin-bottom: 14px;"><span style="position: absolute; left: 0; color: #70f0a0;">⚖️</span> <strong>Role‑Based Accountability</strong> — every piece signed off by Lead Strategy Officer.</li>
-      <li style="padding-left: 28px; position: relative; margin-bottom: 14px;"><span style="position: absolute; left: 0; color: #70f0a0;">🔬</span> <strong>Editorial Friction</strong> — stress‑testing ensures statistical significance.</li>
-    </ul>
-  </div>
-
-  <!-- Approach & responsible -->
-  <div class="glass-card">
-    <h2><i class="fas fa-chart-line"></i> Our Approach</h2>
-    <p>Digital engagement is a probability system, not a guessing exercise. We focus on <strong style="color: #b5ffd0;">pricing</strong>, not outcomes. That shift changes how decisions are made.</p>
-    <hr>
-    <h2 style="margin-top: 4px;"><i class="fas fa-heart" style="color: #80f0b0;"></i> Responsible Wagering</h2>
-    <p>Gaming should remain entertainment, not a financial strategy. We support self‑exclusion, deposit limits, and national helplines.</p>
-    <div style="background: rgba(0,30,20,0.4); border-radius: 20px; padding: 14px 16px; margin-top: 8px; border: 1px solid #1d4a38;">
-      <p style="margin: 0; font-size: 14px;"><i class="fas fa-exclamation-triangle" style="color: #f5b56b; margin-right: 8px;"></i> If gaming interferes with daily life, reach out to <strong>Gambling Therapy</strong> or local 24/7 helplines.</p>
+    <!-- extra tags inside card -->
+    <div class="tag-group" style="margin-top: 12px;">
+      <span class="tag-item"><i class="fas fa-microscope"></i> research lab</span>
+      <span class="tag-item"><i class="fas fa-chart-pie"></i> performance data</span>
+      <span class="tag-item"><i class="fas fa-user-check"></i> SME review</span>
     </div>
   </div>
 
-  <!-- Warning signs & tools -->
+  <!-- Important Notice -->
+  <div class="glass-card" style="border-left: 3px solid #f0b56b;">
+    <h2><i class="fas fa-exclamation-triangle" style="color: #f0b56b;"></i> Important Notice</h2>
+    <p><strong style="color: #f5d07a;">Regarding Third‑Party Apps:</strong> YONO GAMES is an independent research and distribution hub. We do not manage accounts, payments, or internal technical support for the applications listed on our site.</p>
+    <p>If you are facing a payment or login issue within a specific app, please contact that app’s official support team directly.</p>
+    <p>However, if you believe a platform is acting unfairly, <strong style="color: #b5ffd0;">report it to us</strong> so we can update our Trust Index for the community.</p>
+    <!-- tags: notice, third-party, trust -->
+    <div class="tag-group">
+      <span class="tag-item"><i class="fas fa-building"></i> independent hub</span>
+      <span class="tag-item"><i class="fas fa-balance-scale"></i> fair play</span>
+      <span class="tag-item"><i class="fas fa-star"></i> trust index</span>
+      <span class="tag-item"><i class="fas fa-edit"></i> report discrepancy</span>
+    </div>
+  </div>
+
+  <!-- Contact email / direct -->
   <div class="glass-card">
-    <h2><i class="fas fa-lightbulb"></i> Warning Signs & Tools</h2>
-    <ul>
-      <li>Spending money intended for essentials?</li>
-      <li>Chasing losses by playing longer?</li>
-      <li>Feeling anxious or secretive?</li>
-      <li>Borrowing money to fund gaming?</li>
+    <h2><i class="fas fa-paper-plane"></i> Reach Out</h2>
+    <p>For any inquiry, feedback, or to report a platform issue:</p>
+    <div class="contact-email">
+      <i class="fas fa-envelope"></i>
+      <span>support@yonogames.com</span>
+    </div>
+    <p style="font-size: 14px; color: #96b8ab; margin-top: 12px;"><i class="fas fa-lock" style="color: #70f0a0;"></i> All communications are confidential.</p>
+    <!-- more tags -->
+    <div class="tag-group">
+      <span class="tag-item"><i class="fas fa-headset"></i> 24/7 support</span>
+      <span class="tag-item"><i class="fas fa-file-alt"></i> feedback</span>
+      <span class="tag-item"><i class="fas fa-bug"></i> technical</span>
+    </div>
+  </div>
+
+  <!-- Data integrity & verification (extra) -->
+  <div class="glass-card">
+    <h2><i class="fas fa-shield-alt"></i> Our Verification Process</h2>
+    <p>Every app insight on YONO GAMES undergoes a rigorous <strong style="color: #b5ffd0;">Two‑Step Verification</strong>:</p>
+    <ul class="check-list">
+      <li><strong>Quantitative Filter</strong> — historical data & platform mechanics.</li>
+      <li><strong>Manual SME Review</strong> — experts check withdrawal speeds, license validity, and technical stability.</li>
     </ul>
-    <p><strong style="color: #b5ffd0;">Practical tools:</strong> Deposit limits, session timers, cool‑off periods, self‑exclusion.</p>
+    <p><i class="fas fa-database" style="color: #70f0a0; margin-right: 6px;"></i> We maintain an Internal Performance Database to track long‑term variance.</p>
+    <div class="tag-group">
+      <span class="tag-item"><i class="fas fa-check-double"></i> integrity criteria</span>
+      <span class="tag-item"><i class="fas fa-user-tie"></i> SME approved</span>
+      <span class="tag-item"><i class="fas fa-chart-bar"></i> performance tracking</span>
+    </div>
+  </div>
+
+  <!-- Responsible gaming (dedicated) -->
+  <div class="glass-card">
+    <h2><i class="fas fa-heart" style="color: #80f0b0;"></i> Responsible Gaming</h2>
+    <p>We believe gaming should remain entertainment, not a financial strategy. We support self‑exclusion, deposit limits, and national helplines.</p>
+    <p><strong style="color: #b5ffd0;">Tools for control:</strong> deposit limits, session timers, cool‑off periods, self‑exclusion.</p>
     <p style="background: #0a1a13; border-radius: 16px; padding: 10px 16px; font-size: 15px; border: 1px solid #2b5a44;"><i class="fas fa-lock" style="color: #70f0a0; margin-right: 8px;"></i> YONO GAMES is strictly for individuals aged 18+.</p>
-  </div>
-
-  <!-- Affiliate & trust -->
-  <div class="glass-card">
-    <h2><i class="fas fa-handshake"></i> Affiliate Disclosure</h2>
-    <p>We may earn a commission through certain links, but that does not influence how platforms are presented. Our objective remains clear, structured information for independent decisions.</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;">
-      <span class="badge-glow"><i class="fas fa-check-circle" style="color: #70f0a0;"></i> commercial independence</span>
-      <span class="badge-glow"><i class="fas fa-database"></i> trust index</span>
+    <div class="tag-group">
+      <span class="tag-item"><i class="fas fa-phone-alt"></i> helplines</span>
+      <span class="tag-item"><i class="fas fa-sliders-h"></i> deposit limits</span>
+      <span class="tag-item"><i class="fas fa-clock"></i> session timers</span>
+      <span class="tag-item"><i class="fas fa-user-slash"></i> self‑exclusion</span>
     </div>
   </div>
 
-  <!-- Why trust -->
-  <div class="glass-card" style="border-color: rgba(0, 255, 180, 0.1);">
-    <h2><i class="fas fa-star" style="color: #f5d76e;"></i> Why Trust YONO GAMES</h2>
-    <p>Clarity is the focus. Structure drives everything. Better understanding leads to better decisions — not perfect results, but better decisions. And over time, that difference compounds.</p>
-    <p style="margin-top: 12px; font-size: 15px; color: #aacfc0;"><i class="fas fa-arrow-right" style="color: #70f0a0;"></i> Built for users who want structure, not shortcuts.</p>
+  <!-- Partnerships & business -->
+  <div class="glass-card">
+    <h2><i class="fas fa-handshake"></i> Partnerships & Business</h2>
+    <p>For verified operators looking to discuss licensing standards, collaborations, or data partnerships:</p>
+    <div class="contact-email" style="background: rgba(0, 200, 150, 0.04);">
+      <i class="fas fa-briefcase"></i>
+      <span>partners@yonogames.com</span>
+    </div>
+    <div class="tag-group">
+      <span class="tag-item"><i class="fas fa-certificate"></i> licensing</span>
+      <span class="tag-item"><i class="fas fa-users-cog"></i> B2B</span>
+      <span class="tag-item"><i class="fas fa-chart-line"></i> analytics</span>
+    </div>
+  </div>
+
+  <!-- Affiliate disclosure & trust -->
+  <div class="glass-card">
+    <h2><i class="fas fa-info-circle"></i> Affiliate Disclosure</h2>
+    <p>YONO GAMES may earn a commission through certain links, but this does not influence how platforms are presented. Our objective remains clear, structured information for independent decisions.</p>
+    <div class="tag-group">
+      <span class="tag-item"><i class="fas fa-balance-scale"></i> commercial independence</span>
+      <span class="tag-item"><i class="fas fa-database"></i> trust index</span>
+      <span class="tag-item"><i class="fas fa-eye"></i> transparency</span>
+    </div>
   </div>
 
   <div class="footer-note">
-    <i class="fas fa-circle" style="font-size: 8px; vertical-align: middle;"></i> YONO GAMES · HD research hub <i class="fas fa-circle" style="font-size: 8px; vertical-align: middle;"></i>
+    <i class="fas fa-circle" style="font-size: 8px; vertical-align: middle;"></i> YONO GAMES · HD research hub · contact & transparency <i class="fas fa-circle" style="font-size: 8px; vertical-align: middle;"></i>
   </div>
 
 </main>
@@ -477,26 +564,21 @@
     const closeBtn = document.getElementById('closeLedBtn');
 
     if (closeBtn) {
-      // Click handler: history.back() with LED feedback
       closeBtn.addEventListener('click', function(e) {
         e.stopPropagation();
 
-        // visual feedback
         this.classList.add('clicked');
         setTimeout(() => {
           this.classList.remove('clicked');
         }, 200);
 
-        // go back in history
         if (window.history && window.history.length > 1) {
           window.history.back();
         } else {
-          // fallback: if no history, go to home (or just reload)
           window.location.href = '/';
         }
       });
 
-      // optional touch feedback for mobile
       closeBtn.addEventListener('touchstart', function() {
         this.style.transform = 'scale(0.92)';
       }, { passive: true });
@@ -507,6 +589,5 @@
   })();
 </script>
 
-<!-- ensure all tags visible, no hidden content -->
 </body>
 </html>
