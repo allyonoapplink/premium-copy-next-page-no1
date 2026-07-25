@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Yono Games Site – Download 567 Slots, Rummy, Casino & Teen Patti Apps | ₹45 Bonus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Yono Games – Download 567 Slots, Rummy & Teen Patti Apps | ₹45 Bonus</title>
+  <meta name="description" content="Download Yono Games official apps: 567 Slots, Rummy, Teen Patti, Casino & more. Get ₹45 signup bonus, ₹100 min withdrawal. Trusted APK downloads.">
+  <meta name="keywords" content="Yono Games, 567 Slots, Rummy, Teen Patti, Casino, APK download, ₹45 bonus, online games India">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yonogamessite.com/">
+  
   <style>
+    /* all existing CSS styles remain unchanged – kept as original design */
     * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif; }
     body { background: linear-gradient(145deg, #f0f4fa 0%, #e2e8f0 100%); min-height: 100vh; padding-bottom: 30px; }
     
@@ -61,7 +67,6 @@
     .top-nav a:hover .icon-contact { box-shadow: 0 0 12px rgba(59,130,246,0.8); }
     .top-nav a:hover .icon-disclaimer { box-shadow: 0 0 12px rgba(239,68,68,0.8); }
     
-    /* ===== TELEGRAM BUTTON - ROUND WITH COLOR ===== */
     .telegram-nav-btn {
       display: inline-flex;
       align-items: center;
@@ -111,7 +116,6 @@
       background: #f8fafc;
       border-bottom: 1px solid #e2e8f0;
     }
-    /* ===== APP TAGS SCROLL - LEFT TO RIGHT ===== */
     .app-tags-scroll {
       display: flex;
       gap: 8px;
@@ -160,7 +164,6 @@
     .container { max-width: 100%; margin: 12px auto; padding: 0 8px; }
     .cards-grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; padding: 8px 0 16px; }
     
-    /* ===== CARD - YONO GAMES STYLE (All Apps) ===== */
     .app-card {
       background: white;
       border-radius: 24px;
@@ -198,7 +201,6 @@
     .app-card .card-benefits { font-size: 0.65rem; color: #1e562a; line-height: 1.5; margin: 4px 0 6px; text-align: left; padding: 6px 10px; background: #f0f9f0; border-radius: 12px; border-left: 3px solid #22c55e; }
     .app-card .card-benefits strong { color: #0a2e1d; }
     
-    /* ===== LED WARNING TOGGLE - Premium Green/Cyan ===== */
     .warning-led-toggle {
       margin-top: 12px;
       padding: 6px 12px;
@@ -273,7 +275,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
     
-    /* ===== COLOR VARIATIONS ===== */
     .rating-green { color: #22c55e; }
     .rating-pink { color: #ec4899; }
     .size-cyan { color: #06b6d4; }
@@ -283,7 +284,6 @@
     .bonus-green { color: #22c55e; }
     .bonus-red { color: #dc2626; }
     
-    /* ===== DETAIL PAGE ===== */
     .hidden { display: none !important; }
     .download-page {
       background: white;
@@ -368,7 +368,6 @@
     .small-download:hover { background: #1a1a1a; transform: scale(0.97); }
     .footer-note { text-align: center; background: #ecf9f0; border-radius: 40px; padding: 10px; font-weight: 500; font-size: 0.6rem; margin-top: 14px; }
     
-    /* ===== DETAIL PAGE WARNING ===== */
     .detail-warning-led {
       margin-top: 14px;
       padding: 8px 14px;
@@ -413,7 +412,6 @@
     .detail-warning-content.open { display: block; animation: fadeSlideDown 0.3s ease; }
     .detail-warning-content strong { color: #dc2626; font-weight: 700; }
     
-    /* ===== MODAL ===== */
     .info-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 300; justify-content: center; align-items: center; }
     .info-modal-content { 
       background: white; 
@@ -464,7 +462,6 @@
     .modal-close-btn:hover { transform: scale(1.1); background: #1a1a1a; }
     .modal-close-btn:active { transform: scale(0.92); }
     
-    /* ===== PREMIUM TOGGLES ===== */
     .premium-toggle-about, .premium-toggle-contact, .premium-toggle-disclaimer {
       border-radius: 12px;
       padding: 10px 14px;
@@ -600,12 +597,12 @@
   </a>
 </nav>
 
-<!-- ===== APP TAGS SCROLL (LEFT TO RIGHT ANIMATION) ===== -->
+<!-- ===== APP TAGS SCROLL ===== -->
 <div class="app-tags-wrapper">
   <div class="app-tags-scroll" id="appTagsScroll"></div>
 </div>
 
-<!-- ===== MODAL (NO OK BUTTON) ===== -->
+<!-- ===== MODAL ===== -->
 <div id="customInfoModal" class="info-modal">
   <div class="info-modal-content">
     <button class="modal-close-btn" id="modalCloseBtn">✕</button>
@@ -761,7 +758,7 @@
       { name: "Diwa 777", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://sharediwa7771.top?pid=287747863&channel=2010001&t=pdd2&pkg=com.diwa777.app", img: "https://i.ibb.co/Kx2RKNvN/1000022725.jpg", category: "Slots" }
     ];
 
-    // ===== UNIQUE SPIN & WIN DESCRIPTION PER APP (200-300 range) =====
+    // ===== UNIQUE SPIN & WIN DESCRIPTION PER APP =====
     function getSpinWinDescription(appName, bonusNum, category) {
       const catMap = {
         'Slots': 'slot machines',
@@ -787,7 +784,6 @@
       return descs[idx];
     }
 
-    // ===== UNIQUE EXTRA BENEFITS PER APP (150-200 range) =====
     function getExtraBenefits(appName, bonusNum, category) {
       const benefits = [
         `Daily login rewards, referral cashback, fast UPI withdrawals, 24/7 customer support, and exclusive ${appName} tournaments.`,
@@ -800,7 +796,6 @@
       return benefits[idx];
     }
 
-    // ===== UNIQUE WARNING VALUE (100-150 range) =====
     function getWarningValue(appName) {
       let h = 0;
       for (let i = 0; i < appName.length; i++) {
@@ -810,11 +805,9 @@
       return 100 + (Math.abs(h) % 51);
     }
 
-    // ===== POPULATE APP TAGS =====
     function populateAppTags() {
       const container = document.getElementById('appTagsScroll');
       if (!container) return;
-      // Double the items for seamless scrolling
       const allNames = [...appsData.map(a => a.name), ...appsData.map(a => a.name)];
       allNames.forEach(name => {
         const span = document.createElement('span');
@@ -828,7 +821,6 @@
       });
     }
 
-    // ===== HELPERS =====
     function getCardStats(appName, bonusAmount) {
       let hash = 0;
       for (let i = 0; i < appName.length; i++) {
@@ -841,7 +833,7 @@
       const idx = Math.abs(hash) % ratings.length;
       const bIdx = Math.abs(hash * 2) % sizes.length;
       const vIdx = Math.abs(hash * 3) % votes.length;
-      const bonusNum = 200 + (Math.abs(hash) % 101); // 200-300 range
+      const bonusNum = 200 + (Math.abs(hash) % 101);
       return { rating: ratings[idx], size: sizes[bIdx], votes: votes[vIdx], bonus: bonusNum };
     }
 
@@ -894,7 +886,6 @@
       return benefits[idx];
     }
 
-    // ===== GET COLOR CLASSES BASED ON INDEX =====
     function getColorClasses(idx) {
       const ratingClass = (idx % 2 === 0) ? 'rating-green' : 'rating-pink';
       const sizeClass = (idx % 2 === 0) ? 'size-cyan' : 'size-yellow';
@@ -903,7 +894,6 @@
       return { ratingClass, sizeClass, votesClass, bonusClass };
     }
 
-    // ===== CLONE TAG TEMPLATE =====
     function createTagsHTML(appName, bonusNum) {
       const template = document.getElementById('tagTemplate');
       const clone = template.cloneNode(true);
@@ -937,7 +927,6 @@
       return clone.innerHTML;
     }
 
-    // ===== STATE =====
     let currentSelectedIndex = null;
     const customModal = document.getElementById('customInfoModal');
     const modalTitle = document.getElementById('modalTitle');
@@ -961,7 +950,6 @@
     modalCloseBtn.addEventListener('click', closeModalAndResetHistory);
     window.addEventListener('click', (e) => { if (e.target === customModal) closeModalAndResetHistory(); });
 
-    // ===== RENDER MAIN GRID (ALL APPS with LED Warning) =====
     function renderMainGrid() {
       const gridContainer = document.getElementById('allAppsGrid');
       if (!gridContainer) return;
@@ -993,7 +981,6 @@
             <div class="card-spin-desc">${spinDesc}</div>
             <div class="card-benefits"><strong>Extra Benefits:</strong> ${extraBenefits}</div>
             
-            <!-- ===== LED WARNING TOGGLE ===== -->
             <div class="warning-led-toggle" data-toggle-idx="${idx}">
               <span class="led-icon">⚠️</span>
               <span class="led-text">Play responsibly. This website is for users 18+ only.</span>
@@ -1009,7 +996,6 @@
 
       gridContainer.innerHTML = html;
 
-      // ===== LED WARNING TOGGLE EVENT LISTENERS =====
       document.querySelectorAll('.warning-led-toggle').forEach(toggle => {
         toggle.addEventListener('click', function(e) {
           e.stopPropagation();
@@ -1022,7 +1008,6 @@
         });
       });
 
-      // Attach event listeners to all download buttons
       document.querySelectorAll('#allAppsGrid .download-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
           const idx = parseInt(this.getAttribute('data-download-index'));
@@ -1032,7 +1017,6 @@
       });
     }
 
-    // ===== NAVIGATION =====
     function navigateToDownloadPage(selectedIndex) {
       currentSelectedIndex = selectedIndex;
       history.pushState({ page: 'download', index: selectedIndex }, '', '#download');
@@ -1147,7 +1131,6 @@
               </details>
             </div>
 
-            <!-- ===== DETAIL PAGE LED WARNING ===== -->
             <div class="detail-warning-led" id="detailWarningToggle">
               <span class="led-icon">⚠️</span>
               <span class="led-text">Play responsibly. This website is for users 18+ only.</span>
@@ -1166,7 +1149,6 @@
       `;
       downloadContainer.innerHTML = downloadPageHtml;
 
-      // ===== DETAIL PAGE LED WARNING TOGGLE =====
       const detailToggle = document.getElementById('detailWarningToggle');
       const detailContent = document.getElementById('detailWarningContent');
       if (detailToggle && detailContent) {
@@ -1176,7 +1158,6 @@
         });
       }
 
-      // 5+ options click
       document.querySelectorAll('#fiveOptions .opt-item').forEach(el => {
         el.addEventListener('click', function() {
           const idx = this.getAttribute('data-opt-index');
@@ -1222,7 +1203,6 @@
       goToMainGrid();
     }
 
-    // ===== NAV CLICKS =====
     const homeNavLink = document.getElementById('homeNavLink');
     const navAbout = document.getElementById('navAbout');
     const navContact = document.getElementById('navContact');
@@ -1230,7 +1210,6 @@
 
     homeNavLink.addEventListener('click', (e) => { e.preventDefault(); resetToMainGrid(); document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active')); homeNavLink.classList.add('active'); });
 
-    // ===== ABOUT - Show All Tags =====
     navAbout.addEventListener('click', (e) => {
       e.preventDefault();
       document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active'));
@@ -1273,7 +1252,6 @@
       `);
     });
 
-    // ===== CONTACT - Show All Tags =====
     navContact.addEventListener('click', (e) => {
       e.preventDefault();
       document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active'));
@@ -1315,7 +1293,6 @@
       `);
     });
 
-    // ===== DISCLAIMER - Show All Tags =====
     navDisclaimer.addEventListener('click', (e) => {
       e.preventDefault();
       document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active'));
@@ -1401,23 +1378,20 @@
       `);
     });
 
-    // ===== INIT =====
     populateAppTags();
     renderMainGrid();
   })();
 </script>
 
-<!-- ===== FOOTER WITH BLACK ROUNDED MARQUEE ===== -->
+<!-- ===== FOOTER ===== -->
 <footer style="background:#0a2e1d;color:#b9ddcb;text-align:center;padding:20px;margin-top:30px;font-size:0.7rem;border-top:2px solid #ffcf8a;">
   
-  <!-- ===== BLACK ROUNDED MARQUEE CONTAINER ===== -->
   <div style="background:#000000;border-radius:60px;padding:12px 16px;margin-bottom:16px;overflow:hidden;border:2px solid #ffcf8a;box-shadow:0 0 30px rgba(255,207,138,0.05);">
     <marquee behavior="scroll" direction="left" scrollamount="4" style="color:#ffffff;font-weight:700;font-size:0.75rem;letter-spacing:0.5px;">
       567 Slots &nbsp;✦&nbsp; Jaiho 91 &nbsp;✦&nbsp; Rummy Ludo &nbsp;✦&nbsp; ABC Rummy &nbsp;✦&nbsp; Rummy 91 &nbsp;✦&nbsp; Love Rummy &nbsp;✦&nbsp; Bingo 101 &nbsp;✦&nbsp; Yono 777 &nbsp;✦&nbsp; Saga Slots &nbsp;✦&nbsp; Spin Crush &nbsp;✦&nbsp; Top Rummy &nbsp;✦&nbsp; New Yono Games &nbsp;✦&nbsp; Hello Rummy &nbsp;✦&nbsp; All Yono Games &nbsp;✦&nbsp; Rummy 365 &nbsp;✦&nbsp; Taurus App &nbsp;✦&nbsp; Teen Patti Gold &nbsp;✦&nbsp; Teen Patti Master &nbsp;✦&nbsp; Yono Rummy &nbsp;✦&nbsp; Slots Winner &nbsp;✦&nbsp; Good Slots &nbsp;✦&nbsp; Diwa Slot &nbsp;✦&nbsp; GoGo Rummy &nbsp;✦&nbsp; Joy Rummy &nbsp;✦&nbsp; Spin Gold &nbsp;✦&nbsp; Yes Spin &nbsp;✦&nbsp; Yono Arcade &nbsp;✦&nbsp; SVIP 777 &nbsp;✦&nbsp; OK Rummy &nbsp;✦&nbsp; Hind 777 &nbsp;✦&nbsp; Rummy Most &nbsp;✦&nbsp; Bet 213 &nbsp;✦&nbsp; Teen Patti &nbsp;✦&nbsp; Boss Rummy &nbsp;✦&nbsp; Diwa VIP &nbsp;✦&nbsp; Diwa 777
     </marquee>
   </div>
   
-  <!-- ===== ABOUT | CONTACT | DISCLAIMER LINKS ===== -->
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 12px;margin-bottom:8px;">
     <a href="#" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">About</a>
     <span style="color:#6c7a5a;">|</span>
@@ -1426,7 +1400,6 @@
     <a href="#" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">Disclaimer</a>
   </div>
   
-  <!-- ===== COPYRIGHT ===== -->
   <div style="font-size:0.6rem;color:#b9ddcb;">
     © 2026/2030 <strong style="color:#ffcf8a;">yono games site.com</strong> — Play responsibly. 18+ only. | Official APK Downloads
   </div>
