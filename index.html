@@ -462,6 +462,13 @@
     .modal-close-btn:hover { transform: scale(1.1); background: #1a1a1a; }
     .modal-close-btn:active { transform: scale(0.92); }
     
+    /* styles for standalone pages */
+    .standalone-section { background: white; border-radius: 28px; padding: 20px 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); margin: 12px auto; max-width: 800px; }
+    .standalone-section h1 { font-size: 1.8rem; color: #1e562a; margin-bottom: 16px; border-left: 6px solid #ff8c00; padding-left: 16px; }
+    .standalone-section p { font-size: 0.95rem; line-height: 1.6; color: #2d3e2b; margin: 12px 0; }
+    .standalone-section ul, .standalone-section ol { margin-left: 20px; }
+    .standalone-section li { margin: 6px 0; font-size: 0.9rem; }
+    
     .premium-toggle-about, .premium-toggle-contact, .premium-toggle-disclaimer {
       border-radius: 12px;
       padding: 10px 14px;
@@ -586,10 +593,10 @@
     <span class="site-title">YONO GAMES SITE</span>
   </div>
   <div class="nav-links">
-    <a href="#" class="active" id="homeNavLink">HOME</a>
-    <a href="#" id="navAbout"><span class="icon-about"></span> About</a>
-    <a href="#" id="navContact"><span class="icon-contact"></span> Contact</a>
-    <a href="#" id="navDisclaimer"><span class="icon-disclaimer"></span> Disclaimer</a>
+    <a href="index.html" class="active" id="homeNavLink">HOME</a>
+    <a href="about.html"><span class="icon-about"></span> About</a>
+    <a href="contact.html"><span class="icon-contact"></span> Contact</a>
+    <a href="disclaimer.html"><span class="icon-disclaimer"></span> Disclaimer</a>
   </div>
   <a href="https://t.me/yonogamestite" target="_blank" rel="noopener noreferrer" class="telegram-nav-btn" id="telegramNavBtn">
     <img src="https://i.ibb.co/S7P1xcCq/telegram-icon.jpg" alt="Telegram" loading="eager">
@@ -1204,179 +1211,7 @@
     }
 
     const homeNavLink = document.getElementById('homeNavLink');
-    const navAbout = document.getElementById('navAbout');
-    const navContact = document.getElementById('navContact');
-    const navDisclaimer = document.getElementById('navDisclaimer');
-
-    homeNavLink.addEventListener('click', (e) => { e.preventDefault(); resetToMainGrid(); document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active')); homeNavLink.classList.add('active'); });
-
-    navAbout.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active'));
-      navAbout.classList.add('active');
-      showInfoModal('About - Yono Games Site', `
-        <p><strong>Welcome to Yono Games Site</strong>, a trusted platform created to help users discover <strong>genuine Yono Games apps</strong> safely and confidently. Our website was built with one clear purpose—to eliminate confusion, fake apps, and misleading downloads that users often face while searching for Yono Games online.</p>
-        <p>Over time, we noticed a growing problem. Many users searching for Yono Games were landing on spam websites, unofficial APKs, and misleading links that either didn’t work or put their devices and data at risk. Finding authentic Yono Games apps with secure download links was not easy, especially for new users. That’s where <strong>we stepped in</strong>.</p>
-        <p><strong>Our Mission</strong><br>Our mission is simple: to provide only verified, genuine, and officially released Yono Games apps in one place.</p>
-        <p>We carefully list Yono Games apps that are publicly announced and actively available, ensuring users get access to the right versions without confusion. Every app page is created with clarity, transparency, and user trust in mind.</p>
-        <p><strong>What Makes Us Different</strong><br>✅ <strong>Genuine Yono Games Apps Only</strong> – We focus on authenticity. Our platform highlights real Yono Games releases and avoids misleading or fake listings.<br>✅ <strong>Secure & Safe Download Links</strong> – We ensure users are redirected to safe sources so they can download Yono Games apps with confidence.<br>✅ <strong>Regular Updates</strong> – Yono Games frequently releases new apps and updates. We keep our listings fresh so users don’t miss the latest launches.<br>✅ <strong>User-First Approach</strong> – Our content is written in simple language, making it easy for both new and experienced users to understand app details, features, and updates.</p>
-        <p><strong>Built for the Yono Games Community</strong><br>This platform is more than just a listing website. It’s a growing resource for users who want reliable information about Yono Games, new app launches, and popular variants—all in one place. We aim to save users time, reduce risk, and improve their overall experience.</p>
-        <p><strong>Our Commitment</strong><br>We are committed to transparency, accuracy, and continuous improvement. As Yono Games evolves, so do we. Our goal is to remain a dependable destination for users who want to explore Yono Games without worrying about spam, fake apps, or unreliable sources.</p>
-        <p><strong>Explore confidently. Download safely. Stay updated with Yono Games.</strong></p>
-        <p style="margin-top:12px;">Welcome to <strong>Yono All Games</strong>, your ultimate one-stop solution for a fun and diverse gaming experience. Whether you are a strategy enthusiast, skill-based card game lover, or a casual gamer, our website has something for everyone. Download Yono All Games APK with a few taps and have access to top-rated gaming apps for unlimited fun. Our app offers a hassle-free and secure experience, with all your favorite online games in one place. Enjoy new releases, special features, and secure downloads at your fingertips. Join <strong>Yono All Games</strong> and explore a gaming universe at your fingertips!</p>
-        
-        <div class="premium-toggle-about">
-          <details>
-            <summary>
-              <span class="toggle-icon">▶</span> 
-              <span style="font-weight:800; color:#8b5cf6; font-size:0.95rem;">📌 About - Yono Games Store</span>
-              <span style="font-size:0.65rem; color:#6b7280; margin-left:auto;">(Click to expand)</span>
-            </summary>
-            <div class="details-content">
-              <p><strong>Welcome to our platform, Yono Games Site</strong> – a comprehensive hub created to enhance digital experiences for everyone. At the heart of our mission lies the commitment to empower users with access to a wide range of applications, mirroring the global accessibility of platforms like the renowned app marketplaces, but with a unique focus on Indian users.</p>
-              <p>Our journey began with a simple yet powerful vision: to revolutionize the way people discover and download apps. We recognize the evolving needs of the digital age and strive to meet them by offering an extensive selection of applications. From utility and productivity apps to entertainment and lifestyle options, our platform is a one-stop destination for all your app needs.</p>
-              <p>We are not just about providing access to apps; we are about fostering a community where knowledge about the latest digital tools is shared and celebrated. Our platform is designed to be user-friendly, ensuring a seamless experience for everyone, from tech-savvy individuals to those just starting their digital journey.</p>
-              <p>Our focus on Indian applications sets us apart, reflecting our dedication to cater to the unique needs and preferences of our audience. We believe in the power of local solutions for local challenges, and our platform is a testament to this belief.</p>
-              <p><strong>Update Version:</strong> We continuously update our platform to bring you the latest and most reliable Yono Games app information.</p>
-              <p>Join us in our endeavor to bring the best of digital innovations to your fingertips. Explore, download, and stay ahead in the ever-evolving world of apps with us <strong>Yono Games Site</strong>.</p>
-              <div style="margin-top:12px;background:#f5f0ff;padding:10px;border-radius:12px;border-left:4px solid #8b5cf6;">
-                <p style="font-size:0.7rem;color:#333;line-height:1.5;">⚠️ <strong style="color:#8b5cf6;">Disclaimer:</strong> Playing Yono Games may lead to addictive behavior. Please play responsibly and use your discretion. This website is intended strictly for users who are <strong>18 years of age or older</strong>.</p>
-              </div>
-            </div>
-          </details>
-        </div>
-
-        <div style="margin-top:12px;background:#e8f5e9;padding:8px 12px;border-radius:10px;text-align:center;border:1px solid #a5d6a7;">
-          <p style="font-size:0.7rem;color:#1e562a;">✅ All apps are verified and safe only.</p>
-        </div>
-      `);
-    });
-
-    navContact.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active'));
-      navContact.classList.add('active');
-      showInfoModal('Contact Us - Yono Games Site', `
-        <p><strong>Yono Games Site</strong> does not provide Customer Support for Listed Apps/Games. If you encounter any problems, please contact the support option within those games. Because the Listed Games/Apps are not ours. We do not own those games.</p>
-        
-        <p style="margin-top:14px;"><strong style="color:#d50000;">📢 Advertisement/Business Queries</strong><br>If you are a game maker company, operator, or administrator, and you want to promote your application through our website, you can contact us through the contact details given below and discuss promotion and cooperation.</p>
-        
-        <table class="contact-table">
-          <tr><th>Title</th><th>Link</th></tr>
-          <tr><td><strong>Email</strong></td><td><a href="mailto:yonogamesite@gmail.com" class="contact-email" style="color:#d50000;font-weight:700;text-decoration:none;">yonogamesite@gmail.com</a></td></tr>
-          <tr><td><strong>Telegram</strong></td><td><a href="https://t.me/yonogamestite" target="_blank" class="contact-telegram" style="color:#0088cc;font-weight:700;text-decoration:none;">@yonogamestite</a></td></tr>
-        </table>
-        
-        <div class="premium-toggle-contact">
-          <details>
-            <summary>
-              <span class="toggle-icon">▶</span> 
-              <span style="font-weight:800; color:#3b82f6; font-size:0.95rem;">📌 About Tags Model - Disclaimer</span>
-              <span style="font-size:0.65rem; color:#6b7280; margin-left:auto;">(Click to expand)</span>
-            </summary>
-            <div class="details-content">
-              <p><strong>Yono Games Site</strong> – Your Trusted Source for Yono Games Information.</p>
-              <p>We are an independent platform dedicated to providing accurate and up-to-date information about Yono Games apps, their features, bonuses, and download links. Our goal is to help users discover genuine Yono Games apps without confusion or risk.</p>
-              <p><strong>About This Platform</strong><br>• <strong>Purpose:</strong> To simplify the discovery of authentic Yono Games apps<br>• <strong>Focus:</strong> Indian users seeking reliable gaming app information<br>• <strong>Commitment:</strong> Transparency, accuracy, and user safety</p>
-              <p><strong>Our Promise</strong><br>We do not host or distribute any APK files directly. All download links redirect to official or verified sources. We do not collect any user data. Your privacy and safety are our priority.</p>
-              <div style="margin-top:12px;background:#f0f5ff;padding:10px;border-radius:12px;border-left:4px solid #3b82f6;">
-                <p style="font-size:0.7rem;color:#1e3a5f;font-weight:600;">✅ Verified & Trusted Platform</p>
-                <p style="font-size:0.7rem;color:#333;line-height:1.5;">We are committed to providing only verified and genuine Yono Games app information.</p>
-              </div>
-            </div>
-          </details>
-        </div>
-        
-        <div style="margin-top:12px;background:#e8f5e9;padding:8px 12px;border-radius:10px;text-align:center;border:1px solid #a5d6a7;">
-          <p style="font-size:0.7rem;color:#1e562a;">⚡ We respond within 24 hours</p>
-        </div>
-      `);
-    });
-
-    navDisclaimer.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.querySelectorAll('.top-nav a').forEach(el => el.classList.remove('active'));
-      navDisclaimer.classList.add('active');
-      showInfoModal('Disclaimer - Yono Games Site', `
-        <div style="background:linear-gradient(135deg,#fff5e6,#ffe6cc);padding:10px;border-radius:14px;margin-bottom:12px;text-align:center;">
-          <h3 style="color:#b45900;font-weight:800;font-size:1.1rem;">Yono Games Site - Disclaimer</h3>
-          <p style="font-size:0.7rem;color:#555;">By using our website, you confirm that you have read and agreed to this disclaimer. If you do not agree, please discontinue use of our website.</p>
-        </div>
-
-        <div class="premium-toggle-disclaimer">
-          <details>
-            <summary>
-              <span class="toggle-icon">▶</span> 
-              <span style="font-weight:800; color:#ef4444; font-size:0.95rem;">📌 All Disclaimer Points</span>
-              <span style="font-size:0.65rem; color:#6b7280; margin-left:auto;">(Click to expand)</span>
-            </summary>
-            <div class="details-content">
-              <div style="display:flex; flex-direction:column; gap:4px; font-size:0.75rem; color:#333;">
-                <p><strong style="color:#ef4444;">1. No Ownership:</strong> We are not developers/owners of Yono Games.</p>
-                <p><strong style="color:#ef4444;">2. Play Responsibly:</strong> Gaming can be addictive. Play with control.</p>
-                <p><strong style="color:#ef4444;">3. Financial Risk:</strong> Financial transactions may lead to monetary loss.</p>
-                <p><strong style="color:#ef4444;">4. 18+ Age Restriction:</strong> Strictly for users 18 years and above.</p>
-                <p><strong style="color:#ef4444;">5. No Liability:</strong> We are not liable for any losses or damages.</p>
-                <p><strong style="color:#ef4444;">6. Third-Party Links:</strong> External links are not under our control.</p>
-                <p><strong style="color:#ef4444;">7. Changes:</strong> Disclaimer may be updated anytime.</p>
-                <p><strong style="color:#ef4444;">8. Contact Us:</strong> Reach us via Telegram or Email.</p>
-              </div>
-              <div style="margin-top:10px;background:#fff5f5;padding:8px 12px;border-radius:10px;border-left:4px solid #ef4444;">
-                <p style="font-size:0.7rem;color:#333;">🔞 <strong style="color:#ef4444;">Strictly for users aged 18+</strong></p>
-              </div>
-            </div>
-          </details>
-        </div>
-
-        <div class="disclaimer-section" style="border-left-color:#8b5cf6;">
-          <h4>1. No Ownership or Association with Yono Games</h4>
-          <p>We are not the developers, owners, or operators of Yono Games. Our website serves as a promoter/affiliate, providing information about Yono Games. We have no control over the game, its developers, or any related policies. All trademarks, copyrights, and intellectual property related to Yono Games belong to their respective owners.</p>
-        </div>
-
-        <div class="disclaimer-section" style="border-left-color:#22c55e;">
-          <h4>2. Play Responsibly</h4>
-          <p>Gaming can be addictive. Users are advised to play responsibly and maintain control over their gaming activities. We encourage users to take breaks and avoid excessive gameplay that may negatively impact their well-being.</p>
-        </div>
-
-        <div class="disclaimer-section" style="border-left-color:#ef4444;">
-          <h4>3. Financial Risk Warning</h4>
-          <p>Playing games may involve financial transactions that can lead to monetary loss. We are not responsible for any financial decisions made by users while playing Yono Games. Users acknowledge that they play at their own risk and should exercise caution when making in-game purchases or engaging in any financial transactions related to the game.</p>
-        </div>
-
-        <div class="disclaimer-section" style="border-left-color:#f59e0b;">
-          <h4>4. 18+ Age Restriction</h4>
-          <p>Our website and the games we promote are strictly intended for users aged 18 and above. If you are under 18, please refrain from using our website and playing the games we feature.</p>
-        </div>
-
-        <div class="disclaimer-section" style="border-left-color:#3b82f6;">
-          <h4>5. No Liability</h4>
-          <p>We do not accept liability for any losses, damages, or consequences resulting from playing Yono Games. Since we do not own, operate, or control these games, users may not hold us liable for any financial losses, technical issues, or other risks associated with gameplay.</p>
-        </div>
-
-        <div class="disclaimer-section" style="border-left-color:#06b6d4;">
-          <h4>6. Third-Party Links & External Content</h4>
-          <p>Our website may contain links to third-party websites, including the official Yono Games platform. We do not control these external websites and are not responsible for their content, policies, or security practices. Users should review third-party terms and conditions before engaging with them.</p>
-        </div>
-
-        <div class="disclaimer-section" style="border-left-color:#8b5cf6;">
-          <h4>7. Changes to This Disclaimer</h4>
-          <p>We reserve the right to update or modify this disclaimer at any time. Any changes will be posted on this page with an updated date. Continued use of our website implies acceptance of any revisions.</p>
-        </div>
-
-        <div class="disclaimer-section" style="border-left-color:#22c55e;">
-          <h4>8. Contact Us</h4>
-          <p>If you have any questions regarding this disclaimer, please contact us at:</p>
-          <p><strong>Yono Top Games</strong><br>
-          <strong>Telegram:</strong> <a href="https://t.me/yonogamestite" target="_blank" style="color:#0088cc;font-weight:700;text-decoration:none;">@yonogamestite</a><br>
-          <strong>Gmail:</strong> <a href="mailto:yonogamesite@gmail.com" style="color:#d50000;font-weight:700;text-decoration:none;">yonogamesite@gmail.com</a></p>
-        </div>
-
-        <div style="margin-top:14px;background:#fff3e0;padding:10px 12px;border-radius:12px;border:2px solid #ff8c00;">
-          <p style="font-size:0.75rem;color:#d32f2f;font-weight:600;">⚠️ Disclaimer:</p>
-          <p style="font-size:0.7rem;color:#333;line-height:1.5;">yono games site may lead to addictive behavior. Please play responsibly and use your discretion. This website is intended strictly for users who are <strong>18 years of age or older</strong>.</p>
-        </div>
-      `);
-    });
+    // homeNavLink is now an anchor to index.html, no need for JS click handler
 
     populateAppTags();
     renderMainGrid();
@@ -1393,11 +1228,11 @@
   </div>
   
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 12px;margin-bottom:8px;">
-    <a href="#" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">About</a>
+    <a href="about.html" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">About</a>
     <span style="color:#6c7a5a;">|</span>
-    <a href="#" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">Contact</a>
+    <a href="contact.html" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">Contact</a>
     <span style="color:#6c7a5a;">|</span>
-    <a href="#" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">Disclaimer</a>
+    <a href="disclaimer.html" style="color:#ffcf8a;text-decoration:none;font-weight:700;font-size:0.6rem;">Disclaimer</a>
   </div>
   
   <div style="font-size:0.6rem;color:#b9ddcb;">
