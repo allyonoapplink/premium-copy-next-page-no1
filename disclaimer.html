@@ -1,1 +1,513 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>YONO GAMES · About</title>
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0b0f0e;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 0 0 40px 0;
+      color: #e6f0ec;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- PREMIUM FIXED HEADER (YONO GAMES + LED CLOSE) ---- */
+    .premium-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(11, 15, 14, 0.82);
+      backdrop-filter: blur(14px) saturate(180%);
+      -webkit-backdrop-filter: blur(14px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-icon {
+      font-size: 28px;
+      filter: drop-shadow(0 0 8px rgba(180, 255, 200, 0.5));
+    }
+
+    .brand-name {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #f0fff5, #b3ffd9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 20px rgba(140, 255, 180, 0.3);
+    }
+
+    .brand-badge {
+      background: rgba(0, 255, 170, 0.15);
+      border: 1px solid rgba(0, 255, 170, 0.3);
+      color: #9affc0;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 40px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      margin-left: 4px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* LED CLOSE ICON — white glow, black background, premium */
+    .close-led {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0d1210;
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 300;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2), inset 0 0 8px rgba(255, 255, 255, 0.05);
+      transition: all 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      line-height: 1;
+      text-shadow: 0 0 18px rgba(255, 255, 240, 0.6);
+    }
+
+    .close-led:hover {
+      transform: rotate(90deg) scale(1.02);
+      border-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 0 30px rgba(200, 255, 220, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.2);
+      background: #111b17;
+    }
+
+    .close-led:active {
+      transform: scale(0.88) rotate(90deg);
+      box-shadow: 0 0 45px #b0ffd0;
+    }
+
+    /* ---- MAIN CONTAINER (mobile-first, glassmorphism) ---- */
+    .about-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 18px 18px 40px;
+    }
+
+    /* glass cards */
+    .glass-card {
+      background: rgba(20, 30, 27, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 32px;
+      padding: 24px 22px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 20px 40px -18px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 255, 180, 0.02) inset;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .glass-card:hover {
+      box-shadow: 0 24px 48px -18px rgba(0, 255, 180, 0.15), 0 0 0 1px rgba(0, 255, 180, 0.08) inset;
+    }
+
+    /* headings */
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      background: linear-gradient(145deg, #e5ffee, #b0f7d0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+      color: #d4fae6;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    h2 i {
+      color: #80f0b0;
+      font-size: 22px;
+      filter: drop-shadow(0 0 6px #80f0b066);
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 18px 0 12px 0;
+      color: #c8f0db;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      color: #d0dfd8;
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+
+    .lead {
+      font-size: 17px;
+      font-weight: 400;
+      color: #e2f5eb;
+      border-left: 3px solid #50d68a;
+      padding-left: 16px;
+      background: rgba(0, 255, 150, 0.03);
+      border-radius: 0 12px 12px 0;
+    }
+
+    /* lists */
+    ul, ol {
+      padding-left: 22px;
+      margin: 12px 0 18px 0;
+    }
+
+    li {
+      font-size: 15.5px;
+      margin-bottom: 10px;
+      color: #c7dbd2;
+      list-style-type: disc;
+      padding-left: 6px;
+    }
+
+    li strong {
+      color: #bef5d0;
+      font-weight: 600;
+    }
+
+    .check-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .check-list li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .check-list li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: #70f0a0;
+      font-size: 18px;
+      text-shadow: 0 0 12px #70f0a066;
+    }
+
+    .badge-glow {
+      background: rgba(0, 255, 170, 0.08);
+      border: 1px solid rgba(0, 255, 170, 0.15);
+      color: #b0f5cf;
+      padding: 2px 14px;
+      border-radius: 60px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-block;
+      backdrop-filter: blur(4px);
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0 8px;
+    }
+
+    .stat-item {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 20px;
+      padding: 16px 12px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .stat-number {
+      font-size: 26px;
+      font-weight: 800;
+      color: #b5ffd0;
+      text-shadow: 0 0 20px #4ae08a55;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #94b3a8;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 180, 0.2), transparent);
+      margin: 28px 0 24px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 14px;
+      color: #7f9b90;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+      padding-top: 28px;
+      margin-top: 20px;
+    }
+
+    .footer-note i {
+      color: #80f0b0;
+      margin: 0 4px;
+    }
+
+    /* responsive fine-tune */
+    @media (max-width: 480px) {
+      .brand-name {
+        font-size: 19px;
+      }
+      .brand-icon {
+        font-size: 24px;
+      }
+      .close-led {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+      }
+      .glass-card {
+        padding: 20px 16px;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      h2 {
+        font-size: 22px;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+    }
+
+    /* smooth scroll & selection */
+    ::selection {
+      background: #1f6040;
+      color: #f0fff5;
+    }
+
+    /* close icon click feedback */
+    .close-led.clicked {
+      animation: ledPulse 0.2s ease;
+    }
+
+    @keyframes ledPulse {
+      0% { box-shadow: 0 0 10px #fff, 0 0 30px #b0ffd0; }
+      100% { box-shadow: 0 0 20px #fff, 0 0 60px #b0ffd0; }
+    }
+
+    /* all tags visible, no cut-offs */
+    .visible-tag {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ====== FIXED HEADER ====== -->
+<header class="premium-header">
+  <div class="header-left">
+    <span class="brand-icon">🎮</span>
+    <span class="brand-name">YONO GAMES</span>
+    <span class="brand-badge">HD</span>
+  </div>
+  <div class="close-led" id="closeLedBtn" aria-label="Close and go back">
+    ✖
+  </div>
+</header>
+
+<!-- ====== ABOUT CONTENT ====== -->
+<main class="about-container">
+
+  <!-- hero card -->
+  <div class="glass-card">
+    <div class="badge-glow"><i class="fas fa-circle" style="color: #70f0a0; font-size: 8px; margin-right: 6px;"></i> PREMIUM RESEARCH</div>
+    <h1>YONO GAMES</h1>
+    <p style="font-size: 18px; font-weight: 400; color: #ceeadc; margin-top: -2px;">Empowering users through transparency.</p>
+    <p class="lead" style="margin-top: 18px;">
+      <i class="fas fa-bolt" style="color: #80f0b0; margin-right: 8px;"></i> 
+      Built to help players navigate digital gaming with structured information — not marketing noise.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;">
+      <span style="background: #0f1f18; padding: 4px 14px; border-radius: 60px; border: 1px solid #2a5a44; font-size: 12px;">📊 data-driven</span>
+      <span style="background: #0f1f18; padding: 4px 14px; border-radius: 60px; border: 1px solid #2a5a44; font-size: 12px;">🔍 two-step verification</span>
+      <span style="background: #0f1f18; padding: 4px 14px; border-radius: 60px; border: 1px solid #2a5a44; font-size: 12px;">⚡ RTP analysis</span>
+    </div>
+  </div>
+
+  <!-- Why YONO GAMES exists -->
+  <div class="glass-card">
+    <h2><i class="fas fa-bullseye"></i> Why YONO GAMES Exists</h2>
+    <p>Most users lose momentum not because they chose the wrong app, but because they don’t understand pricing and probability. Different platforms offer different RTP percentages and reward margins — often hidden.</p>
+    <p><strong style="color: #b5ffd0;">We fix that gap.</strong> Our focus isn't on telling users what to play; it’s on showing how the ecosystem functions so your decisions improve over time.</p>
+    <div class="stats-grid">
+      <div class="stat-item"><span class="stat-number">94%</span><span class="stat-label">data integrity</span></div>
+      <div class="stat-item"><span class="stat-number">2‑step</span><span class="stat-label">verification</span></div>
+    </div>
+  </div>
+
+  <!-- Who we are -->
+  <div class="glass-card">
+    <h2><i class="fas fa-users"></i> Who We Are</h2>
+    <p>Built by a team with deep experience in gaming platforms, product architecture, and user behavior analytics. We’ve seen where confusion happens and how small misunderstandings turn into consistent losses.</p>
+    <p>Instead of "luck," we focus on <strong style="color: #b5ffd0;">transparency, probability, and informed decision-making</strong>. No gurus, no perfect insight — just clear, practical systems.</p>
+  </div>
+
+  <!-- Data integrity -->
+  <div class="glass-card">
+    <h2><i class="fas fa-shield-alt"></i> Data Integrity & Two‑Step Verification</h2>
+    <p>Every insight undergoes a rigorous process:</p>
+    <ul class="check-list">
+      <li><strong>Quantitative Filter</strong> — scans historical data & platform mechanics.</li>
+      <li><strong>Manual SME Review</strong> — experts verify withdrawal speeds, license validity, and technical stability.</li>
+    </ul>
+    <p style="font-size: 15px; background: rgba(0,0,0,0.2); padding: 14px; border-radius: 20px; border-left: 3px solid #50d68a;">
+      <i class="fas fa-database" style="color: #70f0a0; margin-right: 8px;"></i> Internal Performance Database tracks long‑term variance.
+    </p>
+  </div>
+
+  <!-- Editorial standards -->
+  <div class="glass-card">
+    <h2><i class="fas fa-pen-fancy"></i> Editorial Standards</h2>
+    <ul style="list-style-type: none; padding-left: 0;">
+      <li style="padding-left: 28px; position: relative; margin-bottom: 14px;"><span style="position: absolute; left: 0; color: #70f0a0;">🧠</span> <strong>Collective Expertise</strong> — analysis by former risk management professionals.</li>
+      <li style="padding-left: 28px; position: relative; margin-bottom: 14px;"><span style="position: absolute; left: 0; color: #70f0a0;">⚖️</span> <strong>Role‑Based Accountability</strong> — every piece signed off by Lead Strategy Officer.</li>
+      <li style="padding-left: 28px; position: relative; margin-bottom: 14px;"><span style="position: absolute; left: 0; color: #70f0a0;">🔬</span> <strong>Editorial Friction</strong> — stress‑testing ensures statistical significance.</li>
+    </ul>
+  </div>
+
+  <!-- Approach & responsible -->
+  <div class="glass-card">
+    <h2><i class="fas fa-chart-line"></i> Our Approach</h2>
+    <p>Digital engagement is a probability system, not a guessing exercise. We focus on <strong style="color: #b5ffd0;">pricing</strong>, not outcomes. That shift changes how decisions are made.</p>
+    <hr>
+    <h2 style="margin-top: 4px;"><i class="fas fa-heart" style="color: #80f0b0;"></i> Responsible Wagering</h2>
+    <p>Gaming should remain entertainment, not a financial strategy. We support self‑exclusion, deposit limits, and national helplines.</p>
+    <div style="background: rgba(0,30,20,0.4); border-radius: 20px; padding: 14px 16px; margin-top: 8px; border: 1px solid #1d4a38;">
+      <p style="margin: 0; font-size: 14px;"><i class="fas fa-exclamation-triangle" style="color: #f5b56b; margin-right: 8px;"></i> If gaming interferes with daily life, reach out to <strong>Gambling Therapy</strong> or local 24/7 helplines.</p>
+    </div>
+  </div>
+
+  <!-- Warning signs & tools -->
+  <div class="glass-card">
+    <h2><i class="fas fa-lightbulb"></i> Warning Signs & Tools</h2>
+    <ul>
+      <li>Spending money intended for essentials?</li>
+      <li>Chasing losses by playing longer?</li>
+      <li>Feeling anxious or secretive?</li>
+      <li>Borrowing money to fund gaming?</li>
+    </ul>
+    <p><strong style="color: #b5ffd0;">Practical tools:</strong> Deposit limits, session timers, cool‑off periods, self‑exclusion.</p>
+    <p style="background: #0a1a13; border-radius: 16px; padding: 10px 16px; font-size: 15px; border: 1px solid #2b5a44;"><i class="fas fa-lock" style="color: #70f0a0; margin-right: 8px;"></i> YONO GAMES is strictly for individuals aged 18+.</p>
+  </div>
+
+  <!-- Affiliate & trust -->
+  <div class="glass-card">
+    <h2><i class="fas fa-handshake"></i> Affiliate Disclosure</h2>
+    <p>We may earn a commission through certain links, but that does not influence how platforms are presented. Our objective remains clear, structured information for independent decisions.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;">
+      <span class="badge-glow"><i class="fas fa-check-circle" style="color: #70f0a0;"></i> commercial independence</span>
+      <span class="badge-glow"><i class="fas fa-database"></i> trust index</span>
+    </div>
+  </div>
+
+  <!-- Why trust -->
+  <div class="glass-card" style="border-color: rgba(0, 255, 180, 0.1);">
+    <h2><i class="fas fa-star" style="color: #f5d76e;"></i> Why Trust YONO GAMES</h2>
+    <p>Clarity is the focus. Structure drives everything. Better understanding leads to better decisions — not perfect results, but better decisions. And over time, that difference compounds.</p>
+    <p style="margin-top: 12px; font-size: 15px; color: #aacfc0;"><i class="fas fa-arrow-right" style="color: #70f0a0;"></i> Built for users who want structure, not shortcuts.</p>
+  </div>
+
+  <div class="footer-note">
+    <i class="fas fa-circle" style="font-size: 8px; vertical-align: middle;"></i> YONO GAMES · HD research hub <i class="fas fa-circle" style="font-size: 8px; vertical-align: middle;"></i>
+  </div>
+
+</main>
+
+<script>
+  (function() {
+    const closeBtn = document.getElementById('closeLedBtn');
+
+    if (closeBtn) {
+      // Click handler: history.back() with LED feedback
+      closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+
+        // visual feedback
+        this.classList.add('clicked');
+        setTimeout(() => {
+          this.classList.remove('clicked');
+        }, 200);
+
+        // go back in history
+        if (window.history && window.history.length > 1) {
+          window.history.back();
+        } else {
+          // fallback: if no history, go to home (or just reload)
+          window.location.href = '/';
+        }
+      });
+
+      // optional touch feedback for mobile
+      closeBtn.addEventListener('touchstart', function() {
+        this.style.transform = 'scale(0.92)';
+      }, { passive: true });
+      closeBtn.addEventListener('touchend', function() {
+        this.style.transform = '';
+      }, { passive: true });
+    }
+  })();
+</script>
+
+<!-- ensure all tags visible, no hidden content -->
+</body>
+</html>
