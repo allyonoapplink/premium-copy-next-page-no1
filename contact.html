@@ -1,61 +1,123 @@
-<div class="topbar">
-  <h2>Contact - Yono Games Site</h2>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <button class="menu-btn" onclick="toggleMenu()">⋮</button>
-
-  <div id="menu" class="menu">
-    <a href="javascript:history.back()">✖️ Close</a>
-  </div>
-</div>
-
-<h1>Contact Yono Games Site</h1>
-
-<p>
-At <b>Yono Games Site</b>, we prioritize open communication and transparency.
-Whether you have a technical question about an app we've reviewed, need clarification
-about our data verification process, or want to report a discrepancy, our team is here to help.
-</p>
-
-<p>
-We aim to respond to all legitimate inquiries within <b>24 to 48 hours.</b>
-</p>
-
-<h2>How Can We Assist You?</h2>
-
-<ul>
-<li><b>General Inquiries:</b> Questions about our platform, content, or how we use data.</li>
-
-<li><b>App Verification & Feedback:</b> If you have experienced issues with an app listed on our site (such as withdrawal delays or technical bugs), let us know so our Research Lab can investigate.</li>
-
-<li><b>Partnerships & Business:</b> For verified operators looking to discuss licensing standards or collaborations.</li>
-
-<li><b>Responsible Gaming Support:</b> If you need help finding resources for self-exclusion or gaming control.</li>
-</ul>
-
-<h2>Important Notice</h2>
-
-<p>
-Regarding Third-Party Apps: <b>Yono Games Site</b> is an independent research and distribution hub.
-We do not manage accounts, payments, or internal technical support for the applications listed on our site.
-</p>
-
-<p>
-If you are facing a payment or login issue within a specific app, please contact that app's official support team directly.
-</p>
-
-<p>
-However, if you believe a platform is acting unfairly, please report it to us so we can update our Trust Index for the community.
-</p>
-
-<script>
-function toggleMenu() {
-  var menu = document.getElementById("menu");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0b1220;
+color:#fff;
 }
 
-document.addEventListener("click", function(e) {
-  if (!e.target.closest(".topbar")) {
-    document.getElementById("menu").style.display = "none";
-  }
-});
+.topbar{
+position:sticky;
+top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 18px;
+background:rgba(15,23,42,.95);
+backdrop-filter:blur(15px);
+box-shadow:0 4px 20px rgba(0,255,255,.3);
+z-index:999;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#00f7ff;
+text-shadow:0 0 12px #00f7ff;
+}
+
+.menu-btn{
+background:none;
+border:none;
+color:#fff;
+font-size:28px;
+cursor:pointer;
+}
+
+.dropdown{
+display:none;
+position:absolute;
+right:15px;
+top:60px;
+background:#18243d;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,255,255,.35);
+min-width:180px;
+}
+
+.dropdown a{
+display:flex;
+align-items:center;
+gap:10px;
+padding:14px 18px;
+color:#fff;
+text-decoration:none;
+font-size:17px;
+transition:.3s;
+}
+
+.dropdown a:hover{
+background:#00c8ff;
+color:#000;
+}
+
+.card{
+margin:18px;
+padding:20px;
+background:#152238;
+border-radius:20px;
+box-shadow:0 0 18px rgba(0,255,255,.25);
+}
+
+h1,h2{
+color:#00f7ff;
+}
+
+p,li{
+line-height:1.8;
+font-size:16px;
+color:#ddd;
+}
+</style>
+
+<div class="topbar">
+
+<div class="logo">
+YONO GAMES SITE
+</div>
+
+<div style="position:relative">
+
+<button class="menu-btn" onclick="menuToggle()">
+<i class="fas fa-ellipsis-vertical"></i>
+</button>
+
+<div class="dropdown" id="menu">
+
+<a href="javascript:history.back()">
+<i class="fas fa-times-circle"></i>
+✖️ Close
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+function menuToggle(){
+var x=document.getElementById("menu");
+x.style.display=(x.style.display==="block")?"none":"block";
+}
+
+window.onclick=function(e){
+if(!e.target.closest(".menu-btn")){
+document.getElementById("menu").style.display="none";
+}
+}
 </script>
