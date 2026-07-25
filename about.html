@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>YONO GAMES · About</title>
+  <title>Unlimited YONO Games · About</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
@@ -175,6 +175,23 @@
       margin-right: 6px;
     }
 
+    /* Premium colorful LED icons for tags */
+    .tag-icon {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .tag-icon-gold { background: #f5c542; box-shadow: 0 0 16px #f5c54288; }
+    .tag-icon-blue { background: #4aa8f0; box-shadow: 0 0 16px #4aa8f088; }
+    .tag-icon-pink { background: #f07ab0; box-shadow: 0 0 16px #f07ab088; }
+    .tag-icon-green { background: #50d68a; box-shadow: 0 0 16px #50d68a88; }
+    .tag-icon-purple { background: #b07af0; box-shadow: 0 0 16px #b07af088; }
+    .tag-icon-orange { background: #f0a050; box-shadow: 0 0 16px #f0a05088; }
+    .tag-icon-cyan { background: #50d0f0; box-shadow: 0 0 16px #50d0f088; }
+
     h3 {
       font-size: 20px;
       font-weight: 600;
@@ -258,7 +275,36 @@
       margin: 28px 0 24px;
     }
 
-    /* ---- Back to Top (glowing LED arrow) ---- */
+    /* ---- Tag Cloud Premium ---- */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
+      margin: 16px 0 6px;
+    }
+    .tag-item {
+      background: rgba(18, 35, 28, 0.7);
+      border: 1px solid rgba(0, 255, 170, 0.08);
+      padding: 6px 16px 6px 12px;
+      border-radius: 60px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #c8f0db;
+      backdrop-filter: blur(4px);
+      display: inline-flex;
+      align-items: center;
+      letter-spacing: 0.2px;
+      transition: all 0.25s ease;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+    .tag-item:hover {
+      border-color: rgba(0, 255, 170, 0.3);
+      background: rgba(0, 40, 28, 0.6);
+      box-shadow: 0 0 24px rgba(0, 255, 170, 0.06);
+      transform: translateY(-1px);
+    }
+
+    /* ---- Back to Top ---- */
     .back-to-top {
       position: fixed;
       bottom: 28px;
@@ -336,6 +382,10 @@
         bottom: 20px;
         right: 16px;
       }
+      .tag-item {
+        font-size: 12px;
+        padding: 4px 12px 4px 10px;
+      }
     }
 
     ::selection {
@@ -362,7 +412,7 @@
       animation: floatGlow 2.4s infinite ease-in-out;
     }
 
-    /* author credit — only my name */
+    /* author credit */
     .author-credit {
       margin-top: 12px;
       padding-top: 16px;
@@ -382,7 +432,7 @@
 <!-- ====== HEADER ====== -->
 <header class="premium-header">
   <div class="header-left">
-    <span class="brand-name">YONO GAMES</span>
+    <span class="brand-name">Unlimited YONO Games</span>
     <span class="brand-badge">HD</span>
   </div>
   <div class="close-led" id="closeLedBtn" aria-label="Close and go back">
@@ -393,34 +443,34 @@
 <!-- ====== ABOUT CONTENT ====== -->
 <main class="about-container">
 
-  <!-- 1. About YONO GAMES -->
+  <!-- 1. About -->
   <div class="glass-card">
-    <div class="badge-glow"><span class="led-icon-glow"></span> ABOUT · YONO GAMES</div>
-    <h1>About YONO GAMES</h1>
+    <div class="badge-glow"><span class="led-icon-glow"></span> ABOUT · UNLIMITED YONO GAMES</div>
+    <h1>About Unlimited YONO Games</h1>
     <p class="lead" style="margin-top:6px;">Empowering Users Through Transparency</p>
-    <p>YONO GAMES is built to help players navigate the digital gaming and earning landscape with structured information, not marketing noise. Our platform focuses on platform mechanics, market behavior, and performance comparisons across the gaming industry. The goal is simple: to show how digital systems work and where true value exists so our users can act with total clarity.</p>
+    <p>Unlimited YONO Games is built to help players navigate the digital gaming and earning landscape with structured information, not marketing noise. Our platform focuses on platform mechanics, market behavior, and performance comparisons across the gaming industry. The goal is simple: to show how digital systems work and where true value exists so our users can act with total clarity.</p>
     <p>This is not a "get-rich-quick" portal. It is a research-driven system designed to demystify apps, explain how reward structures move, and help users understand exactly what they are engaging with. If you are trying to avoid blind decisions and impulse-driven guesswork, you are in the right place.</p>
   </div>
 
-  <!-- 2. Why YONO GAMES Exists -->
+  <!-- 2. Why Unlimited YONO Games Exists -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> Why YONO GAMES Exists</h2>
+    <h2><span class="led-icon"></span> Why Unlimited YONO Games Exists</h2>
     <p>Most users in the gaming and earning space lose momentum early and it rarely happens because they chose the wrong app. It happens because they don't understand pricing and probability.</p>
     <p>Different platforms offer different Return to Player (RTP) percentages and reward margins for the same activities. These margins are often hidden. Beginners face a second problem: they jump in fast because a bonus looks attractive, and within a few sessions, their balance is gone. This isn't because success is impossible, but because the structure behind the system was never explained properly.</p>
-    <p>YONO GAMES exists to fix that gap. Our focus isn't on telling users what to play; it's on showing how the ecosystem functions so your decisions improve over time.</p>
+    <p>Unlimited YONO Games exists to fix that gap. Our focus isn't on telling users what to play; it's on showing how the ecosystem functions so your decisions improve over time.</p>
   </div>
 
   <!-- 3. Who We Are -->
   <div class="glass-card">
     <h2><span class="led-icon"></span> Who We Are</h2>
-    <p>YONO GAMES is built by a team that has worked closely with gaming platforms, product architecture, and user behavior analytics. We've seen how users interact with digital rewards, where confusion happens, and how small misunderstandings turn into consistent losses.</p>
+    <p>Unlimited YONO Games is built by a team that has worked closely with gaming platforms, product architecture, and user behavior analytics. We've seen how users interact with digital rewards, where confusion happens, and how small misunderstandings turn into consistent losses.</p>
     <p>That exposure shaped our structure. Instead of focusing on "luck," we focus on transparency, probability, and informed decision-making. We aren't here to position ourselves as gurus or claim perfect insight. Our goal is to translate complex gaming systems into a format that is clear, practical, and usable for the everyday user.</p>
   </div>
 
   <!-- 4. Data Integrity & Two-Step Verification -->
   <div class="glass-card">
     <h2><span class="led-icon"></span> Data Integrity &amp; Two-Step Verification</h2>
-    <p>Transparency is our core metric. Every insight published on YONO GAMES undergoes a rigorous Two-Step Verification Process:</p>
+    <p>Transparency is our core metric. Every insight published on Unlimited YONO Games undergoes a rigorous Two-Step Verification Process:</p>
     <ul class="check-list">
       <li><strong>Quantitative Filter:</strong> Our system scans historical data and platform mechanics to ensure an app meets our strict "Integrity Criteria."</li>
       <li><strong>Manual SME Review:</strong> A Subject Matter Expert (SME) with years of industry experience reviews the "contextual variables" (withdrawal speeds, license validity, and technical stability) that data alone might miss.</li>
@@ -430,7 +480,7 @@
 
   <!-- 5. Editorial Standards -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> The YONO GAMES Editorial Standards</h2>
+    <h2><span class="led-icon"></span> The Unlimited YONO Games Editorial Standards</h2>
     <ul class="check-list">
       <li><strong>Collective Expertise:</strong> Analysis is authored by our Research Lab, composed of former risk management professionals and system analysts with decades of combined experience in global digital markets.</li>
       <li><strong>Role-Based Accountability:</strong> While we protect the privacy of our individual analysts—many of whom still consult within the industry—every piece of content is signed off by our Lead Strategy Officer or Head of Technical Research.</li>
@@ -442,14 +492,14 @@
   <div class="glass-card">
     <h2><span class="led-icon"></span> Our Approach to Content</h2>
     <p>Digital engagement is a probability system, not a guessing exercise.</p>
-    <p>Most platforms focus on outcomes. YONO GAMES focuses on pricing. That shift changes how decisions are made. If you consistently choose platforms with better margins, your long-term results improve even if short-term outcomes fluctuate.</p>
+    <p>Most platforms focus on outcomes. Unlimited YONO Games focuses on pricing. That shift changes how decisions are made. If you consistently choose platforms with better margins, your long-term results improve even if short-term outcomes fluctuate.</p>
     <p>Our content is structured around logic, not emotion. Variance is part of the system; understanding the difference between a "good decision" and a "lucky outcome" is critical for long-term control.</p>
   </div>
 
   <!-- 7. Commitment to Responsible Wagering -->
   <div class="glass-card">
     <h2><span class="led-icon"></span> Our Commitment to Responsible Wagering</h2>
-    <p>At YONO GAMES, we believe gaming should remain a form of entertainment, not a financial strategy. We strictly align our operations with global consumer protection standards.</p>
+    <p>At Unlimited YONO Games, we believe gaming should remain a form of entertainment, not a financial strategy. We strictly align our operations with global consumer protection standards.</p>
     <ul class="check-list">
       <li><strong>Player Protection:</strong> We fully support and encourage the use of self-exclusion registers and deposit limits.</li>
       <li><strong>National Support:</strong> If you or someone you know is struggling with gaming habits, please reach out to recognized support organizations (such as Gambling Therapy or local 24/7 helplines) for free, confidential assistance.</li>
@@ -459,7 +509,7 @@
   <!-- 8. Responsible Gaming (detailed) -->
   <div class="glass-card">
     <h2><span class="led-icon"></span> Our Commitment to Responsible Gaming</h2>
-    <p>At YONO GAMES, we believe that digital gaming should be a source of entertainment, not a source of stress or a financial strategy. Because we operate in a space involving real-money apps, we recognize our responsibility to protect our community from the risks associated with compulsive behavior.</p>
+    <p>At Unlimited YONO Games, we believe that digital gaming should be a source of entertainment, not a source of stress or a financial strategy. Because we operate in a space involving real-money apps, we recognize our responsibility to protect our community from the risks associated with compulsive behavior.</p>
     <h3>1. Understanding the House Edge</h3>
     <p>Every game—whether it is Rummy, Slots, or Fantasy Sports—is designed with a mathematical advantage for the operator. While skill can play a role, the "house" always maintains a margin.</p>
     <ul>
@@ -476,7 +526,7 @@
     </ul>
     <p>If you answered "yes" to any of these, it may be time to take a step back.</p>
     <h3>3. Practical Tools for Control</h3>
-    <p>We only list platforms that provide users with the tools necessary to maintain control. We strongly encourage every YONO GAMES user to set the following limits before they start:</p>
+    <p>We only list platforms that provide users with the tools necessary to maintain control. We strongly encourage every Unlimited YONO Games user to set the following limits before they start:</p>
     <ul>
       <li><strong>Deposit Limits:</strong> Cap the amount you can transfer daily, weekly, or monthly.</li>
       <li><strong>Session Timers:</strong> Set alerts for play duration.</li>
@@ -484,43 +534,70 @@
       <li><strong>Self-Exclusion:</strong> Block access for long-term control.</li>
     </ul>
     <h3>4. Regional Compliance &amp; Underage Protection</h3>
-    <p>YONO GAMES is strictly for individuals aged 18 or older. We advocate for parental control software (such as Net Nanny or CyberPatrol) and respect regional laws, including restrictions in states like Telangana or Odisha.</p>
+    <p>Unlimited YONO Games is strictly for individuals aged 18 or older. We advocate for parental control software (such as Net Nanny or CyberPatrol) and respect regional laws, including restrictions in states like Telangana or Odisha.</p>
   </div>
 
   <!-- 9. Affiliate Disclosure -->
   <div class="glass-card">
     <h2><span class="led-icon"></span> Affiliate Disclosure</h2>
-    <p>YONO GAMES may earn a commission when users sign up through certain links on our platform. However, this does not influence how platforms are presented. Our objective remains the same: provide clear, structured information so users can decide independently. Users are always free to choose any platform they wish.</p>
+    <p>Unlimited YONO Games may earn a commission when users sign up through certain links on our platform. However, this does not influence how platforms are presented. Our objective remains the same: provide clear, structured information so users can decide independently. Users are always free to choose any platform they wish.</p>
   </div>
 
   <!-- 10. Who This Platform Is For -->
   <div class="glass-card">
     <h2><span class="led-icon"></span> Who This Platform Is For</h2>
-    <p>YONO GAMES is designed for users who want structure in how they approach digital apps.</p>
+    <p>Unlimited YONO Games is designed for users who want structure in how they approach digital apps.</p>
     <p>If your goal is to understand reward mechanics, compare platform pricing, and make informed choices, we provide that framework.</p>
     <p>If you are willing to slow down, learn the system, and build consistency, the value becomes clear.</p>
     <p>It is not built for shortcuts. Users looking for "guaranteed wins" or instant profits will not find that here.</p>
   </div>
 
-  <!-- 11. Why Trust YONO GAMES -->
+  <!-- 11. Why Trust Unlimited YONO Games -->
   <div class="glass-card">
-    <h2><span class="led-icon"></span> Why Trust YONO GAMES</h2>
+    <h2><span class="led-icon"></span> Why Trust Unlimited YONO Games</h2>
     <p>Clarity is the focus. Structure drives everything. We don't overcomplicate simple ideas, and we don't oversell outcomes. Information is presented so it can actually be used.</p>
-    <p>YONO GAMES is built on a simple principle: Better understanding leads to better decisions. Not perfect results—but better decisions. And over time, that difference compounds.</p>
+    <p>Unlimited YONO Games is built on a simple principle: Better understanding leads to better decisions. Not perfect results—but better decisions. And over time, that difference compounds.</p>
   </div>
 
-  <!-- 12. Welcome text (exact copy, no Rani Slots / Yono Games Store) -->
+  <!-- 12. Welcome text -->
   <div class="glass-card">
-    <p>Welcome to our platform, a comprehensive hub created on 31 May 2025, dedicated to enhancing digital experiences for everyone. At the heart of our mission lies the commitment to empower users with access to a wide range of applications, mirroring the global accessibility of platforms like the renowned app marketplaces, but with a unique focus on Indian users.</p>
+    <p>Welcome to our platform, a comprehensive hub dedicated to enhancing digital experiences for everyone. At the heart of our mission lies the commitment to empower users with access to a wide range of applications, mirroring the global accessibility of platforms like the renowned app marketplaces, but with a unique focus on Indian users.</p>
     <p>Our journey began with a simple yet powerful vision: to revolutionize the way people discover and download apps. We recognize the evolving needs of the digital age and strive to meet them by offering an extensive selection of applications. From utility and productivity apps to entertainment and lifestyle options, our platform is a one-stop destination for all your app needs.</p>
     <p>We are not just about providing access to apps; we are about fostering a community where knowledge about the latest digital tools is shared and celebrated. Our platform is designed to be user-friendly, ensuring a seamless experience for everyone, from tech-savvy individuals to those just starting their digital journey.</p>
     <p>Our focus on Indian applications sets us apart, reflecting our dedication to cater to the unique needs and preferences of our audience. We believe in the power of local solutions for local challenges, and our platform is a testament to this belief.</p>
     <p>Join us in our endeavor to bring the best of digital innovations to your fingertips. Explore, download, and stay ahead in the ever-evolving world of apps with us.</p>
-    
-    <!-- Author credit — only my name -->
+
+    <!-- Author credit: Baharul · Unlimited YONO Games -->
     <div class="author-credit">
-      <span class="led-icon-glow" style="display:inline-block; margin-right:6px;"></span> 
-      <strong>Designed by Aman Verma</strong> · YONO GAMES
+      <span class="led-icon-glow" style="display:inline-block; margin-right:6px;"></span>
+      <strong>Baharul</strong> · Unlimited YONO Games
+    </div>
+  </div>
+
+  <!-- ====== PREMIUM TAG CLOUD (Unlimited YONO Games related) ====== -->
+  <div class="glass-card" style="border-color: rgba(0,255,180,0.08);">
+    <h2 style="margin-bottom:12px;"><span class="led-icon"></span> Explore Unlimited YONO Games</h2>
+    <div class="tag-cloud">
+      <span class="tag-item"><span class="tag-icon tag-icon-gold"></span>Unlimited Games</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-blue"></span>YONO HD</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-pink"></span>Premium Slots</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-green"></span>Live RTP</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-purple"></span>Trust Index</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-orange"></span>Reward Mechanics</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-cyan"></span>Data Integrity</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-gold"></span>Smart Play</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-blue"></span>App Verification</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-pink"></span>Responsible Gaming</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-green"></span>Performance Tracker</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-purple"></span>Licensing Standards</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-orange"></span>Self-Exclusion</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-cyan"></span>Deposit Limits</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-gold"></span>Session Timers</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-blue"></span>Cool-off Periods</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-pink"></span>House Edge</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-green"></span>Variance Control</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-purple"></span>Indian Apps</span>
+      <span class="tag-item"><span class="tag-icon tag-icon-orange"></span>Digital Ecosystem</span>
     </div>
   </div>
 
