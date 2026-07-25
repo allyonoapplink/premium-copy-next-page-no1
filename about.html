@@ -176,15 +176,6 @@
       box-shadow: 0 0 18px #c084fc66;
       flex-shrink: 0;
     }
-    .led-icon-gold {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      background: #fbbf24;
-      border-radius: 50%;
-      box-shadow: 0 0 18px #fbbf2466;
-      flex-shrink: 0;
-    }
     .led-icon-glow {
       display: inline-block;
       width: 10px;
@@ -193,82 +184,6 @@
       border-radius: 50%;
       box-shadow: 0 0 24px #70f0a088;
       margin-right: 6px;
-    }
-
-    .tag-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 12px;
-      margin: 18px 0 6px;
-      justify-content: center;
-    }
-    .tag-item {
-      background: rgba(10, 22, 18, 0.7);
-      border: 1px solid rgba(0, 255, 170, 0.12);
-      padding: 6px 18px;
-      border-radius: 60px;
-      font-size: 13px;
-      font-weight: 500;
-      color: #c2f0d6;
-      backdrop-filter: blur(4px);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      letter-spacing: 0.2px;
-      transition: all 0.2s;
-      box-shadow: 0 0 12px rgba(0,255,170,0.02);
-    }
-    .tag-item:hover {
-      border-color: rgba(0, 255, 170, 0.35);
-      background: rgba(0, 40, 25, 0.5);
-      box-shadow: 0 0 24px rgba(0, 255, 170, 0.08);
-      transform: translateY(-2px);
-    }
-
-    .tag-icon-green {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background: #70f0a0;
-      border-radius: 50%;
-      box-shadow: 0 0 14px #70f0a0aa;
-      flex-shrink: 0;
-    }
-    .tag-icon-blue {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background: #60b0ff;
-      border-radius: 50%;
-      box-shadow: 0 0 14px #60b0ffaa;
-      flex-shrink: 0;
-    }
-    .tag-icon-cyan {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background: #40e0d0;
-      border-radius: 50%;
-      box-shadow: 0 0 14px #40e0d0aa;
-      flex-shrink: 0;
-    }
-    .tag-icon-purple {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background: #c084fc;
-      border-radius: 50%;
-      box-shadow: 0 0 14px #c084fcaa;
-      flex-shrink: 0;
-    }
-    .tag-icon-gold {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background: #fbbf24;
-      border-radius: 50%;
-      box-shadow: 0 0 14px #fbbf24aa;
-      flex-shrink: 0;
     }
 
     h3 {
@@ -405,153 +320,111 @@
       font-weight: 200;
     }
 
-    /* ---- 5 Premium CSS LED Icons with different colors ---- */
-    .icon-showcase {
+    /* ---- TOP VERTICAL ICON SECTION - 3 icons stacked vertically ---- */
+    .vertical-icons {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 32px 40px;
-      padding: 10px 0 4px 0;
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
+      padding: 20px 0 12px 0;
     }
 
     .icon-wrap {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 52px;
-      height: 52px;
+      width: 70px;
+      height: 70px;
     }
 
-    .icon-shield {
-      display: inline-block;
-      width: 28px;
-      height: 32px;
-      background: transparent;
-      border: 2.5px solid #60b0ff;
-      border-radius: 6px 6px 14px 14px;
-      box-shadow: 0 0 28px #60b0ff66, inset 0 0 12px #60b0ff22;
-      position: relative;
-      flex-shrink: 0;
-      animation: glowBlue 2.2s infinite alternate;
-    }
-    .icon-shield::after {
-      content: '';
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      right: 4px;
-      bottom: 4px;
-      background: #60b0ff22;
-      border-radius: 3px 3px 8px 8px;
-      box-shadow: inset 0 0 20px #60b0ff33;
-    }
-
-    .icon-lock {
-      display: inline-block;
-      width: 22px;
-      height: 26px;
-      border: 2.5px solid #70f0a0;
-      border-radius: 6px 6px 0 0;
-      border-bottom: none;
-      box-shadow: 0 -6px 0 0 #70f0a0, 0 0 28px #70f0a066;
-      flex-shrink: 0;
-      position: relative;
-      animation: glowGreen 2.6s infinite alternate;
-    }
-    .icon-lock::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 3px;
-      right: 3px;
-      height: 10px;
-      border: 2.5px solid #70f0a0;
-      border-top: none;
-      border-radius: 0 0 8px 8px;
-      box-shadow: 0 0 28px #70f0a066;
-    }
-
-    .icon-check {
-      display: inline-block;
-      width: 28px;
-      height: 14px;
-      border-bottom: 4px solid #40e0d0;
-      border-right: 4px solid #40e0d0;
-      transform: rotate(45deg);
-      box-shadow: 0 0 30px #40e0d066;
-      flex-shrink: 0;
-      animation: glowCyan 2.0s infinite alternate;
-    }
-
-    .icon-star {
+    /* Green LED Arrow (↑) */
+    .icon-arrow-up {
       display: inline-block;
       width: 0;
       height: 0;
-      border-left: 16px solid transparent;
-      border-right: 16px solid transparent;
-      border-bottom: 26px solid #fbbf24;
-      box-shadow: 0 0 36px #fbbf2466;
+      border-left: 22px solid transparent;
+      border-right: 22px solid transparent;
+      border-bottom: 38px solid #70f0a0;
+      box-shadow: 0 0 40px #70f0a066, 0 0 80px #70f0a033;
       flex-shrink: 0;
       position: relative;
-      animation: glowGold 2.8s infinite alternate;
-      transform: scale(0.9);
+      animation: glowGreen 2.4s infinite alternate;
+      transform: scale(1);
     }
-    .icon-star::after {
+    .icon-arrow-up::after {
       content: '';
       position: absolute;
       top: 8px;
-      left: -10px;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 16px solid #fbbf24;
-      transform: rotate(180deg);
-      box-shadow: 0 0 36px #fbbf2466;
-    }
-
-    .icon-lightning {
-      display: inline-block;
-      width: 0;
-      height: 0;
+      left: -14px;
       border-left: 14px solid transparent;
       border-right: 14px solid transparent;
-      border-bottom: 28px solid #c084fc;
-      box-shadow: 0 0 32px #c084fc66;
+      border-bottom: 24px solid #70f0a0;
+      transform: rotate(180deg) scale(0.6);
+      box-shadow: 0 0 40px #70f0a066;
+    }
+
+    /* Cyan LED Diamond */
+    .icon-diamond {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 3px solid #40e0d0;
+      transform: rotate(45deg);
+      box-shadow: 0 0 40px #40e0d066, inset 0 0 30px #40e0d022;
+      flex-shrink: 0;
+      animation: glowCyan 2.8s infinite alternate;
+    }
+
+    /* Blue LED Shield / Crown combination */
+    .icon-shield-crown {
+      display: inline-block;
+      width: 42px;
+      height: 48px;
+      background: transparent;
+      border: 3px solid #60b0ff;
+      border-radius: 8px 8px 18px 18px;
+      box-shadow: 0 0 40px #60b0ff66, inset 0 0 20px #60b0ff22;
       flex-shrink: 0;
       position: relative;
-      animation: glowPurple 2.4s infinite alternate;
-      transform: rotate(20deg) scale(0.85);
+      animation: glowBlue 2.6s infinite alternate;
     }
-    .icon-lightning::after {
+    .icon-shield-crown::before {
       content: '';
       position: absolute;
-      top: 4px;
-      left: -10px;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 20px solid #c084fc;
-      transform: rotate(180deg) scale(0.7);
-      box-shadow: 0 0 32px #c084fc66;
+      top: -16px;
+      left: 4px;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 20px solid #60b0ff;
+      box-shadow: 0 0 40px #60b0ff66;
+    }
+    .icon-shield-crown::after {
+      content: '';
+      position: absolute;
+      top: -16px;
+      right: 4px;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 20px solid #60b0ff;
+      box-shadow: 0 0 40px #60b0ff66;
     }
 
     @keyframes glowGreen {
-      0% { filter: drop-shadow(0 0 6px #70f0a044); }
-      100% { filter: drop-shadow(0 0 30px #70f0a0aa); }
+      0% { filter: drop-shadow(0 0 8px #70f0a044); }
+      100% { filter: drop-shadow(0 0 45px #70f0a0aa); }
     }
     @keyframes glowBlue {
-      0% { filter: drop-shadow(0 0 6px #60b0ff44); }
-      100% { filter: drop-shadow(0 0 30px #60b0ffaa); }
+      0% { filter: drop-shadow(0 0 8px #60b0ff44); }
+      100% { filter: drop-shadow(0 0 45px #60b0ffaa); }
     }
     @keyframes glowCyan {
-      0% { filter: drop-shadow(0 0 6px #40e0d044); }
-      100% { filter: drop-shadow(0 0 30px #40e0d0aa); }
-    }
-    @keyframes glowPurple {
-      0% { filter: drop-shadow(0 0 6px #c084fc44); }
-      100% { filter: drop-shadow(0 0 30px #c084fcaa); }
-    }
-    @keyframes glowGold {
-      0% { filter: drop-shadow(0 0 6px #fbbf2444); }
-      100% { filter: drop-shadow(0 0 30px #fbbf24aa); }
+      0% { filter: drop-shadow(0 0 8px #40e0d044); }
+      100% { filter: drop-shadow(0 0 45px #40e0d0aa); }
     }
 
     @media (max-width: 480px) {
@@ -579,12 +452,36 @@
         bottom: 20px;
         right: 16px;
       }
-      .tag-item {
-        font-size: 12px;
-        padding: 4px 14px;
+      .icon-wrap {
+        width: 60px;
+        height: 60px;
       }
-      .icon-showcase {
-        gap: 24px 30px;
+      .icon-arrow-up {
+        border-left-width: 18px;
+        border-right-width: 18px;
+        border-bottom-width: 32px;
+      }
+      .icon-arrow-up::after {
+        top: 6px;
+        left: -12px;
+        border-left-width: 12px;
+        border-right-width: 12px;
+        border-bottom-width: 20px;
+      }
+      .icon-diamond {
+        width: 34px;
+        height: 34px;
+      }
+      .icon-shield-crown {
+        width: 36px;
+        height: 42px;
+      }
+      .icon-shield-crown::before,
+      .icon-shield-crown::after {
+        top: -14px;
+        border-left-width: 10px;
+        border-right-width: 10px;
+        border-bottom-width: 16px;
       }
     }
 
@@ -638,6 +535,15 @@
 </header>
 
 <main class="about-container">
+
+  <!-- ====== TOP VERTICAL ICONS ====== -->
+  <div class="glass-card" style="text-align:center;">
+    <div class="vertical-icons">
+      <div class="icon-wrap"><span class="icon-arrow-up"></span></div>
+      <div class="icon-wrap"><span class="icon-diamond"></span></div>
+      <div class="icon-wrap"><span class="icon-shield-crown"></span></div>
+    </div>
+  </div>
 
   <div class="glass-card">
     <div class="badge-glow"><span class="led-icon-glow"></span> ABOUT · Unlimited YONO GAMES</div>
@@ -753,57 +659,6 @@
     <div class="author-credit">
       <span class="led-icon-glow" style="display:inline-block; margin-right:6px;"></span> 
       <strong>Baharul – Unlimited YONO GAMES</strong>
-    </div>
-  </div>
-
-  <!-- ====== SEO TAGS SECTION ====== -->
-  <div class="glass-card" style="text-align:center;">
-    <h2 style="justify-content:center;"><span class="led-icon-gold" style="display:inline-block; width:14px; height:14px; background:#fbbf24; border-radius:50%; box-shadow:0 0 24px #fbbf24aa;"></span> SEO Tags</h2>
-    <div class="tag-cloud">
-      <span class="tag-item"><span class="tag-icon-green"></span> Unlimited YONO GAMES</span>
-      <span class="tag-item"><span class="tag-icon-blue"></span> Baharul</span>
-      <span class="tag-item"><span class="tag-icon-cyan"></span> YONO Games</span>
-      <span class="tag-item"><span class="tag-icon-purple"></span> Online Games</span>
-      <span class="tag-item"><span class="tag-icon-green"></span> Gaming Platform</span>
-      <span class="tag-item"><span class="tag-icon-blue"></span> Secure Access</span>
-      <span class="tag-item"><span class="tag-icon-cyan"></span> Fast Updates</span>
-      <span class="tag-item"><span class="tag-icon-purple"></span> Daily Games</span>
-      <span class="tag-item"><span class="tag-icon-gold"></span> VIP Access</span>
-      <span class="tag-item"><span class="tag-icon-green"></span> Smart Gaming</span>
-      <span class="tag-item"><span class="tag-icon-blue"></span> Trusted Platform</span>
-      <span class="tag-item"><span class="tag-icon-cyan"></span> Latest Games</span>
-      <span class="tag-item"><span class="tag-icon-purple"></span> Safe &amp; Secure</span>
-      <span class="tag-item"><span class="tag-icon-gold"></span> Unlimited Access</span>
-      <span class="tag-item"><span class="tag-icon-green"></span> Google Ranking</span>
-      <span class="tag-item"><span class="tag-icon-blue"></span> Top Search Result</span>
-      <span class="tag-item"><span class="tag-icon-cyan"></span> SEO Optimized</span>
-      <span class="tag-item"><span class="tag-icon-purple"></span> Fast Loading</span>
-      <span class="tag-item"><span class="tag-icon-gold"></span> Mobile Friendly</span>
-      <span class="tag-item"><span class="tag-icon-green"></span> Responsive Design</span>
-      <span class="tag-item"><span class="tag-icon-blue"></span> High Performance</span>
-      <span class="tag-item"><span class="tag-icon-cyan"></span> Secure Platform</span>
-      <span class="tag-item"><span class="tag-icon-purple"></span> Verified Platform</span>
-      <span class="tag-item"><span class="tag-icon-gold"></span> Trending Games</span>
-      <span class="tag-item"><span class="tag-icon-green"></span> Daily Updates</span>
-      <span class="tag-item"><span class="tag-icon-blue"></span> Popular Games</span>
-      <span class="tag-item"><span class="tag-icon-cyan"></span> Best Experience</span>
-      <span class="tag-item"><span class="tag-icon-purple"></span> Instant Access</span>
-      <span class="tag-item"><span class="tag-icon-gold"></span> Live Updates</span>
-      <span class="tag-item"><span class="tag-icon-green"></span> Advanced Security</span>
-      <span class="tag-item"><span class="tag-icon-blue"></span> Premium UI</span>
-      <span class="tag-item"><span class="tag-icon-cyan"></span> Quality</span>
-    </div>
-  </div>
-
-  <!-- ====== 5 PREMIUM LED ICONS (no text, only icons) ====== -->
-  <div class="glass-card" style="text-align:center;">
-    <h2 style="justify-content:center;"><span class="led-icon-glow" style="display:inline-block; width:14px; height:14px; background:#a0f0c0; border-radius:50%; box-shadow:0 0 28px #70f0a088;"></span> Premium Icons</h2>
-    <div class="icon-showcase">
-      <div class="icon-wrap"><span class="icon-shield"></span></div>
-      <div class="icon-wrap"><span class="icon-lock"></span></div>
-      <div class="icon-wrap"><span class="icon-check"></span></div>
-      <div class="icon-wrap"><span class="icon-star"></span></div>
-      <div class="icon-wrap"><span class="icon-lightning"></span></div>
     </div>
   </div>
 
