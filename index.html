@@ -2221,7 +2221,265 @@
     </div>
     <div class="yono-tags-container" id="yonoTagsContainer"></div>
   </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Important Responsible Gaming Notice</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #151a2b;
+}
+
+.responsible-gaming-card {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 14px;
+  background: #ffffff;
+  border: 2px solid #e53935;
+  border-radius: 22px;
+  box-shadow:
+    0 6px 24px rgba(229, 57, 53, 0.10),
+    0 1px 5px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+/* Title */
+.warning-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 13px;
+  text-align: center;
+  font-size: clamp(17px, 4.5vw, 28px);
+  line-height: 1.25;
+  font-weight: 800;
+  color: #151a2b;
+}
+
+/* SVG Warning Icon */
+.warning-icon {
+  width: 29px;
+  height: 29px;
+  flex: 0 0 29px;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  animation: warningLED 1.8s ease-in-out infinite;
+}
+
+/* LED Glow */
+@keyframes warningLED {
+  0% {
+    transform: scale(1);
+    filter:
+      drop-shadow(0 0 2px rgba(255,193,7,.45))
+      drop-shadow(0 0 5px rgba(255,152,0,.25));
+  }
+
+  50% {
+    transform: scale(1.07);
+    filter:
+      drop-shadow(0 0 5px rgba(255,235,59,.95))
+      drop-shadow(0 0 13px rgba(255,152,0,.75));
+  }
+
+  100% {
+    transform: scale(1);
+    filter:
+      drop-shadow(0 0 2px rgba(255,193,7,.45))
+      drop-shadow(0 0 5px rgba(255,152,0,.25));
+  }
+}
+
+/* Text */
+.warning-content {
+  font-size: clamp(14px, 3.7vw, 18px);
+  line-height: 1.6;
+  text-align: left;
+  color: #202636;
+}
+
+.warning-content p {
+  margin: 0 0 11px;
+}
+
+.warning-content p:last-child {
+  margin-bottom: 0;
+}
+
+.warning-content strong {
+  font-weight: 800;
+  color: #111827;
+}
+
+/* Disclaimer */
+.disclaimer {
+  color: #c62828;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+  body {
+    padding: 8px;
+  }
+
+  .responsible-gaming-card {
+    padding: 14px 12px;
+    border-radius: 18px;
+  }
+
+  .warning-title {
+    gap: 6px;
+    margin-bottom: 10px;
+    font-size: 17px;
+  }
+
+  .warning-icon {
+    width: 25px;
+    height: 25px;
+    flex-basis: 25px;
+  }
+
+  .warning-content {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .warning-content p {
+    margin-bottom: 9px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="responsible-gaming-card">
+
+  <h2 class="warning-title">
+
+    <!-- Only ONE non-clickable warning icon -->
+    <svg
+      class="warning-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+
+      <!-- Warning Triangle -->
+      <path
+        d="M12 2L1 21H23L12 2Z"
+        fill="url(#warningGradient)"
+        stroke="#FFC107"
+        stroke-width="1.5"
+        stroke-linejoin="round"
+      />
+
+      <!-- Exclamation -->
+      <path
+        d="M12 8V13"
+        stroke="#151A2B"
+        stroke-width="2.2"
+        stroke-linecap="round"
+      />
+
+      <circle
+        cx="12"
+        cy="16.5"
+        r="1.2"
+        fill="#151A2B"
+      />
+
+      <!-- Original Warning Colors -->
+      <defs>
+        <linearGradient
+          id="warningGradient"
+          x1="12"
+          y1="2"
+          x2="12"
+          y2="21"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#FFEB3B"/>
+          <stop offset="1" stop-color="#FF9800"/>
+        </linearGradient>
+      </defs>
+
+    </svg>
+
+    IMPORTANT RESPONSIBLE GAMING NOTICE
+
+  </h2>
+
+  <div class="warning-content">
+
+    <p>
+      <strong>yonogamesinfo.com</strong> is an independent informational
+      website only.
+    </p>
+
+    <p>
+      We do not own, operate, manage, sponsor, or control any Yono-style
+      game app, wallet, deposit system, withdrawal system, bonus system,
+      referral program, or related platform.
+    </p>
+
+    <p>
+      Real-money gaming may involve <strong>financial risk</strong> and
+      may be addictive. Users should only access such platforms if they
+      are <strong>18+ years old</strong>, legally permitted in their
+      region, and capable of making independent financial decisions.
+    </p>
+
+    <p>
+      Never use <strong>borrowed money, loan money, or emergency
+      savings</strong> for gaming.
+    </p>
+
+    <p>
+      Please check the laws applicable in your region and read each
+      app's own <strong>terms, privacy policy, responsible-gaming rules,
+      and <span class="disclaimer">Disclaimer</span></strong> before
+      using any platform.
+    </p>
+
+    <p>
+      All <strong>bonuses, deposits, withdrawals, account restrictions,
+      KYC verification, transactions, and customer-support decisions</strong>
+      are controlled solely by the respective app or platform operators.
+    </p>
+
+    <p>
+      <strong>yonogamesinfo.com</strong> does not guarantee or control
+      the availability, accuracy, security, performance, bonuses,
+      withdrawals, or services of any third-party platform.
+    </p>
+
+  </div>
+
+</section>
+
+</body>
+</html>
   <!-- ===== NEW FOOTER SCROLL TAGS SECTION ===== -->
   <div class="footer-scroll-section">
     <div class="scroll-tags-wrapper">
