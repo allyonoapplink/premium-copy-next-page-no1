@@ -1,4 +1,3 @@
-copy premium no1
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,7 +129,7 @@ copy premium no1
 
     .header-right { display: flex; align-items: center; gap: 8px; }
 
-    /* ===== PREMIUM TELEGRAM SVG ICON ===== */
+    /* ===== PREMIUM TELEGRAM SVG ICON - UNTOUCHED ===== */
     .telegram-btn {
       display: inline-flex;
       align-items: center;
@@ -159,7 +158,6 @@ copy premium no1
       transition: all 0.3s ease;
       animation: telegramGlow 2.5s ease-in-out infinite;
     }
-    /* Proper Telegram Logo Shape */
     .telegram-btn svg .telegram-icon-bg {
       fill: #0088cc;
       stroke: none;
@@ -191,9 +189,6 @@ copy premium no1
       filter: drop-shadow(0 0 20px rgba(0, 136, 204, 0.8)) drop-shadow(0 0 45px rgba(0, 136, 204, 0.4));
       animation: none;
     }
-    .telegram-btn:active svg .telegram-icon-bg {
-      fill: #00aaff;
-    }
     @media (max-width: 480px) {
       .telegram-btn { width: 32px; height: 32px; }
     }
@@ -204,7 +199,7 @@ copy premium no1
       .telegram-btn { width: 42px; height: 42px; }
     }
 
-    /* ===== PREMIUM SHARE SVG BUTTON ===== */
+    /* ===== PREMIUM SHARE SVG BUTTON - UNTOUCHED ===== */
     .share-btn {
       display: inline-flex;
       align-items: center;
@@ -223,6 +218,7 @@ copy premium no1
       position: relative;
       background: rgba(0, 0, 0, 0.03);
       border: 1px solid rgba(0, 0, 0, 0.06);
+      flex-shrink: 0;
     }
     .share-btn svg {
       width: 20px;
@@ -232,57 +228,61 @@ copy premium no1
       stroke-width: 2;
       stroke-linecap: round;
       stroke-linejoin: round;
-      filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.25)) drop-shadow(0 0 15px rgba(255, 215, 0, 0.08));
-      animation: shareGlow 2.8s ease-in-out infinite;
       transition: stroke 0.3s ease, filter 0.3s ease;
+      animation: shareColorCycle 6s ease-in-out infinite;
     }
     .share-btn svg .share-circle {
-      stroke: #0b1e33;
+      stroke: currentColor;
       transition: stroke 0.3s ease;
     }
     .share-btn svg .share-line {
-      stroke: #0b1e33;
+      stroke: currentColor;
       transition: stroke 0.3s ease;
     }
     .share-btn svg .share-dot {
-      fill: #0b1e33;
+      fill: currentColor;
       stroke: none;
       transition: fill 0.3s ease;
     }
-    @keyframes shareGlow {
-      0%, 100% { filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.25)) drop-shadow(0 0 15px rgba(255, 215, 0, 0.06)); }
-      50% { filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.55)) drop-shadow(0 0 30px rgba(255, 215, 0, 0.18)); }
+    @keyframes shareColorCycle {
+      0% { stroke: #0b1e33; color: #0b1e33; filter: drop-shadow(0 0 4px rgba(11,30,51,0.2)); }
+      16% { stroke: #e74c3c; color: #e74c3c; filter: drop-shadow(0 0 8px rgba(231,76,60,0.3)); }
+      33% { stroke: #f39c12; color: #f39c12; filter: drop-shadow(0 0 8px rgba(243,156,18,0.3)); }
+      50% { stroke: #2ecc71; color: #2ecc71; filter: drop-shadow(0 0 8px rgba(46,204,113,0.3)); }
+      66% { stroke: #3498db; color: #3498db; filter: drop-shadow(0 0 8px rgba(52,152,219,0.3)); }
+      83% { stroke: #9b59b6; color: #9b59b6; filter: drop-shadow(0 0 8px rgba(155,89,182,0.3)); }
+      100% { stroke: #0b1e33; color: #0b1e33; filter: drop-shadow(0 0 4px rgba(11,30,51,0.2)); }
     }
     .share-btn .share-text {
       font-weight: 600;
       font-size: 0.6rem;
       color: #0b1e33;
       transition: color 0.3s ease;
+      animation: shareTextColorCycle 6s ease-in-out infinite;
+    }
+    @keyframes shareTextColorCycle {
+      0% { color: #0b1e33; }
+      16% { color: #e74c3c; }
+      33% { color: #f39c12; }
+      50% { color: #2ecc71; }
+      66% { color: #3498db; }
+      83% { color: #9b59b6; }
+      100% { color: #0b1e33; }
     }
     .share-btn:hover {
-      background: rgba(255, 215, 0, 0.08);
-      border-color: rgba(255, 215, 0, 0.3);
+      background: rgba(0, 0, 0, 0.08);
+      border-color: rgba(0, 0, 0, 0.15);
     }
     .share-btn:hover svg {
-      stroke: #f5a623;
-      filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.5)) drop-shadow(0 0 30px rgba(255, 215, 0, 0.2));
-    }
-    .share-btn:hover svg .share-circle,
-    .share-btn:hover svg .share-line {
-      stroke: #f5a623;
-    }
-    .share-btn:hover svg .share-dot {
-      fill: #f5a623;
-    }
-    .share-btn:hover .share-text {
-      color: #f5a623;
+      filter: drop-shadow(0 0 12px rgba(0,0,0,0.2)) !important;
     }
     .share-btn:active {
       transform: scale(0.90);
     }
     .share-btn:active svg {
-      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.7)) drop-shadow(0 0 40px rgba(255, 215, 0, 0.3));
       animation: none;
+      filter: drop-shadow(0 0 20px rgba(0,0,0,0.3)) !important;
+      transform: scale(0.95);
     }
     @media (max-width: 480px) {
       .share-btn { padding: 4px 8px 4px 6px; font-size: 0.5rem; }
@@ -302,13 +302,75 @@ copy premium no1
 
     /* --- MARQUEE REMOVED --- */
 
-    /* --- NAV ROW --- */
+    /* --- NAV ROW - PREMIUM SVG ICONS WITH DISTINCT FIXED COLORS --- */
     .nav-row-small { display: flex; justify-content: space-around; align-items: center; background: #ffffff !important; padding: 4px 6px; border-bottom: 1px solid #e9edf4; gap: 2px; }
-    .nav-small { font-size: 0.5rem; font-weight: 600; color: #1e293b; background: white; padding: 3px 8px; border-radius: 40px; border: 1px solid #e2e8f0; cursor: pointer; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
+    .nav-small {
+      font-size: 0.5rem;
+      font-weight: 600;
+      color: #1e293b;
+      background: white;
+      padding: 3px 8px;
+      border-radius: 40px;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.3s ease;
+    }
     .nav-small:active { transform: scale(0.95); }
-    .nav-small.active { background: #1e293b; color: white; border-color: #1e293b; }
-    .nav-small svg { width: 14px; height: 14px; flex-shrink: 0; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .nav-small.active svg { stroke: white; }
+    .nav-small.active {
+      background: #1e293b;
+      color: white;
+      border-color: #1e293b;
+    }
+    .nav-small.active svg {
+      stroke: white !important;
+    }
+    .nav-small.active .nav-icon-home { stroke: white !important; }
+    .nav-small.active .nav-icon-about { stroke: white !important; }
+    .nav-small.active .nav-icon-contact { stroke: white !important; }
+    .nav-small.active .nav-icon-disclaimer { stroke: white !important; }
+    /* Premium SVG Icons - Each with distinct fixed color */
+    .nav-small svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.3s ease;
+    }
+    /* Home - Premium Blue */
+    .nav-icon-home { stroke: #2563eb; }
+    /* About - Premium Emerald Green */
+    .nav-icon-about { stroke: #059669; }
+    /* Contact - Premium Purple */
+    .nav-icon-contact { stroke: #7c3aed; }
+    /* Disclaimer - Premium Amber/Orange */
+    .nav-icon-disclaimer { stroke: #d97706; }
+    /* Hover states - subtle color shift */
+    .nav-small:not(.active):hover .nav-icon-home { stroke: #3b82f6; }
+    .nav-small:not(.active):hover .nav-icon-about { stroke: #10b981; }
+    .nav-small:not(.active):hover .nav-icon-contact { stroke: #8b5cf6; }
+    .nav-small:not(.active):hover .nav-icon-disclaimer { stroke: #f59e0b; }
+    .nav-small:not(.active):hover {
+      border-color: #94a3b8;
+      background: rgba(0, 0, 0, 0.03);
+    }
+    @media (max-width: 420px) {
+      .nav-small { font-size: 0.4rem; padding: 2px 6px; gap: 2px; }
+      .nav-small svg { width: 14px; height: 14px; }
+    }
+    @media (max-width: 360px) {
+      .nav-small svg { width: 12px; height: 12px; }
+    }
+    @media (min-width: 769px) {
+      .nav-small { font-size: 0.6rem; padding: 4px 12px; gap: 6px; }
+      .nav-small svg { width: 20px; height: 20px; }
+    }
 
     /* --- HOME PAGE GREEN-LINE BOX (replaces photo) --- */
     .home-greenbox {
@@ -696,7 +758,24 @@ copy premium no1
     .meta-item.size .svg-icon svg { stroke: #000000; }
     .meta-item.votes .svg-icon svg { stroke: #6c5ce7; }
 
-    .detail-download { margin-top: 12px; }
+    /* ===== DETAIL DOWNLOAD SECTION - COLOR ANIMATING BACKGROUND ===== */
+    .detail-download { 
+      margin-top: 12px; 
+      padding: 10px;
+      border-radius: 60px;
+      background: #000000;
+      animation: downloadBgCycle 12s ease-in-out infinite;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    }
+    @keyframes downloadBgCycle {
+      0% { background: #000000; box-shadow: 0 0 30px rgba(0,0,0,0.3), 0 0 60px rgba(0,0,0,0.1); }
+      16% { background: #00cc44; box-shadow: 0 0 40px rgba(0,204,68,0.4), 0 0 80px rgba(0,204,68,0.15); }
+      33% { background: #00bcd4; box-shadow: 0 0 40px rgba(0,188,212,0.4), 0 0 80px rgba(0,188,212,0.15); }
+      50% { background: #e74c3c; box-shadow: 0 0 40px rgba(231,76,60,0.4), 0 0 80px rgba(231,76,60,0.15); }
+      66% { background: #3498db; box-shadow: 0 0 40px rgba(52,152,219,0.4), 0 0 80px rgba(52,152,219,0.15); }
+      83% { background: #f1c40f; box-shadow: 0 0 40px rgba(241,196,15,0.4), 0 0 80px rgba(241,196,15,0.15); }
+      100% { background: #000000; box-shadow: 0 0 30px rgba(0,0,0,0.3), 0 0 60px rgba(0,0,0,0.1); }
+    }
     .detail-download .download-btn {
       display: flex;
       align-items: center;
@@ -1251,7 +1330,7 @@ copy premium no1
     }
 
     /* ============================================================
-       HOME PAGE GRID - PREMIUM CYAN + GREEN DOWNLOAD BUTTONS
+       HOME PAGE GRID - PREMIUM GREEN DOWNLOAD BUTTONS (NO DUPLICATE NAME)
        ============================================================ */
     #mainGrid { display: flex; flex-direction: column; gap: 6px; padding: 8px; }
     .card {
@@ -1308,8 +1387,9 @@ copy premium no1
       min-width: 0;
       padding-right: 4px;
     }
-    .card-name { font-weight: 700; font-size: 0.7rem; color: #0b1e33; display: flex; align-items: center; gap: 3px; flex-wrap: wrap; }
-    .card-name .alt { font-weight: 400; font-size: 0.5rem; color: #6b7280; }
+    /* App name - only one name, no duplicate */
+    .card-name { font-weight: 700; font-size: 0.7rem; color: #0b1e33; display: flex; align-items: center; flex-wrap: wrap; }
+    .card-name .alt { display: none !important; }
     .card-bonus, .card-withdraw {
       display: flex;
       align-items: center;
@@ -1349,12 +1429,12 @@ copy premium no1
     .card-withdraw .label { color: #64748b; }
     .card-withdraw { font-size: 0.5rem; }
 
-    /* PREMIUM CYAN + GREEN DOWNLOAD BUTTON - HOME PAGE */
+    /* PREMIUM GREEN DOWNLOAD BUTTON - HOME PAGE */
     .card-download-sm {
       flex-shrink: 0;
-      background: linear-gradient(135deg, #00d4ff, #00e676) !important;
+      background: #00c853 !important;
       color: #ffffff !important;
-      border: 2px solid #00e676 !important;
+      border: 2px solid #00c853 !important;
       padding: 10px 22px 10px 16px !important;
       font-size: 0.75rem !important;
       font-weight: 700 !important;
@@ -1364,7 +1444,7 @@ copy premium no1
       display: inline-flex !important;
       align-items: center !important;
       gap: 8px !important;
-      box-shadow: 0 0 20px rgba(0,212,255,0.25), 0 0 40px rgba(0,230,118,0.15) !important;
+      box-shadow: 0 0 15px rgba(0,200,83,0.25), 0 0 30px rgba(0,200,83,0.08) !important;
       transition: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94) !important;
       text-decoration: none;
       letter-spacing: 0.3px;
@@ -1374,31 +1454,30 @@ copy premium no1
       justify-content: center;
     }
     .card-download-sm::before {
-      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffd700' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/%3E%3Cpolyline points='7 10 12 15 17 10'/%3E%3Cline x1='12' y1='15' x2='12' y2='3'/%3E%3C/svg%3E");
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/%3E%3Cpolyline points='7 10 12 15 17 10'/%3E%3Cline x1='12' y1='15' x2='12' y2='3'/%3E%3C/svg%3E");
       display: inline-block;
       width: 18px;
       height: 18px;
       line-height: 1;
       flex-shrink: 0;
-      filter: drop-shadow(0 0 6px rgba(255,215,0,0.3));
+      filter: drop-shadow(0 0 6px rgba(255,255,255,0.2));
     }
     .card-download-sm:hover {
-      background: linear-gradient(135deg, #00e5ff, #69f0ae) !important;
+      background: #00e676 !important;
       color: #ffffff !important;
-      box-shadow: 0 0 30px rgba(0,212,255,0.4), 0 0 60px rgba(0,230,118,0.25) !important;
+      box-shadow: 0 0 25px rgba(0,200,83,0.4), 0 0 50px rgba(0,200,83,0.15) !important;
       transform: scale(1.04) translateY(-2px) !important;
-      border-color: #69f0ae !important;
+      border-color: #00e676 !important;
     }
     .card-download-sm:hover::before {
-      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffd700' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/%3E%3Cpolyline points='7 10 12 15 17 10'/%3E%3Cline x1='12' y1='15' x2='12' y2='3'/%3E%3C/svg%3E");
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/%3E%3Cpolyline points='7 10 12 15 17 10'/%3E%3Cline x1='12' y1='15' x2='12' y2='3'/%3E%3C/svg%3E");
     }
-    .card-download-sm:active { transform: scale(0.94) !important; box-shadow: 0 0 20px rgba(0,212,255,0.3) !important; }
+    .card-download-sm:active { transform: scale(0.94) !important; box-shadow: 0 0 20px rgba(0,200,83,0.3) !important; }
 
     @media (max-width: 420px) {
       .card-img { width: 60px; height: 52px; margin-left: 25px; margin-right: 18px; }
       .card-number { width: 16px; height: 16px; font-size: 0.4rem; top: 2px; left: 2px; }
       .card-name { font-size: 0.6rem; }
-      .card-name .alt { font-size: 0.45rem; }
       .card-bonus { font-size: 0.5rem; }
       .card-withdraw { font-size: 0.45rem; }
       .card-download-sm { padding: 8px 16px 8px 12px !important; font-size: 0.65rem !important; gap: 6px !important; min-width: 80px; }
@@ -1409,7 +1488,6 @@ copy premium no1
       .card-img { width: 52px; height: 46px; margin-left: 22px; margin-right: 14px; }
       .card-number { width: 14px; height: 14px; font-size: 0.35rem; top: 2px; left: 2px; }
       .card-name { font-size: 0.5rem; }
-      .card-name .alt { font-size: 0.4rem; }
       .card-bonus { font-size: 0.45rem; }
       .card-withdraw { font-size: 0.4rem; }
       .card-download-sm { padding: 6px 12px 6px 10px !important; font-size: 0.55rem !important; gap: 4px !important; min-width: 65px; }
@@ -1509,6 +1587,7 @@ copy premium no1
 
     .static-loading { padding: 40px 20px; text-align: center; color: #64748b; font-size: 0.9rem; }
 
+    /* ===== YONO GAMES INFORMATION SECTION - NO DOWNLOAD BUTTON ON HOME ===== */
     .yono-info-section {
       padding: 14px 10px 10px 10px;
       background: #ffffff;
@@ -1611,7 +1690,7 @@ copy premium no1
       .share-btn .share-text { font-size: 0.5rem; }
       .telegram-btn { width: 32px; height: 32px; }
       .nav-small { font-size: 0.4rem; padding: 2px 6px; gap: 2px; }
-      .nav-small svg { width: 10px; height: 10px; }
+      .nav-small svg { width: 14px; height: 14px; }
       .detail-img { width: 50px; height: 50px; }
       .detail-info .game-name { font-size: 0.9rem; }
       .game-tag { font-size: 0.45rem; padding: 3px 8px; }
@@ -1652,7 +1731,7 @@ copy premium no1
       .share-btn .share-text { font-size: 0.45rem; }
       .telegram-btn { width: 28px; height: 28px; }
       .nav-small { font-size: 0.4rem; padding: 3px 6px; gap: 2px; }
-      .nav-small svg { width: 9px; height: 9px; }
+      .nav-small svg { width: 12px; height: 12px; }
       .yono-tag { font-size: 0.45rem; padding: 4px 10px; }
       .back-btn { font-size: 0.5rem; padding: 3px 8px 3px 6px; }
       .back-btn svg { width: 11px; height: 11px; }
@@ -1662,6 +1741,8 @@ copy premium no1
       .share-btn svg { width: 22px; height: 22px; }
       .share-btn .share-text { font-size: 0.7rem; }
       .telegram-btn { width: 42px; height: 42px; }
+      .nav-small { font-size: 0.6rem; padding: 4px 12px; gap: 6px; }
+      .nav-small svg { width: 20px; height: 20px; }
     }
     @media (min-width: 1201px) {
       .container { padding: 0 20px; }
@@ -1775,7 +1856,7 @@ copy premium no1
       <span class="header-name-box">YONO GAMES POINT .com</span>
     </div>
     <div class="header-right">
-      <!-- Premium Telegram SVG Icon - Proper Telegram Logo -->
+      <!-- Premium Telegram SVG Icon - UNTOUCHED -->
       <a href="https://t.me/allyonogamesdite" target="_blank" rel="noopener noreferrer" class="telegram-btn" aria-label="Telegram">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="11" class="telegram-icon-bg"/>
@@ -1785,14 +1866,14 @@ copy premium no1
           <path d="M17.5 7.5L12.5 10.5L15.5 13.5" class="telegram-icon-plane" fill="none" stroke="#ffffff" stroke-width="1.5"/>
         </svg>
       </a>
-      <!-- Premium Share SVG Button - Standard 3-Node Share Logo -->
+      <!-- Premium Share SVG Button - UNTOUCHED -->
       <button class="share-btn" id="shareBtn">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="18" cy="5" r="3" class="share-circle"/>
-          <circle cx="6" cy="12" r="3" class="share-circle"/>
-          <circle cx="18" cy="19" r="3" class="share-circle"/>
-          <line x1="8.59" y1="10.51" x2="15.42" y2="6.49" class="share-line"/>
-          <line x1="15.41" y1="17.51" x2="8.59" y2="13.49" class="share-line"/>
+          <circle cx="18" cy="5" r="3" class="share-circle" stroke="currentColor"/>
+          <circle cx="6" cy="12" r="3" class="share-circle" stroke="currentColor"/>
+          <circle cx="18" cy="19" r="3" class="share-circle" stroke="currentColor"/>
+          <line x1="8.59" y1="10.51" x2="15.42" y2="6.49" class="share-line" stroke="currentColor"/>
+          <line x1="15.41" y1="17.51" x2="8.59" y2="13.49" class="share-line" stroke="currentColor"/>
         </svg>
         <span class="share-text">Share</span>
       </button>
@@ -1801,22 +1882,39 @@ copy premium no1
 
   <!-- MARQUEE REMOVED -->
 
-  <!-- NAV ROW -->
+  <!-- NAV ROW - PREMIUM SVG ICONS WITH DISTINCT FIXED COLORS -->
   <div class="nav-row-small">
     <span class="nav-small active" id="homeNav">
-      <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1"/></svg>
+      <!-- Home - Premium Blue -->
+      <svg class="nav-icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1"/>
+      </svg>
       Home
     </span>
     <span class="nav-small" id="aboutNav">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <!-- About - Premium Emerald Green -->
+      <svg class="nav-icon-about" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="16" x2="12" y2="12"/>
+        <line x1="12" y1="8" x2="12.01" y2="8"/>
+      </svg>
       About
     </span>
     <span class="nav-small" id="contactNav">
-      <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      <!-- Contact - Premium Purple -->
+      <svg class="nav-icon-contact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="M22 7l-8.97 5.7a2 2 0 01-2.06 0L2 7"/>
+      </svg>
       Contact
     </span>
     <span class="nav-small" id="disclaimerNav">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <!-- Disclaimer - Premium Amber/Orange -->
+      <svg class="nav-icon-disclaimer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
       Disclaimer
     </span>
   </div>
@@ -1912,6 +2010,7 @@ copy premium no1
           </div>
         </div>
       </div>
+      <!-- ===== DOWNLOAD SECTION WITH COLOR-ANIMATING BACKGROUND ===== -->
       <div class="detail-download">
         <a href="#" class="download-btn" id="detailDownloadBtn" target="_blank">⬇ Download APK</a>
       </div>
@@ -2112,7 +2211,7 @@ copy premium no1
     </div>
   </div>
 
-  <!-- ===== YONO GAMES INFORMATION SECTION ===== -->
+  <!-- ===== YONO GAMES INFORMATION SECTION (Home Page) - NO DOWNLOAD BUTTON ===== -->
   <div class="yono-info-section" id="yonoInfoSection">
     <div class="yono-info-title">
       <span class="title-icon">
@@ -2204,80 +2303,80 @@ copy premium no1
   (function() {
     // ---------- GAME DATA (74 total) ----------
     const games = [
-      { name: "YONO NEW APP", altName: "All Yono Games", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/CssC2WbG/1000022725.jpg" },
-      { name: "567 SLOTS", altName: "567 SLOTS Game", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://join567slots0.com/?code=4NYF487URJ6&t=1781505684", img: "https://i.ibb.co/hFytMXY2/1000022725.jpg" },
-      { name: "SAGA SLOTS", altName: "SAGA SLOTS APK", bonus: "₹40", withdrawal: "₹100", downloadUrl: "https://www.sagaslots5.com/?code=0QHJSERZYMV&t=1781505813", img: "https://i.ibb.co/20dzhBZf/1000022725.jpg" },
-      { name: "JAIHO 91", altName: "JAIHO 91 Game", bonus: "₹50", withdrawal: "₹100", downloadUrl: "https://jaiho91bonus.vip/?code=C42T99ZQHAT&t=1781506067", img: "https://i.ibb.co/zV0C6Xkk/1000022725.jpg" },
-      { name: "RUMMY LUDO", altName: "RUMMY LUDO APK", bonus: "₹35", withdrawal: "₹100", downloadUrl: "https://rummyludoapp37.com/", img: "https://i.ibb.co/Z6Xy7y2x/1000022725.jpg" },
-      { name: "ABC RUMMY", altName: "ABC RUMMY Game", bonus: "₹42", withdrawal: "₹100", downloadUrl: "https://d34i569g8ztoql.cloudfront.net/abcrummy_MeApp.apk", img: "https://i.ibb.co/Ldmd1DHH/1000022725.jpg" },
-      { name: "RUMMY 91", altName: "RUMMY 91 APK", bonus: "₹38", withdrawal: "₹100", downloadUrl: "https://d16sfv4ssrmnvt.cloudfront.net/rummy91_AGENT.apk", img: "https://i.ibb.co/Fb2j77pp/1000022725.jpg" },
-      { name: "LOVE RUMMY", altName: "LOVE RUMMY Game", bonus: "₹36", withdrawal: "₹100", downloadUrl: "https://d34i569g8ztoql.cloudfront.net/loverummy_App.apk", img: "https://i.ibb.co/PZ2dpNJ9/1000022725.jpg" },
-      { name: "SPIN CRUSH", altName: "SPIN CRUSH APK", bonus: "₹30", withdrawal: "₹100", downloadUrl: "https://d292swwe9zki3u.cloudfront.net/spincrush_freecash.apk", img: "https://i.ibb.co/S4C26kVS/1000022725.jpg" },
-      { name: "TOP RUMMY", altName: "TOP RUMMY Game", bonus: "₹48", withdrawal: "₹100", downloadUrl: "https://th7.my/BY1JWS/3gvute0", img: "https://i.ibb.co/bRy3w8dN/1000022725.jpg" },
-      { name: "Hello Rummy", altName: "Hello Rummy APK", bonus: "₹40", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/gold/jm9n7r", img: "https://i.ibb.co/LXqV77rd/yono-games.jpg" },
-      { name: "RUMMY 365", altName: "RUMMY 365 APK", bonus: "₹44", withdrawal: "₹100", downloadUrl: "https://join567slots0.com/?code=4NYF487URJ6&t=1781505684", img: "https://i.ibb.co/Hf9bhrFm/1000022725.jpg" },
-      { name: "TEEN PATTI GOLD", altName: "TEEN PATTI GOLD Game", bonus: "₹37", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/gold/jm9n7r", img: "https://i.ibb.co/C5XcGXsJ/teen-patti-gold.jpg" },
-      { name: "TEEN PATTI MASTER", altName: "TEEN PATTI MASTER APK", bonus: "₹20", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/JjrZjn2n/teen-patti-master.jpg" },
-      { name: "YONO RUMMY", altName: "YONO RUMMY Game", bonus: "₹25", withdrawal: "₹100", downloadUrl: "https://yonorummy043.com/?code=VIPYQC5EE9X&t=1781107758", img: "https://i.ibb.co/zTFDGPpX/yono-rummy.jpg" },
-      { name: "SLOTS WINNER", altName: "SLOTS WINNER APK", bonus: "₹40", withdrawal: "₹100", downloadUrl: "https://slotswinneri.com/?code=PGVC6CBNF53&t=1781107393", img: "https://i.ibb.co/NdbNBtx7/slots-winner.jpg" },
-      { name: "GOOD SLOTS", altName: "GOOD SLOTS Game", bonus: "₹15", withdrawal: "₹100", downloadUrl: "https://7sharegoodslots.vip?pid=320806209&channel=2010001&t=pdd2&pkg=com.1", img: "https://i.ibb.co/nq9kMKHZ/good-slots.jpg" },
-      { name: "Diwa Slot", altName: "Diwa Slot APK", bonus: "₹50", withdrawal: "₹100", downloadUrl: "https://sharediwaslot1.vip?pid=483455673&channel=2010002&t=pdd2&pkg=com.diwaslotwhl.app", img: "https://i.ibb.co/BKB6QMbD/diwa-slot.jpg" },
-      { name: "GOGO RUMMY", altName: "GOGO RUMMY Game", bonus: "₹28", withdrawal: "₹100", downloadUrl: "https://www.gogorummyagent.com/?code=V4UTQA2VYMQ&t=1781196694", img: "https://i.ibb.co/Y7dzDP7z/gogo-rummy.jpg" },
-      { name: "JOY RUMMY", altName: "JOY RUMMY APK", bonus: "₹35", withdrawal: "₹100", downloadUrl: "https://www.joyrummymax.com/?code=J5KFTAWJ9X5&t=1781198100", img: "https://i.ibb.co/nqD8CD8W/joy-rummy.jpg" },
-      { name: "SPIN GOLD", altName: "SPIN GOLD Game", bonus: "₹22", withdrawal: "₹100", downloadUrl: "https://uono-bingo101.com/?code=3WFQ231H9Y2&t=1781197828", img: "https://i.ibb.co/G3QnY0vY/spin-gold.jpg" },
-      { name: "BINGO 101", altName: "BINGO 101 APK", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://uono-bingo101.com/?code=3WFQ231H9Y2&t=1781197828", img: "https://i.ibb.co/My9tjNgL/bingo101.jpg" },
-      { name: "YES SPIN", altName: "YES SPIN Game", bonus: "₹18", withdrawal: "₹100", downloadUrl: "https://www.yesspineee.com/?code=47TXJTLU5YY&t=1781198907", img: "https://i.ibb.co/m5qzq7W4/yes-spin.jpg" },
-      { name: "YONO ARCADE", altName: "YONO ARCADE APK", bonus: "₹32", withdrawal: "₹100", downloadUrl: "https://yonoarcadeapk9.com/?code=96LNEL9FQXZ&t=1781199006", img: "https://i.ibb.co/mCzSG1L7/yono-arcade.jpg" },
-      { name: "SVIP 777", altName: "SVIP 777 Game", bonus: "₹27", withdrawal: "₹100", downloadUrl: "https://www.svip777.life?pid=297924008&channel=2050001&t=pdd2&pkg=com.svip777.h5", img: "https://i.ibb.co/vfWZMLm/svip777.jpg" },
-      { name: "OK RUMMY", altName: "OK RUMMY APK", bonus: "₹38", withdrawal: "₹100", downloadUrl: "https://www.okrummy22.com/?code=H2GU92WUXXA&t=1781199220", img: "https://i.ibb.co/99fCMbNC/ok-rummy.jpg" },
-      { name: "HINDI 777", altName: "HINDI 777 Game", bonus: "₹42", withdrawal: "₹100", downloadUrl: "https://www.hindi777agent5.com/?code=7LFFR8WPHEG&t=1781199307", img: "https://i.ibb.co/5gf3q0Sh/hind777.jpg" },
-      { name: "BET 213", altName: "BET 213 APK", bonus: "₹36", withdrawal: "₹100", downloadUrl: "https://www.bet213.rocks/?code=2QTKPV4BYDH&t=1781199576", img: "https://i.ibb.co/YTqq2C4F/bet213.jpg" },
-      { name: "BOSS RUMMY", altName: "BOSS RUMMY Game", bonus: "₹40", withdrawal: "₹100", downloadUrl: "https://www.bossrummyy.com/?code=LSHTVUZE1NR&t=1781429504", img: "https://i.ibb.co/fdWgRgxk/1000022725.jpg" },
-      { name: "YONO 777", altName: "YONO 777 APK", bonus: "₹35", withdrawal: "₹100", downloadUrl: "https://uono777refer.vip/?code=F9MPSLKZCV9&t=1781429388", img: "https://i.ibb.co/VWz6S3JB/1000022725.jpg" },
-      { name: "Diwa VIP", altName: "Diwa VIP Game", bonus: "₹60", withdrawal: "₹100", downloadUrl: "https://uono777refer.vip/?code=F9MPSLKZCV9&t=1781429388", img: "https://i.ibb.co/ynsBHKtg/1000022725.jpg" },
-      { name: "Diwa 777", altName: "Diwa 777 APK", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://sharediwa7771.top?pid=287747863&channel=2010001&t=pdd2&pkg=com.diwa777.app", img: "https://i.ibb.co/Kx2RKNvN/1000022725.jpg" },
-      { name: "YONO GAMES", altName: "YONO GAMES APK", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://yonogamesm.com/?code=LHS49AEHVMR&t=1784314209", img: "https://i.ibb.co/LXqV77rd/yono-games.jpg" },
-      { name: "INR RUMMY", altName: "INR RUMMY Game", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://inrrummy.club/?code=JMQBV8TAPD7&t=1784298106", img: "https://i.ibb.co/Y7ZRkLFp/inr-rummy.jpg" },
-      { name: "MBM BET", altName: "MBM BET Game", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://www.mbmbet3.com/?code=GD3H3VA6YK5&t=1784297830", img: "https://i.ibb.co/sJcmCxK6/mbm-bet.jpg" },
-      { name: "GOA SPIN", altName: "GOA SPIN APK", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/FbpzMnQx/goa-spin.jpg" },
-      { name: "777 GAME", altName: "777 GAME APK", bonus: "₹50", withdrawal: "₹100", downloadUrl: "https://t.me/yonogamestite", img: "https://i.ibb.co/YFG8D6NF/777-game.jpg" },
-      { name: "TEEN PATTI", altName: "TEEN PATTI Game", bonus: "₹35", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/gold/jm9n7r", img: "https://i.ibb.co/5xkDVhrK/teen-patti.jpg" },
-      { name: "All YONO GAMES", altName: "All YONO GAMES APK", bonus: "₹42", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/gold/jm9n7r", img: "https://i.ibb.co/yzyKyN1/all-yono-games.jpg" },
-      { name: "NEW YONO GAMES", altName: "NEW YONO GAMES Game", bonus: "₹38", withdrawal: "₹100", downloadUrl: "https://t.me/yonogamestite", img: "https://i.ibb.co/8nq6LH05/new-yono-games.jpg" },
-      { name: "YONO APPS", altName: "YONO APPS APK", bonus: "₹36", withdrawal: "₹100", downloadUrl: "https://t.me/yonogamestite", img: "https://i.ibb.co/S4rJJnB7/yono-apps.jpg" },
-      { name: "SPIN WINNER", altName: "SPIN WINNER Game", bonus: "₹30", withdrawal: "₹100", downloadUrl: "https://www.yesspineee.com/?code=47TXJTLU5YY&t=1781198907", img: "https://i.ibb.co/ZpP9wKdm/spin-winner.jpg" },
-      { name: "YONO All GAMES", altName: "YONO All GAMES APK", bonus: "₹48", withdrawal: "₹100", downloadUrl: "https://diwavipshare.cc?pid=428256719&channel=2050001&t=pdd2&pkg=com.diwavip.h5", img: "https://i.ibb.co/XxxDXGr3/yono-all-games.jpg" },
-      { name: "SPIN LUCKY", altName: "SPIN LUCKY Game", bonus: "₹44", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/VY95vgTQ/spin-lucky.jpg" },
-      { name: "MAX RUMMY", altName: "MAX RUMMY APK", bonus: "₹55", withdrawal: "₹100", downloadUrl: "https://www.maxrummy66.com/?code=QUMWTJCMZ5N&t=1784912540", img: "https://i.ibb.co/9kVbkd4D/MAX-RUMMY.jpg" },
-      { name: "RANI SLOTS", altName: "RANI SLOTS Game", bonus: "₹48", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/Ps4CcYTX/RANI-SLOTS.jpg" },
-      { name: "1GO PLUS", altName: "1GO PLUS APK", bonus: "₹52", withdrawal: "₹100", downloadUrl: "https://1go.plus/4h91q", img: "https://i.ibb.co/tpWC7c9H/1GO-PLUS.jpg" },
-      { name: "RUMMY ULTRA", altName: "RUMMY ULTRA Game", bonus: "₹60", withdrawal: "₹100", downloadUrl: "https://www.rummyultraa.com/?dl=5hrw1p", img: "https://i.ibb.co/Jj2h10jr/RUMMY-ULTRA.jpg" },
-      { name: "789 JACKPOTS", altName: "789 JACKPOTS APK", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://join789jackpots1.com/?code=XYUGRMBA44Y&t=1784907944", img: "https://i.ibb.co/JWTYb2n7/789-JACKPOTS.jpg" },
-      { name: "JAIHO WIN", altName: "JAIHO WIN Game", bonus: "₹50", withdrawal: "₹100", downloadUrl: "https://www.jaihowin12.com/?code=1XNCQVU3XA5&t=1784914695", img: "https://i.ibb.co/Cs2tFTYQ/JAIHO-WIN.jpg" },
-      { name: "SLOTS SPIN", altName: "SLOTS SPIN APK", bonus: "₹42", withdrawal: "₹100", downloadUrl: "https://slotsspinq.com/?code=XJB6LEBYG8R&t=1784908638", img: "https://i.ibb.co/FQnsr1B/SLOTS-SPIN.jpg" },
-      { name: "NETA VIP", altName: "NETA VIP Game", bonus: "₹58", withdrawal: "₹100", downloadUrl: "https://neta3.vip/?code=DR0V69R7BGJ&t=1784915088", img: "https://i.ibb.co/C3NpwKJQ/NETA-VIP.jpg" },
-      { name: "JAIHO 777 VIP", altName: "JAIHO 777 VIP APK", bonus: "₹55", withdrawal: "₹100", downloadUrl: "https://jaiho777agent.com?code=98X2D8Y3QGD&t=1784915217", img: "https://i.ibb.co/B5xsKyPT/JAIHO-777-VIP.jpg" },
-      { name: "DHAN GAME", altName: "DHAN GAME App", bonus: "₹47", withdrawal: "₹100", downloadUrl: "https://www.dhanwin365.com/?code=47TWH18LDKB&t=1784915487", img: "https://i.ibb.co/5XWyWkWk/DHAN-GAME.jpg" },
-      { name: "DIWA GAME", altName: "DIWA GAME APK", bonus: "₹53", withdrawal: "₹100", downloadUrl: "https://diwagameshare.club?pid=345550936&channel=2010002&t=pdd2&pkg=com.diwagamewhx.app", img: "https://i.ibb.co/chbQQ482/DIWA-GAME.jpg" },
-      { name: "BET 54 GAMES", altName: "BET 54 GAMES App", bonus: "₹46", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/gold/jm9n7r", img: "https://i.ibb.co/W428h2L5/BET-54-GAMES.jpg" },
-      { name: "ALL YONO APPS", altName: "ALL YONO APPS Collection", bonus: "₹50", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/nsx7pMB3/ALL-YONO-APPS.jpg" },
-      { name: "T989 APPS", altName: "T989 APPS APK", bonus: "₹44", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/gold/jm9n7r", img: "https://i.ibb.co/5XsrJWM0/T989-APPS.jpg" },
-      { name: "765 CLUB", altName: "765 CLUB Game", bonus: "₹56", withdrawal: "₹100", downloadUrl: "https://765club.com/?id=637056077", img: "https://i.ibb.co/zhTynJ1Z/765-CLUB.jpg" },
-      { name: "MKM BET APK", altName: "MKM BET APK Game", bonus: "₹49", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/hN6HpJm/MKM-BET-APK.jpg" },
-      { name: "YN 777", altName: "YN 777 APK", bonus: "₹54", withdrawal: "₹100", downloadUrl: "https://www.y729.com/?code=4SWD98JQ8LU&t=1785588919", img: "https://i.ibb.co/NntBD9SR/YN-777.jpg" },
-      { name: "SPIN 777", altName: "SPIN 777 Game", bonus: "₹47", withdrawal: "₹100", downloadUrl: "https://spin777cc.com/?code=7V9ZG91PA4R&t=1785589035", img: "https://i.ibb.co/d4hxX4kY/SPIN-777.jpg" },
-      { name: "RUMMY 888", altName: "RUMMY 888 APK", bonus: "₹59", withdrawal: "₹100", downloadUrl: "https://rummy888vip43.com/?code=7WTEEW87DPM&t=1785589166", img: "https://i.ibb.co/ynqDvC8k/RUMMY-888.jpg" },
-      { name: "RUMMY 77", altName: "RUMMY 77 Game", bonus: "₹43", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/cKQ66JHj/RUMMY-77.jpg" },
-      { name: "MQM BET", altName: "MQM BET APK", bonus: "₹51", withdrawal: "₹100", downloadUrl: "https://4mqmshare.vip?pid=486385025&channel=2010001&pkg=com.mqm.bet", img: "https://i.ibb.co/xtwZk3ZV/MQM-BET.jpg" },
-      { name: "MAHA GAMES", altName: "MAHA GAMES App", bonus: "₹57", withdrawal: "₹100", downloadUrl: "https://good-mahagames.com/?code=J24U9DHRWR8&t=1785589525", img: "https://i.ibb.co/1txbB818/MAHA-GAMES.jpg" },
-      { name: "IND RUMMY", altName: "IND RUMMY Game", bonus: "₹46", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/zWRG3pSv/IND-RUMMY.jpg" },
-      { name: "Hi RUMMY", altName: "Hi RUMMY APK", bonus: "₹49", withdrawal: "₹100", downloadUrl: "https://joinhirummy.net/?code=RX35XQBCPC9&t=1785590074", img: "https://i.ibb.co/JFx9d9C3/Hi-RUMMY.jpg" },
-      { name: "JAIHO SPIN", altName: "JAIHO SPIN APK", bonus: "₹44", withdrawal: "₹100", downloadUrl: "https://18jaihospinpro.com/?code=U3VDD22Q&t=1785590326", img: "https://i.ibb.co/qL4kSnBn/JAIHO-SPIN.jpg" },
-      { name: "JAIHO RUMMY", altName: "JAIHO RUMMY Game", bonus: "₹53", withdrawal: "₹100", downloadUrl: "https://jaihoclud.com/?code=E744HJRF6W7&t=1785590487", img: "https://i.ibb.co/C5xsXRLW/JAIHO-RUMMY.jpg" },
-      { name: "YONO SLOTS", altName: "YONO SLOTS APK", bonus: "₹48", withdrawal: "₹100", downloadUrl: "https://www.yonoslotsm.com/?code=KU899FV2GFY&t=1785590595", img: "https://i.ibb.co/SXrPLwd6/YONO-SLOTS.jpg" },
-      { name: "Diwa Win", altName: "Diwa Win Game", bonus: "₹56", withdrawal: "₹100", downloadUrl: "https://diwawinshare.tech?pid=528544053&channel=2010002&pkg=com.diwawin002.app", img: "https://i.ibb.co/PvjFNTHc/Diwa-Win.jpg" },
-      { name: "RUMBLE RUMMY", altName: "RUMBLE RUMMY APK", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://www.rumblerummy111.vip/?code=VX9H1GEM5EL&t=1785590916", img: "https://i.ibb.co/bD3BLcp/RUMBLE-RUMMY.jpg" },
-      { name: "YONO VIP", altName: "YONO VIP Game", bonus: "₹58", withdrawal: "₹100", downloadUrl: "https://uonovipfast.com/?code=3crTKB9H7ND&t=1785591034", img: "https://i.ibb.co/DfZr6kQH/YONO-VIP.jpg" }
+      { name: "YONO NEW APP", altName: "All Yono Games", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/0RZPw4wH/Screenshot-20260814-093236.jpg" },
+      { name: "567 SLOTS", altName: "567 SLOTS Game", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://join567slots0.com/?code=4NYF487URJ6&t=1781505684", img: "https://i.ibb.co/QWVBtNG/Screenshot-20260814-045334.jpg" },
+      { name: "SAGA SLOTS", altName: "SAGA SLOTS APK", bonus: "₹40", withdrawal: "₹100", downloadUrl: "https://www.sagaslots5.com/?code=0QHJSERZYMV&t=1781505813", img: "https://i.ibb.co/k20yYCYZ/Screenshot-20260814-045747.jpg" },
+      { name: "JAIHO 91", altName: "JAIHO 91 Game", bonus: "₹50", withdrawal: "₹100", downloadUrl: "https://jaiho91bonus.vip/?code=C42T99ZQHAT&t=1781506067", img: "https://i.ibb.co/bnQfcCV/Screenshot-20260814-045233.jpg" },
+      { name: "RUMMY LUDO", altName: "RUMMY LUDO APK", bonus: "₹35", withdrawal: "₹100", downloadUrl: "https://rummyludoapp37.com/", img: "https://i.ibb.co/JR326qDL/Screenshot-20260814-050655.jpg" },
+      { name: "ABC RUMMY", altName: "ABC RUMMY Game", bonus: "₹42", withdrawal: "₹100", downloadUrl: "https://d34i569g8ztoql.cloudfront.net/abcrummy_MeApp.apk", img: "https://i.ibb.co/CKxFgdKB/Screenshot-20260814-050911.jpg" },
+      { name: "RUMMY 91", altName: "RUMMY 91 APK", bonus: "₹38", withdrawal: "₹100", downloadUrl: "https://d16sfv4ssrmnvt.cloudfront.net/rummy91_AGENT.apk", img: "https://i.ibb.co/ymwjhMwy/Screenshot-20260814-051214.jpg" },
+      { name: "LOVE RUMMY", altName: "LOVE RUMMY Game", bonus: "₹36", withdrawal: "₹100", downloadUrl: "https://d34i569g8ztoql.cloudfront.net/loverummy_App.apk", img: "https://i.ibb.co/FkzpZCrk/Screenshot-20260814-051426.jpg" },
+      { name: "SPIN CRUSH", altName: "SPIN CRUSH APK", bonus: "₹30", withdrawal: "₹100", downloadUrl: "https://d292swwe9zki3u.cloudfront.net/spincrush_freecash.apk", img: "https://i.ibb.co/M5cLBLc1/Screenshot-20260814-034836.jpg" },
+      { name: "TOP RUMMY", altName: "TOP RUMMY Game", bonus: "₹48", withdrawal: "₹100", downloadUrl: "https://th7.my/BY1JWS/3gvute0", img: "https://i.ibb.co/9mwHZbCp/Screenshot-20260814-051751.jpg" },
+      { name: "Hello Rummy", altName: "Hello Rummy APK", bonus: "₹40", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/gold/jm9n7r", img: "https://i.ibb.co/ksXtjTVp/Screenshot-20260814-052023.jpg" },
+      { name: "RUMMY 365", altName: "RUMMY 365 APK", bonus: "₹44", withdrawal: "₹100", downloadUrl: "https://join567slots0.com/?code=4NYF487URJ6&t=1781505684", img: "https://i.ibb.co/jvpGswXD/Screenshot-20260814-052223.jpg" },
+      { name: "TEEN PATTI GOLD", altName: "TEEN PATTI GOLD Game", bonus: "₹37", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/gold/jm9n7r", img: "https://i.ibb.co/m5sHK3ys/Screenshot-20260814-052420.jpg" },
+      { name: "TEEN PATTI MASTER", altName: "TEEN PATTI MASTER APK", bonus: "₹20", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/cXkXTDPR/Screenshot-20260814-052628.jpg" },
+      { name: "YONO RUMMY", altName: "YONO RUMMY Game", bonus: "₹25", withdrawal: "₹100", downloadUrl: "https://yonorummy043.com/?code=VIPYQC5EE9X&t=1781107758", img: "https://i.ibb.co/b5THXzC7/Screenshot-20260814-040920.jpg" },
+      { name: "SLOTS WINNER", altName: "SLOTS WINNER APK", bonus: "₹40", withdrawal: "₹100", downloadUrl: "https://slotswinneri.com/?code=PGVC6CBNF53&t=1781107393", img: "https://i.ibb.co/wNT5cZ1k/Screenshot-20260814-041656.jpg" },
+      { name: "GOOD SLOTS", altName: "GOOD SLOTS Game", bonus: "₹15", withdrawal: "₹100", downloadUrl: "https://7sharegoodslots.vip?pid=320806209&channel=2010001&t=pdd2&pkg=com.1", img: "https://i.ibb.co/Hpk3dp9X/Screenshot-20260814-053030.jpg" },
+      { name: "Diwa Slot", altName: "Diwa Slot APK", bonus: "₹50", withdrawal: "₹100", downloadUrl: "https://sharediwaslot1.vip?pid=483455673&channel=2010002&t=pdd2&pkg=com.diwaslotwhl.app", img: "https://i.ibb.co/2zv2Nyy/Screenshot-20260814-053408.jpg" },
+      { name: "GOGO RUMMY", altName: "GOGO RUMMY Game", bonus: "₹28", withdrawal: "₹100", downloadUrl: "https://www.gogorummyagent.com/?code=V4UTQA2VYMQ&t=1781196694", img: "https://i.ibb.co/RTwyQ4tF/Screenshot-20260814-053625.jpg" },
+      { name: "JOY RUMMY", altName: "JOY RUMMY APK", bonus: "₹35", withdrawal: "₹100", downloadUrl: "https://www.joyrummymax.com/?code=J5KFTAWJ9X5&t=1781198100", img: "https://i.ibb.co/SCc42Cp/Screenshot-20260814-053827.jpg" },
+      { name: "SPIN GOLD", altName: "SPIN GOLD Game", bonus: "₹22", withdrawal: "₹100", downloadUrl: "https://uono-bingo101.com/?code=3WFQ231H9Y2&t=1781197828", img: "https://i.ibb.co/0yd0J3dy/Screenshot-20260814-030656.jpg" },
+      { name: "BINGO 101", altName: "BINGO 101 APK", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://uono-bingo101.com/?code=3WFQ231H9Y2&t=1781197828", img: "https://i.ibb.co/Xk2wP9Nk/Screenshot-20260814-034121.jpg" },
+      { name: "YES SPIN", altName: "YES SPIN Game", bonus: "₹18", withdrawal: "₹100", downloadUrl: "https://www.yesspineee.com/?code=47TXJTLU5YY&t=1781198907", img: "https://i.ibb.co/60hFLZzw/Screenshot-20260814-054324.jpg" },
+      { name: "YONO ARCADE", altName: "YONO ARCADE APK", bonus: "₹32", withdrawal: "₹100", downloadUrl: "https://yonoarcadeapk9.com/?code=96LNEL9FQXZ&t=1781199006", img: "https://i.ibb.co/R4QMbqBt/Screenshot-20260814-040720.jpg" },
+      { name: "SVIP 777", altName: "SVIP 777 Game", bonus: "₹27", withdrawal: "₹100", downloadUrl: "https://www.svip777.life?pid=297924008&channel=2050001&t=pdd2&pkg=com.svip777.h5", img: "https://i.ibb.co/MyQvt1R2/Screenshot-20260814-054554.jpg" },
+      { name: "OK RUMMY", altName: "OK RUMMY APK", bonus: "₹38", withdrawal: "₹100", downloadUrl: "https://www.okrummy22.com/?code=H2GU92WUXXA&t=1781199220", img: "https://i.ibb.co/xKhB5qzg/Screenshot-20260814-054736.jpg" },
+      { name: "HINDI 777", altName: "HINDI 777 Game", bonus: "₹42", withdrawal: "₹100", downloadUrl: "https://www.hindi777agent5.com/?code=7LFFR8WPHEG&t=1781199307", img: "https://i.ibb.co/pvtCPtTT/Screenshot-20260814-055304.jpg" },
+      { name: "BET 213", altName: "BET 213 APK", bonus: "₹36", withdrawal: "₹100", downloadUrl: "https://www.bet213.rocks/?code=2QTKPV4BYDH&t=1781199576", img: "https://i.ibb.co/6c3k7wdG/Screenshot-20260814-055545.jpg" },
+      { name: "BOSS RUMMY", altName: "BOSS RUMMY Game", bonus: "₹40", withdrawal: "₹100", downloadUrl: "https://www.bossrummyy.com/?code=LSHTVUZE1NR&t=1781429504", img: "https://i.ibb.co/jvwscPDf/Screenshot-20260814-055812.jpg" },
+      { name: "YONO 777", altName: "YONO 777 APK", bonus: "₹35", withdrawal: "₹100", downloadUrl: "https://uono777refer.vip/?code=F9MPSLKZCV9&t=1781429388", img: "https://i.ibb.co/v4G1fQtr/Screenshot-20260814-060203.jpg" },
+      { name: "Diwa VIP", altName: "Diwa VIP Game", bonus: "₹60", withdrawal: "₹100", downloadUrl: "https://uono777refer.vip/?code=F9MPSLKZCV9&t=1781429388", img: "https://i.ibb.co/6RQ2tGnw/Screenshot-20260814-060417.jpg" },
+      { name: "Diwa 777", altName: "Diwa 777 APK", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://sharediwa7771.top?pid=287747863&channel=2010001&t=pdd2&pkg=com.diwa777.app", img: "https://i.ibb.co/hFNKBdvq/Screenshot-20260814-060707.jpg" },
+      { name: "YONO GAMES", altName: "YONO GAMES APK", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://yonogamesm.com/?code=LHS49AEHVMR&t=1784314209", img: "https://i.ibb.co/Gf0fxYQ4/Screenshot-20260814-040510.jpg" },
+      { name: "INR RUMMY", altName: "INR RUMMY Game", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://inrrummy.club/?code=JMQBV8TAPD7&t=1784298106", img: "https://i.ibb.co/hJpHMvPg/Screenshot-20260814-061018.jpg" },
+      { name: "MBM BET", altName: "MBM BET Game", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://www.mbmbet3.com/?code=GD3H3VA6YK5&t=1784297830", img: "https://i.ibb.co/0j53Gb5W/Screenshot-20260814-042359.jpg" },
+      { name: "GOA SPIN", altName: "GOA SPIN APK", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/jkQ5z96x/Screenshot-20260814-033551.jpg" },
+      { name: "777 GAME", altName: "777 GAME APK", bonus: "₹50", withdrawal: "₹100", downloadUrl: "https://t.me/yonogamestite", img: "https://i.ibb.co/tMJ0L7L8/1786658176260.jpg" },
+      { name: "TEEN PATTI", altName: "TEEN PATTI Game", bonus: "₹35", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/gold/jm9n7r", img: "https://i.ibb.co/fzmMFV0F/Screenshot-20260814-061532.jpg" },
+      { name: "All YONO GAMES", altName: "All YONO GAMES APK", bonus: "₹42", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/gold/jm9n7r", img: "https://i.ibb.co/cKc56vJj/Screenshot-20260814-061719.jpg" },
+      { name: "NEW YONO GAMES", altName: "NEW YONO GAMES Game", bonus: "₹38", withdrawal: "₹100", downloadUrl: "https://t.me/yonogamestite", img: "https://i.ibb.co/R4hkwzbW/Screenshot-20260814-062237.jpg" },
+      { name: "YONO APPS", altName: "YONO APPS APK", bonus: "₹36", withdrawal: "₹100", downloadUrl: "https://t.me/yonogamestite", img: "https://i.ibb.co/DfQgSYrP/Screenshot-20260814-061950.jpg" },
+      { name: "SPIN WINNER", altName: "SPIN WINNER Game", bonus: "₹30", withdrawal: "₹100", downloadUrl: "https://www.yesspineee.com/?code=47TXJTLU5YY&t=1781198907", img: "https://i.ibb.co/PZNRbCwk/Screenshot-20260814-034801.jpg" },
+      { name: "YONO All GAMES", altName: "YONO All GAMES APK", bonus: "₹48", withdrawal: "₹100", downloadUrl: "https://diwavipshare.cc?pid=428256719&channel=2050001&t=pdd2&pkg=com.diwavip.h5", img: "https://i.ibb.co/TMJwF88r/Screenshot-20260814-031654.jpg" },
+      { name: "SPIN LUCKY", altName: "SPIN LUCKY Game", bonus: "₹44", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/Q7YCZLWP/Screenshot-20260814-041943.jpg" },
+      { name: "MAX RUMMY", altName: "MAX RUMMY APK", bonus: "₹55", withdrawal: "₹100", downloadUrl: "https://www.maxrummy66.com/?code=QUMWTJCMZ5N&t=1784912540", img: "https://i.ibb.co/xKH8Zz6C/Screenshot-20260814-032014.jpg" },
+      { name: "RANI SLOTS", altName: "RANI SLOTS Game", bonus: "₹48", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/jZMq58Pc/Screenshot-20260814-063312.jpg" },
+      { name: "1GO PLUS", altName: "1GO PLUS APK", bonus: "₹52", withdrawal: "₹100", downloadUrl: "https://1go.plus/4h91q", img: "https://i.ibb.co/PzV7FRHT/Screenshot-20260814-063537.jpg" },
+      { name: "RUMMY ULTRA", altName: "RUMMY ULTRA Game", bonus: "₹60", withdrawal: "₹100", downloadUrl: "https://www.rummyultraa.com/?dl=5hrw1p", img: "https://i.ibb.co/pjWGb0ty/Screenshot-20260814-034858.jpg" },
+      { name: "789 JACKPOTS", altName: "789 JACKPOTS APK", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://join789jackpots1.com/?code=XYUGRMBA44Y&t=1784907944", img: "https://i.ibb.co/5WV6Z60y/Screenshot-20260814-063848.jpg" },
+      { name: "JAIHO WIN", altName: "JAIHO WIN Game", bonus: "₹50", withdrawal: "₹100", downloadUrl: "https://www.jaihowin12.com/?code=1XNCQVU3XA5&t=1784914695", img: "https://i.ibb.co/qFmG8b9q/Screenshot-20260814-041444.jpg" },
+      { name: "SLOTS SPIN", altName: "SLOTS SPIN APK", bonus: "₹42", withdrawal: "₹100", downloadUrl: "https://slotsspinq.com/?code=XJB6LEBYG8R&t=1784908638", img: "https://i.ibb.co/0pSskjBY/Screenshot-20260814-032904.jpg" },
+      { name: "NETA VIP", altName: "NETA VIP Game", bonus: "₹58", withdrawal: "₹100", downloadUrl: "https://neta3.vip/?code=DR0V69R7BGJ&t=1784915088", img: "https://i.ibb.co/yBKhXW7S/Screenshot-20260814-032933.jpg" },
+      { name: "JAIHO 777 VIP", altName: "JAIHO 777 VIP APK", bonus: "₹55", withdrawal: "₹100", downloadUrl: "https://jaiho777agent.com?code=98X2D8Y3QGD&t=1784915217", img: "https://i.ibb.co/xVcCbWY/1786669966384.jpg" },
+      { name: "DHAN GAME", altName: "DHAN GAME App", bonus: "₹47", withdrawal: "₹100", downloadUrl: "https://www.dhanwin365.com/?code=47TWH18LDKB&t=1784915487", img: "https://i.ibb.co/JRshnS3z/Screenshot-20260814-033641.jpg" },
+      { name: "DIWA GAME", altName: "DIWA GAME APK", bonus: "₹53", withdrawal: "₹100", downloadUrl: "https://diwagameshare.club?pid=345550936&channel=2010002&t=pdd2&pkg=com.diwagamewhx.app", img: "https://i.ibb.co/zVvgvPpL/Screenshot-20260814-040014.jpg" },
+      { name: "BET 54 GAMES", altName: "BET 54 GAMES App", bonus: "₹46", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/gold/jm9n7r", img: "https://i.ibb.co/zWrDwLPt/Screenshot-20260814-033239.jpg" },
+      { name: "ALL YONO APPS", altName: "ALL YONO APPS Collection", bonus: "₹50", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/Qq9Zn7f/Screenshot-20260814-064907.jpg" },
+      { name: "T989 APPS", altName: "T989 APPS APK", bonus: "₹44", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/gold/jm9n7r", img: "https://i.ibb.co/bR8bB9qn/Screenshot-20260814-041927.jpg" },
+      { name: "765 CLUB", altName: "765 CLUB Game", bonus: "₹56", withdrawal: "₹100", downloadUrl: "https://765club.com/?id=637056077", img: "https://i.ibb.co/LDF3sXTx/Screenshot-20260814-065302.jpg" },
+      { name: "MKM BET APK", altName: "MKM BET APK Game", bonus: "₹49", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/wZxK5XGr/Screenshot-20260814-032720.jpg" },
+      { name: "YN 777", altName: "YN 777 APK", bonus: "₹54", withdrawal: "₹100", downloadUrl: "https://www.y729.com/?code=4SWD98JQ8LU&t=1785588919", img: "https://i.ibb.co/v6GbHJ95/Screenshot-20260814-040445.jpg" },
+      { name: "SPIN 777", altName: "SPIN 777 Game", bonus: "₹47", withdrawal: "₹100", downloadUrl: "https://spin777cc.com/?code=7V9ZG91PA4R&t=1785589035", img: "https://i.ibb.co/ccGr69gJ/Screenshot-20260814-033520.jpg" },
+      { name: "RUMMY 888", altName: "RUMMY 888 APK", bonus: "₹59", withdrawal: "₹100", downloadUrl: "https://rummy888vip43.com/?code=7WTEEW87DPM&t=1785589166", img: "https://i.ibb.co/bMgzZNPd/Screenshot-20260814-033315.jpg" },
+      { name: "RUMMY 77", altName: "RUMMY 77 Game", bonus: "₹43", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/BXKxwDX/Screenshot-20260814-035041.jpg" },
+      { name: "MQM BET", altName: "MQM BET APK", bonus: "₹51", withdrawal: "₹100", downloadUrl: "https://4mqmshare.vip?pid=486385025&channel=2010001&pkg=com.mqm.bet", img: "https://i.ibb.co/nqbdMSST/Screenshot-20260814-035011.jpg" },
+      { name: "MAHA GAMES", altName: "MAHA GAMES App", bonus: "₹57", withdrawal: "₹100", downloadUrl: "https://good-mahagames.com/?code=J24U9DHRWR8&t=1785589525", img: "https://i.ibb.co/nNmMgR25/Screenshot-20260814-034026.jpg" },
+      { name: "IND RUMMY", altName: "IND RUMMY Game", bonus: "₹46", withdrawal: "₹100", downloadUrl: "https://www.earntp.com/m/jm9n7r", img: "https://i.ibb.co/BKSZbZMt/Screenshot-20260814-091502.jpg" },
+      { name: "Hi RUMMY", altName: "Hi RUMMY APK", bonus: "₹49", withdrawal: "₹100", downloadUrl: "https://joinhirummy.net/?code=RX35XQBCPC9&t=1785590074", img: "https://i.ibb.co/27r99T47/Screenshot-20260814-091836.jpg" },
+      { name: "JAIHO SPIN", altName: "JAIHO SPIN APK", bonus: "₹44", withdrawal: "₹100", downloadUrl: "https://18jaihospinpro.com/?code=U3VDD22Q&t=1785590326", img: "https://i.ibb.co/rfc5rdpv/Screenshot-20260814-041105.jpg" },
+      { name: "JAIHO RUMMY", altName: "JAIHO RUMMY Game", bonus: "₹53", withdrawal: "₹100", downloadUrl: "https://jaihoclud.com/?code=E744HJRF6W7&t=1785590487", img: "https://i.ibb.co/TD7mQ4Qw/Screenshot-20260814-035539.jpg" },
+      { name: "YONO SLOTS", altName: "YONO SLOTS APK", bonus: "₹48", withdrawal: "₹100", downloadUrl: "https://www.yonoslotsm.com/?code=KU899FV2GFY&t=1785590595", img: "https://i.ibb.co/TDF7VJ1w/Screenshot-20260814-092416.jpg" },
+      { name: "Diwa Win", altName: "Diwa Win Game", bonus: "₹56", withdrawal: "₹100", downloadUrl: "https://diwawinshare.tech?pid=528544053&channel=2010002&pkg=com.diwawin002.app", img: "https://i.ibb.co/XfXsfDrh/Screenshot-20260814-032430.jpg" },
+      { name: "RUMBLE RUMMY", altName: "RUMBLE RUMMY APK", bonus: "₹45", withdrawal: "₹100", downloadUrl: "https://www.rumblerummy111.vip/?code=VX9H1GEM5EL&t=1785590916", img: "https://i.ibb.co/S7VgC8Cr/Screenshot-20260814-035804.jpg" },
+      { name: "YONO VIP", altName: "YONO VIP Game", bonus: "₹58", withdrawal: "₹100", downloadUrl: "https://uonovipfast.com/?code=3crTKB9H7ND&t=1785591034", img: "https://i.ibb.co/zTH4HqXT/Screenshot-20260814-041418.jpg" }
     ];
 
     const seen = new Set();
@@ -2797,11 +2896,12 @@ copy premium no1
         const bonusIcon = `<span class="icon-svg"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M12 2v12"/><path d="M8 10l4 4 4-4"/><path d="M4 8h16"/><rect x="8" y="14" width="8" height="2" rx="1"/><path d="M10 6h4"/></svg></span>`;
         const withdrawIcon = `<span class="icon-svg"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6h-4V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/><path d="M12 12v6"/><path d="M9 15l3 3 3-3"/><path d="M8 6h8"/></svg></span>`;
 
+        // HOME PAGE: Only app name, no duplicate alt name
         card.innerHTML = `
           <div class="card-number">${index + 1}</div>
-          <div class="card-img"><img src="${game.img}" alt="${game.name} | ${game.altName}" loading="lazy" onerror="this.src='https://i.ibb.co/LXqV77rd/yono-games.jpg'"></div>
+          <div class="card-img"><img src="${game.img}" alt="${game.name}" loading="lazy" onerror="this.src='https://i.ibb.co/LXqV77rd/yono-games.jpg'"></div>
           <div class="card-info">
-            <div class="card-name">${game.name} <span class="alt">| ${game.altName}</span></div>
+            <div class="card-name">${game.name}</div>
             <div class="card-bonus">${bonusIcon} <span class="label">Sign Up Bonus</span> <span class="value">${game.bonus}</span></div>
             <div class="card-withdraw">${withdrawIcon} <span class="label">Min. Withdraw</span> <span class="value">${game.withdrawal}</span></div>
           </div>
