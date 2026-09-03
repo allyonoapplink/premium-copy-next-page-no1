@@ -1,0 +1,1631 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>App Directory</title>
+    <meta name="description" content="A clean directory of original gaming app destinations.">
+    <style>
+        :root {
+            --paper: #f5f1e8;
+            --ink: #202b2b;
+            --muted: #687a72;
+            --line: #deded6;
+            --red: #b4312d;
+            --green: #197957;
+            --soft: #e7eee8
+        }
+        * {
+            box-sizing: border-box
+        }
+        html {
+            scroll-behavior: smooth
+        }
+        body {
+            margin: 0;
+            min-width: 320px;
+            background: radial-gradient(circle at 5% 0%, #19795714, transparent 22rem), radial-gradient(circle at 96% 22%, #b4312d14, transparent 20rem), var(--paper);
+            color: var(--ink);
+            font-family: Manrope, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased
+        }
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent
+        }
+        button {
+            font: inherit
+        }
+        .shell {
+            min-height: 100vh;
+            overflow-x: hidden
+        }
+        .container {
+            width: min(920px, calc(100% - 24px));
+            margin: auto
+        }
+        .nav-wrap {
+            padding-top: 12px
+        }
+        .nav {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 6px;
+            padding: 5px;
+            border: 1px solid #dddcd4;
+            border-radius: 16px;
+            background: #eeeae1
+        }
+        .nav-center {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 4px
+        }
+        .nav button {
+            min-width: 0;
+            min-height: 38px;
+            padding: 8px 7px;
+            border: 0;
+            border-radius: 12px;
+            background: transparent;
+            color: #64716c;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 800;
+            line-height: 1.1;
+            white-space: nowrap
+        }
+        .nav button:hover,
+        .nav button.active {
+            background: var(--ink);
+            color: #fffaf1
+        }
+        .nav-side {
+            display: flex
+        }
+        .nav-side button {
+            min-width: 62px
+        }
+        .cards {
+            display: grid;
+            gap: 10px;
+            padding: 16px 0 64px
+        }
+        .card {
+            display: grid;
+            grid-template-columns: 78px minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 11px;
+            position: relative;
+            min-width: 0;
+            padding: 12px 10px 12px 15px;
+            border: 1px solid #e3e3dc;
+            border-radius: 21px;
+            background: #fff;
+            box-shadow: 0 5px 18px #1c281f0e;
+            animation: rise .45s both
+        }
+        .number {
+            position: absolute;
+            top: 8px;
+            left: 7px;
+            z-index: 2;
+            display: grid;
+            place-items: center;
+            min-width: 29px;
+            height: 29px;
+            padding: 0 7px;
+            border: 2px solid #fff;
+            border-radius: 999px;
+            background: var(--green);
+            color: #fff;
+            font: 800 10px 'DM Mono', monospace;
+            box-shadow: 0 3px 8px #0003
+        }
+        .image {
+            width: 78px;
+            height: 78px;
+            overflow: hidden;
+            border-radius: 16px;
+            border: 1px solid #e7e7e2;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+        .image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            background: transparent
+        }
+        .details {
+            min-width: 0
+        }
+        .name {
+            margin: 0;
+            color: #171b1a;
+            font: 700 clamp(.92rem, 2.2vw, 1.3rem)/1.08 'Space Grotesk', Arial, sans-serif;
+            letter-spacing: -.035em;
+            overflow-wrap: anywhere
+        }
+        .meta {
+            display: grid;
+            gap: 5px;
+            margin-top: 8px;
+            color: #171b1a;
+            font-size: clamp(.68rem, 1.4vw, .9rem);
+            font-weight: 700;
+            line-height: 1.15
+        }
+        .meta-line {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            gap: 6px
+        }
+        .meta-line.bonus {
+            gap: 5px;
+            flex-wrap: wrap
+        }
+        .meta-line.bonus .bonus-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px
+        }
+        .bonus-value {
+            font-weight: 900;
+            color: #c62d2e;
+            white-space: nowrap
+        }
+        .icon {
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px
+        }
+        .download {
+            display: flex;
+            min-height: 48px;
+            width: 96px;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 9px 7px;
+            border-radius: 13px;
+            background: var(--green);
+            color: #fff;
+            font-size: .74rem;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: inset 0 -2px #00000059, 0 5px 12px #1c281f29;
+            transition: .2s
+        }
+        .download:hover {
+            background: #126247;
+            transform: translateY(-2px)
+        }
+        .download svg {
+            width: 15px;
+            height: 15px;
+            flex: 0 0 15px
+        }
+        .home-tags {
+            margin: 0 auto 64px;
+            padding: 24px 18px
+        }
+        .home-tags h2 {
+            margin: 0;
+            color: #171b1a;
+            font: 800 1.15rem/1.1 'Space Grotesk', Arial, sans-serif
+        }
+        .home-tags .eyebrow {
+            margin-bottom: 7px
+        }
+        .home-tags .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 16px
+        }
+        .home-tags .tag {
+            padding: 8px 10px;
+            border: 1px solid #dfe7e1;
+            border-radius: 999px;
+            background: var(--soft);
+            color: #36504b;
+            font-size: 11px;
+            font-weight: 800
+        }
+        .page {
+            width: min(920px, calc(100% - 24px));
+            margin: 24px auto 64px;
+            padding: 30px 20px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: #fff;
+            box-shadow: 0 8px 24px #1c281f0d
+        }
+        .eyebrow {
+            margin: 0;
+            color: var(--red);
+            font: 500 10px 'DM Mono', monospace;
+            letter-spacing: .16em;
+            text-transform: uppercase
+        }
+        .page h1 {
+            max-width: 680px;
+            margin: 12px 0 0;
+            font: 700 clamp(1.65rem, 5vw, 3.1rem)/.98 'Space Grotesk', Arial, sans-serif;
+            letter-spacing: -.06em
+        }
+        .page p {
+            max-width: 680px;
+            margin: 18px 0 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.65
+        }
+        .info-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 24px
+        }
+        .info-tag {
+            padding: 9px 12px;
+            border-radius: 99px;
+            background: var(--soft);
+            color: #36504b;
+            font-size: 12px;
+            font-weight: 800
+        }
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(10px)
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+        @keyframes countPulse {
+            0% {
+                transform: scale(1)
+            }
+            40% {
+                transform: scale(1.12)
+            }
+            70% {
+                transform: scale(0.96)
+            }
+            100% {
+                transform: scale(1)
+            }
+        }
+        .counter-anim {
+            display: inline-block;
+            animation: countPulse .6s ease-out
+        }
+        @media(prefers-reduced-motion:reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important
+            }
+        }
+        @media(max-width:390px) {
+            .nav {
+                gap: 3px;
+                padding: 4px
+            }
+            .nav button {
+                font-size: 10.5px;
+                min-height: 36px;
+                padding: 7px 4px
+            }
+            .nav-side button {
+                min-width: 58px
+            }
+            .card {
+                grid-template-columns: 72px minmax(0, 1fr) 86px;
+                gap: 8px;
+                padding-left: 13px
+            }
+            .image {
+                width: 72px;
+                height: 72px
+            }
+            .download {
+                width: 86px;
+                min-height: 46px;
+                font-size: .68rem;
+                gap: 4px;
+                padding-inline: 4px
+            }
+            .download svg {
+                width: 14px;
+                height: 14px;
+                flex-basis: 14px
+            }
+            .name {
+                font-size: .88rem
+            }
+            .meta {
+                font-size: .63rem
+            }
+            .icon {
+                width: 14px;
+                height: 14px;
+                flex-basis: 14px
+            }
+            .meta-line.bonus {
+                gap: 3px
+            }
+            .meta-line.bonus .bonus-label {
+                gap: 3px
+            }
+        }
+        @media(min-width:640px) {
+            .nav-wrap {
+                padding-top: 20px
+            }
+            .nav button {
+                min-height: 42px;
+                font-size: 13px
+            }
+            .cards {
+                padding-top: 20px
+            }
+            .card {
+                grid-template-columns: 90px minmax(0, 1fr) 140px;
+                gap: 16px;
+                padding: 16px 16px 16px 20px
+            }
+            .image {
+                width: 90px;
+                height: 90px
+            }
+            .download {
+                width: 140px;
+                min-height: 54px;
+                font-size: .95rem
+            }
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 20px;
+            color: var(--ink);
+            font-size: 15px;
+            font-weight: 800;
+            text-decoration: none
+        }
+        .detail-page {
+            padding: 20px 18px 44px
+        }
+        .detail-hero {
+            display: grid;
+            grid-template-columns: 110px minmax(0, 1fr);
+            gap: 18px;
+            align-items: center
+        }
+        .detail-image {
+            width: 110px;
+            height: 110px;
+            border: 1px solid #e3e3dc;
+            border-radius: 22px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 8px 20px #1c281f12
+        }
+        .detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain
+        }
+        .detail-heading {
+            min-width: 0
+        }
+        .detail-heading h1 {
+            margin: 7px 0 0;
+            font: 700 clamp(1.7rem, 5vw, 3rem)/1 'Space Grotesk', Arial, sans-serif;
+            letter-spacing: -.055em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: clip
+        }
+        .detail-rating {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-top: 12px;
+            color: #f0a000;
+            font-size: 24px;
+            line-height: 1
+        }
+        .detail-rating .rating-number {
+            color: #40504c;
+            font-size: 15px;
+            font-weight: 800
+        }
+        .detail-update {
+            display: inline-flex;
+            margin-top: 13px;
+            padding: 8px 14px;
+            border: 1px solid #f1c9c7;
+            border-radius: 999px;
+            background: #fff8f7;
+            color: #c62d2e;
+            font-size: 13px;
+            font-weight: 900
+        }
+        .detail-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 8px;
+            margin: 20px 0 12px
+        }
+        .detail-stats span {
+            min-width: 0;
+            padding: 8px 5px;
+            background: transparent;
+            color: #202b2b;
+            font-size: 11px;
+            font-weight: 800;
+            text-align: center
+        }
+        .detail-stat-value {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: clamp(1.35rem, 4vw, 2rem);
+            font-weight: 900;
+            line-height: 1
+        }
+        .detail-stat-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 7px;
+            font-size: clamp(.85rem, 2.5vw, 1rem);
+            font-weight: 500;
+            white-space: nowrap
+        }
+        .detail-stat-label svg {
+            width: 19px;
+            height: 19px;
+            flex: 0 0 19px
+        }
+        .detail-stat-bonus .detail-stat-value {
+            color: #202b2b
+        }
+        .detail-download {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 54px;
+            padding: 12px 16px;
+            border-radius: 15px;
+            background: var(--green);
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 900;
+            box-shadow: inset 0 -2px #00000035, 0 7px 16px #1c281f24
+        }
+        .detail-download svg {
+            width: 19px;
+            height: 19px;
+            flex: 0 0 19px
+        }
+        .detail-download {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 0;
+        }
+        .app-trust-card {
+            z-index: 1;
+        }
+        .unique-tags {
+            margin-top: 25px
+        }
+        .unique-tags>.eyebrow {
+            margin-bottom: 9px
+        }
+        /* FIXED LAYOUT: horizontal wrapping, no vertical list */
+        .tag-grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            align-content: flex-start;
+            width: 100%;
+            gap: 8px;
+        }
+        .detail-tag {
+            display: inline-flex;
+            width: auto;
+            flex: 0 0 auto;
+            max-width: calc(100% - 2px);
+            min-width: 0;
+            padding: 9px 11px;
+            border: 1px solid #dfe7e1;
+            border-radius: 13px;
+            background: var(--soft);
+            color: #36504b;
+            font-size: 11px;
+            font-weight: 800;
+            line-height: 1.2;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            box-sizing: border-box;
+        }
+        .related-section {
+            margin-top: 32px
+        }
+        .related-section h2 {
+            margin: 7px 0 14px;
+            font: 800 1.2rem/1.1 'Space Grotesk', Arial, sans-serif
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px
+        }
+        .related-grid .card .meta {
+            min-width: 0
+        }
+        .related-grid .card .meta-line.bonus {
+            flex-wrap: nowrap
+        }
+        .related-card {
+            position: relative;
+            display: grid;
+            grid-template-columns: 58px minmax(0, 1fr);
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border: 1px solid #e3e3dc;
+            border-radius: 15px;
+            background: #fff;
+            color: var(--ink);
+            text-decoration: none;
+            box-shadow: 0 4px 12px #1c281f0b;
+            min-height: 70px
+        }
+        .related-card img {
+            width: 58px;
+            height: 58px;
+            border-radius: 10px;
+            object-fit: contain;
+            background: transparent
+        }
+        .related-card>span:last-child {
+            font-size: 13px;
+            font-weight: 900;
+            line-height: 1.2;
+            overflow-wrap: anywhere
+        }
+        .related-number {
+            display: none !important
+        }
+        @media(max-width:390px) {
+            .detail-page {
+                padding-inline: 14px
+            }
+            .detail-hero {
+                grid-template-columns: 82px minmax(0, 1fr);
+                gap: 12px
+            }
+            .detail-image {
+                width: 82px;
+                height: 82px;
+                border-radius: 17px
+            }
+            .detail-heading h1 {
+                font-size: clamp(.98rem, 5.5vw, 1.45rem);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: clip
+            }
+            .detail-rating {
+                font-size: 20px;
+                gap: 5px
+            }
+            .detail-rating .rating-number {
+                font-size: 13px
+            }
+            .detail-update {
+                font-size: 10px;
+                padding: 7px 10px;
+                margin-top: 10px
+            }
+            .detail-stats {
+                gap: 2px;
+                margin-top: 18px
+            }
+            .detail-stats span {
+                font-size: 9.5px;
+                padding: 7px 2px
+            }
+            .detail-stat-value {
+                font-size: 1.28rem
+            }
+            .detail-stat-label {
+                font-size: .76rem;
+                gap: 3px
+            }
+            .detail-stat-label svg {
+                width: 16px;
+                height: 16px;
+                flex-basis: 16px
+            }
+            .detail-download {
+                font-size: 14px;
+                min-height: 50px
+            }
+            .tag-grid {
+                gap: 6px;
+            }
+            .detail-tag {
+                font-size: 10px;
+                padding: 9px;
+            }
+            .related-grid {
+                grid-template-columns: 1fr
+            }
+            .related-card {
+                grid-template-columns: 48px minmax(0, 1fr);
+                min-height: 60px
+            }
+            .related-card img {
+                width: 48px;
+                height: 48px
+            }
+        }
+        @media(min-width:640px) {
+            .detail-page {
+                padding: 28px 24px 60px
+            }
+            .detail-hero {
+                grid-template-columns: 150px minmax(0, 1fr)
+            }
+            .detail-image {
+                width: 150px;
+                height: 150px
+            }
+            .related-grid {
+                grid-template-columns: 1fr
+            }
+            .tag-grid {
+                gap: 10px;
+            }
+            .detail-tag {
+                font-size: 12px;
+                padding: 11px 13px;
+            }
+        }
+        .detail-stars {
+            width: 120px;
+            height: 24px;
+            display: block;
+            flex: 0 0 auto
+        }
+        .detail-version {
+            margin-left: 8px;
+            white-space: nowrap
+        }
+        .detail-update {
+            white-space: nowrap;
+            align-items: center;
+            gap: 2px
+        }
+        @media(max-width:390px) {
+            .detail-stars {
+                width: 100px;
+                height: 21px
+            }
+            .detail-version {
+                margin-left: 5px
+            }
+            .detail-update {
+                font-size: 9.5px;
+                padding-inline: 9px
+            }
+            .related-grid .card .name {
+                font-size: clamp(.72rem, 4.1vw, .88rem);
+                white-space: nowrap;
+                overflow: visible
+            }
+            .related-grid .card .meta-line.bonus {
+                white-space: nowrap;
+                flex-wrap: nowrap
+            }
+            .related-grid .card .bonus-value {
+                white-space: nowrap;
+                flex: 0 0 auto
+            }
+        }
+        /* Keep home/related card text on one line */
+        .meta-line { flex-wrap: nowrap; white-space: nowrap; }
+        .meta-line.bonus { flex-wrap: nowrap; }
+        .meta-line.bonus .bonus-label { flex-wrap: nowrap; white-space: nowrap; }
+        .bonus-value { flex: 0 0 auto; }
+        @media(max-width:390px) {
+            .meta-line { white-space: nowrap; }
+            .meta-line.bonus .bonus-label { font-size: inherit; }
+        }
+
+        /* bonus left align tweaks */
+        .meta-line.bonus .bonus-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            flex-wrap: wrap
+        }
+        .meta-line.bonus .bonus-label .bonus-value {
+            margin-left: 0
+        }
+        .detail-stat-bonus .detail-stat-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px
+        }
+        .detail-stat-bonus .detail-stat-label svg {
+            flex: 0 0 19px
+        }
+        .detail-stat-bonus .detail-stat-value {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px
+        }
+        .detail-bonus-line {
+            font-size: clamp(.82rem, 2.4vw, 1.15rem) !important;
+            white-space: nowrap;
+            gap: 6px !important;
+        }
+        .detail-bonus-line svg { width: 18px; height: 18px; flex: 0 0 18px; }
+        .detail-bonus-line b { color: #c62d2e; font-weight: 900; }
+        /* related card bonus left align */
+        .related-grid .card .meta-line.bonus {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-wrap: wrap
+        }
+        .related-grid .card .meta-line.bonus .bonus-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px
+        }
+        .detail-stat-value .counter-number {
+            display: inline-block;
+            font-weight: 900;
+            font-size: inherit;
+            line-height: 1;
+        }
+        .counter-number.animating {
+            animation: countPulse .5s ease-out
+        }
+
+        /* Floating scroll-to-top button */
+        .scroll-top {
+            position: fixed;
+            right: 16px;
+            bottom: max(18px, env(safe-area-inset-bottom));
+            z-index: 2147483647;
+            width: 54px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,.65);
+            border-radius: 18px;
+            background: var(--green);
+            color: #fff;
+            box-shadow: 0 10px 26px rgba(25,121,87,.34), inset 0 -2px rgba(0,0,0,.18);
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+            transform: translateY(18px) scale(.9);
+            transition: opacity .22s ease, transform .22s ease, visibility .22s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .scroll-top.show {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            visibility: visible !important;
+            transform: translateY(0) scale(1) !important;
+            animation: topFloat 1.8s ease-in-out infinite;
+        }
+        .scroll-top svg { width: 26px; height: 26px; }
+        .scroll-top:active { transform: translateY(1px) scale(.96); }
+        @keyframes topFloat {
+            0%,100% { box-shadow: 0 10px 26px rgba(25,121,87,.34), inset 0 -2px rgba(0,0,0,.18); }
+            50% { box-shadow: 0 14px 30px rgba(25,121,87,.48), inset 0 -2px rgba(0,0,0,.18); }
+        }
+        @media(max-width:390px) { .scroll-top { right: 12px; bottom: max(14px, env(safe-area-inset-bottom)); width: 50px; height: 50px; border-radius: 16px; } }
+
+        /* Final Details page stats: 3 perfectly aligned columns */
+        .detail-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            column-gap: 6px;
+            row-gap: 0;
+            align-items: start;
+            width: 100%;
+            overflow: visible;
+        }
+        .detail-stats > span {
+            min-width: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            padding: 8px 0;
+            overflow: visible;
+        }
+        .detail-stat-value {
+            display: block;
+            width: 100%;
+            white-space: nowrap;
+            text-align: center;
+            line-height: 1.05;
+            font-size: clamp(1.15rem, 4.6vw, 2rem);
+            font-weight: 900;
+            overflow: visible;
+        }
+        .detail-stat-label {
+            display: inline-flex;
+            width: auto;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 8px;
+            white-space: nowrap;
+            line-height: 1;
+            font-size: clamp(.78rem, 2.8vw, 1rem);
+        }
+        .detail-stat-label svg {
+            display: block;
+            flex: 0 0 auto;
+        }
+        .detail-stat-bonus .detail-stat-value {
+            color: #202b2b;
+        }
+
+        /* Related cards: Sign Up Bonus + amount always remain on one line */
+        .related-grid .card .meta-line.bonus { flex-wrap: nowrap !important; }
+        .related-grid .card .bonus-label {
+            display: inline-flex !important;
+            align-items: center;
+            flex-wrap: nowrap !important;
+            white-space: nowrap !important;
+            gap: 5px !important;
+        }
+        .related-grid .card .bonus-label > span,
+        .related-grid .card .bonus-value { white-space: nowrap !important; }
+
+        @media(max-width:390px) {
+            .detail-stats { gap: 2px; }
+            .detail-stat-value { font-size: clamp(1.15rem, 5.8vw, 1.5rem); }
+            .detail-stat-label { font-size: .72rem; gap: 3px; }
+            .detail-stat-label svg { width: 16px; height: 16px; flex: 0 0 16px; }
+            .related-grid .card { grid-template-columns: 62px minmax(0,1fr) 82px; gap: 7px; padding: 9px 7px 9px 10px; }
+            .related-grid .card .image { width: 62px; height: 62px; }
+            .related-grid .card .download { width: 82px; min-height: 44px; font-size: .66rem; }
+            .related-grid .card .meta { font-size: .58rem; gap: 4px; }
+            .related-grid .card .bonus-label { gap: 3px !important; }
+        }
+        
+        @media(max-width:390px) {
+            .detail-stats {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                column-gap: 2px;
+            }
+            .detail-stats > span { padding: 6px 0; }
+            .detail-stat-value {
+                font-size: clamp(1rem, 5.2vw, 1.35rem);
+                letter-spacing: -.02em;
+            }
+            .detail-stat-label {
+                font-size: clamp(.64rem, 3.25vw, .78rem);
+                gap: 3px;
+                margin-top: 7px;
+            }
+            .detail-stat-label svg {
+                width: 15px;
+                height: 15px;
+                flex-basis: 15px;
+            }
+        }
+
+    
+        /* Locked details statistics alignment: all 3 columns use identical rows */
+        .detail-stats{
+            display:grid !important;
+            grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+            grid-template-rows:auto auto !important;
+            column-gap:6px !important;
+            row-gap:0 !important;
+            align-items:start !important;
+            width:100% !important;
+        }
+        .detail-stats > span{
+            display:grid !important;
+            grid-template-rows:56px 38px !important;
+            align-items:center !important;
+            justify-items:center !important;
+            width:100% !important;
+            min-width:0 !important;
+            padding:0 !important;
+            margin:0 !important;
+            text-align:center !important;
+        }
+        .detail-stat-value{
+            grid-row:1 !important;
+            align-self:center !important;
+            width:100% !important;
+            margin:0 !important;
+            line-height:1 !important;
+            white-space:nowrap !important;
+            text-align:center !important;
+        }
+        .detail-stat-label{
+            grid-row:2 !important;
+            align-self:center !important;
+            display:inline-flex !important;
+            align-items:center !important;
+            justify-content:center !important;
+            margin:0 !important;
+            white-space:nowrap !important;
+            line-height:1 !important;
+        }
+        .detail-stat-label svg{
+            flex:0 0 auto !important;
+            margin:0 !important;
+        }
+        @media(max-width:390px){
+            .detail-stats > span{
+                grid-template-rows:48px 34px !important;
+            }
+        }
+
+
+        /* Scroll-to-top: Top label above the existing SVG, inside the same floating control */
+        #scrollTop, .scroll-top, .scroll-to-top {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 3px !important;
+            overflow: visible !important;
+        }
+        #scrollTop .scroll-top-label, .scroll-top .scroll-top-label, .scroll-to-top .scroll-top-label {
+            display: block !important;
+            position: static !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            font-size: 10px !important;
+            line-height: 1 !important;
+            font-weight: 800 !important;
+            letter-spacing: .04em !important;
+            text-align: center !important;
+            pointer-events: none !important;
+        }
+        #scrollTop svg, .scroll-top svg, .scroll-to-top svg {
+            animation: atomicTopMove 1.6s ease-in-out infinite !important;
+            transform-origin: center !important;
+        }
+        @keyframes atomicTopMove {
+            0%,100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-4px) rotate(-2deg); }
+            50% { transform: translateY(-7px) rotate(0deg); }
+            75% { transform: translateY(-4px) rotate(2deg); }
+        }
+
+
+/* Details page trust bar */
+.app-trust-card{width:100%;min-height:82px;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:flex-start;padding:14px 10px;margin:10px 0 0 0;background:#fff;border-top:1px solid #edf1f4;border-bottom:1px solid #dfe5ec;box-sizing:border-box;position:relative;clear:both;isolation:isolate}
+.app-trust-item{display:flex;flex-direction:row;align-items:center;flex:none;white-space:nowrap}
+.safe-item{margin-right:14px}.official-item{margin-right:14px}
+.app-trust-text{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;line-height:1;color:#566274;white-space:nowrap;letter-spacing:-.2px}
+.app-trust-svg{width:27px;height:27px;min-width:27px;flex:0 0 27px;display:block}
+.safe-item .app-trust-svg{margin-right:7px}.official-item .app-trust-svg{margin-right:9px}
+.android-svg{width:30px;height:30px;min-width:30px;flex:0 0 30px;display:block;margin-right:7px}
+@media(max-width:480px){.app-trust-card{padding-left:8px;padding-right:8px;margin-top:10px}.app-trust-text{font-size:12px}.safe-item,.official-item{margin-right:10px}.app-trust-svg{width:25px;height:25px;min-width:25px;flex-basis:25px}.official-item .app-trust-svg{margin-right:8px}.android-svg{width:27px;height:27px;min-width:27px;flex-basis:27px;margin-right:6px}}
+@media(max-width:380px){.app-trust-card{padding-left:5px;padding-right:5px;margin-top:8px}.app-trust-text{font-size:10px}.safe-item,.official-item{margin-right:7px}.app-trust-svg{width:22px;height:22px;min-width:22px;flex-basis:22px}.official-item .app-trust-svg{margin-right:6px}.android-svg{width:24px;height:24px;min-width:24px;flex-basis:24px;margin-right:5px}}
+
+
+/* FINAL TRUST BAR POSITION: directly below download button */
+.detail-download + .app-trust-card{margin-top:10px!important;position:relative!important;top:auto!important;bottom:auto!important;transform:none!important;clear:both!important}
+.detail-download{margin-bottom:0!important}
+
+/* Description paragraph styling inside detail page */
+.detail-description {
+    margin: 16px 0 0 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 100%;
+}
+
+        /* Final Information Tags layout: compact wrapped chips on every app detail page */
+        .detail-page .unique-tags { margin-top: 24px !important; }
+        .detail-page .tag-grid {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            width: 100% !important;
+            gap: 6px !important;
+            align-items: flex-start !important;
+            justify-content: flex-start !important;
+        }
+        .detail-page .detail-tag {
+            display: inline-flex !important;
+            flex: 0 0 auto !important;
+            width: auto !important;
+            max-width: calc(50% - 3px) !important;
+            margin: 0 !important;
+            padding: 7px 9px !important;
+            font-size: 10px !important;
+            line-height: 1.15 !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            box-sizing: border-box !important;
+        }
+</style>
+</head>
+<body>
+    <div class="shell">
+        <header class="container nav-wrap">
+            <nav class="nav" aria-label="Primary navigation">
+                <div class="nav-side"><button class="active" data-page="home">Home</button></div>
+                <div class="nav-center"><button data-page="about">About</button><button data-page="contact">Contact</button><button data-page="disclaimer">Disclaimer</button></div>
+                <div class="nav-side"><button data-page="privacy">Privacy Policy</button></div>
+            </nav>
+        </header>
+        <main id="content"></main>
+    </div>
+    <button class="scroll-top" id="scrollTop" type="button" aria-label="Scroll to top" title="Back to top">
+        <span class="scroll-top-label">Top</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/><path d="M12 20V9"/></svg>
+    </button>
+    <script>
+        const apps = [
+            ["YONO NEW APP", "https://i.ibb.co/0RZPw4wH/Screenshot-20260814-093236.jpg", "https://www.earntp.com/m/jm9n7r"],
+            ["567 SLOTS", "https://i.ibb.co/QWVBtNG/Screenshot-20260814-045334.jpg", "https://join567slots0.com/?code=4NYF487URJ6&t=1781505684"],
+            ["SAGA SLOTS", "https://i.ibb.co/k20yYCYZ/Screenshot-20260814-045747.jpg", "https://www.sagaslots5.com/?code=0QHJSERZYMV&t=1781505813"],
+            ["JAIHO 91", "https://i.ibb.co/bnQfcCV/Screenshot-20260814-045233.jpg", "https://jaiho91bonus.vip/?code=C42T99ZQHAT&t=1781506067"],
+            ["RUMMY LUDO", "https://i.ibb.co/JR326qDL/Screenshot-20260814-050655.jpg", "https://rummyludoapp37.com/"],
+            ["ABC RUMMY", "https://i.ibb.co/CKxFgdKB/Screenshot-20260814-050911.jpg", "https://d34i569g8ztoql.cloudfront.net/abcrummy_MeApp.apk"],
+            ["RUMMY 91", "https://i.ibb.co/ymwjhMwy/Screenshot-20260814-051214.jpg", "https://d16sfv4ssrmnvt.cloudfront.net/rummy91_AGENT.apk"],
+            ["LOVE RUMMY", "https://i.ibb.co/FkzpZCrk/Screenshot-20260814-051426.jpg", "https://d34i569g8ztoql.cloudfront.net/loverummy_App.apk"],
+            ["SPIN CRUSH", "https://i.ibb.co/M5cLBLc1/Screenshot-20260814-034836.jpg", "https://d292swwe9zki3u.cloudfront.net/spincrush_freecash.apk"],
+            ["TOP RUMMY", "https://i.ibb.co/9mwHZbCp/Screenshot-20260814-051751.jpg", "https://th7.my/BY1JWS/3gvute0"],
+            ["Hello Rummy", "https://i.ibb.co/ksXtjTVp/Screenshot-20260814-052023.jpg", "https://www.earntp.com/gold/jm9n7r"],
+            ["RUMMY 365", "https://i.ibb.co/jvpGswXD/Screenshot-20260814-052223.jpg", "https://join567slots0.com/?code=4NYF487URJ6&t=1781505684"],
+            ["TEEN PATTI GOLD", "https://i.ibb.co/m5sHK3ys/Screenshot-20260814-052420.jpg", "https://www.earntp.com/gold/jm9n7r"],
+            ["TEEN PATTI MASTER", "https://i.ibb.co/cXkXTDPR/Screenshot-20260814-052628.jpg", "https://www.earntp.com/m/jm9n7r"],
+            ["YONO RUMMY", "https://i.ibb.co/b5THXzC7/Screenshot-20260814-040920.jpg", "https://yonorummy043.com/?code=VIPYQC5EE9X&t=1781107758"],
+            ["SLOTS WINNER", "https://i.ibb.co/wNT5cZ1k/Screenshot-20260814-041656.jpg", "https://slotswinneri.com/?code=PGVC6CBNF53&t=1781107393"],
+            ["GOOD SLOTS", "https://i.ibb.co/Hpk3dp9X/Screenshot-20260814-053030.jpg", "https://7sharegoodslots.vip?pid=320806209&channel=2010001&t=pdd2&pkg=com.1"],
+            ["Diwa Slot", "https://i.ibb.co/2zv2Nyy/Screenshot-20260814-053408.jpg", "https://sharediwaslot1.vip?pid=483455673&channel=2010002&t=pdd2&pkg=com.diwaslotwhl.app"],
+            ["GOGO RUMMY", "https://i.ibb.co/RTwyQ4tF/Screenshot-20260814-053625.jpg", "https://www.gogorummyagent.com/?code=V4UTQA2VYMQ&t=1781196694"],
+            ["JOY RUMMY", "https://i.ibb.co/SCc42Cp/Screenshot-20260814-053827.jpg", "https://www.joyrummymax.com/?code=J5KFTAWJ9X5&t=1781198100"],
+            ["SPIN GOLD", "https://i.ibb.co/0yd0J3dy/Screenshot-20260814-030656.jpg", "https://uono-bingo101.com/?code=3WFQ231H9Y2&t=1781197828"],
+            ["BINGO 101", "https://i.ibb.co/Xk2wP9Nk/Screenshot-20260814-034121.jpg", "https://uono-bingo101.com/?code=3WFQ231H9Y2&t=1781197828"],
+            ["YES SPIN", "https://i.ibb.co/60hFLZzw/Screenshot-20260814-054324.jpg", "https://www.yesspineee.com/?code=47TXJTLU5YY&t=1781198907"],
+            ["YONO ARCADE", "https://i.ibb.co/R4QMbqBt/Screenshot-20260814-040720.jpg", "https://yonoarcadeapk9.com/?code=96LNEL9FQXZ&t=1781199006"],
+            ["SVIP 777", "https://i.ibb.co/MyQvt1R2/Screenshot-20260814-054554.jpg", "https://www.svip777.life?pid=297924008&channel=2050001&t=pdd2&pkg=com.svip777.h5"],
+            ["OK RUMMY", "https://i.ibb.co/xKhB5qzg/Screenshot-20260814-054736.jpg", "https://www.okrummy22.com/?code=H2GU92WUXXA&t=1781199220"],
+            ["HINDI 777", "https://i.ibb.co/pvtCPtTT/Screenshot-20260814-055304.jpg", "https://www.hindi777agent5.com/?code=7LFFR8WPHEG&t=1781199307"],
+            ["BET 213", "https://i.ibb.co/6c3k7wdG/Screenshot-20260814-055545.jpg", "https://www.bet213.rocks/?code=2QTKPV4BYDH&t=1781199576"],
+            ["BOSS RUMMY", "https://i.ibb.co/jvwscPDf/Screenshot-20260814-055812.jpg", "https://www.bossrummyy.com/?code=LSHTVUZE1NR&t=1781429504"],
+            ["YONO 777", "https://i.ibb.co/v4G1fQtr/Screenshot-20260814-060203.jpg", "https://uono777refer.vip/?code=F9MPSLKZCV9&t=1781429388"],
+            ["Diwa VIP", "https://i.ibb.co/6RQ2tGnw/Screenshot-20260814-060417.jpg", "https://uono777refer.vip/?code=F9MPSLKZCV9&t=1781429388"],
+            ["Diwa 777", "https://i.ibb.co/hFNKBdvq/Screenshot-20260814-060707.jpg", "https://sharediwa7771.top?pid=287747863&channel=2010001&t=pdd2&pkg=com.diwa777.app"],
+            ["YONO GAMES", "https://i.ibb.co/Gf0fxYQ4/Screenshot-20260814-040510.jpg", "https://yonogamesm.com/?code=LHS49AEHVMR&t=1784314209"],
+            ["INR RUMMY", "https://i.ibb.co/hJpHMvPg/Screenshot-20260814-061018.jpg", "https://inrrummy.club/?code=JMQBV8TAPD7&t=1784298106"],
+            ["MBM BET", "https://i.ibb.co/0j53Gb5W/Screenshot-20260814-042359.jpg", "https://www.mbmbet3.com/?code=GD3H3VA6YK5&t=1784297830"],
+            ["GOA SPIN", "https://i.ibb.co/jkQ5z96x/Screenshot-20260814-033551.jpg", "https://www.earntp.com/m/jm9n7r"],
+            ["777 GAME", "https://i.ibb.co/tMJ0L7L8/1786658176260.jpg", "https://t.me/yonogamestite"],
+            ["TEEN PATTI", "https://i.ibb.co/fzmMFV0F/Screenshot-20260814-061532.jpg", "https://www.earntp.com/gold/jm9n7r"],
+            ["All YONO GAMES", "https://i.ibb.co/cKc56vJj/Screenshot-20260814-061719.jpg", "https://www.earntp.com/gold/jm9n7r"],
+            ["NEW YONO GAMES", "https://i.ibb.co/R4hkwzbW/Screenshot-20260814-062237.jpg", "https://t.me/yonogamestite"],
+            ["YONO APPS", "https://i.ibb.co/DfQgSYrP/Screenshot-20260814-061950.jpg", "https://t.me/yonogamestite"],
+            ["SPIN WINNER", "https://i.ibb.co/PZNRbCwk/Screenshot-20260814-034801.jpg", "https://www.yesspineee.com/?code=47TXJTLU5YY&t=1781198907"],
+            ["YONO All GAMES", "https://i.ibb.co/TMJwF88r/Screenshot-20260814-031654.jpg", "https://diwavipshare.cc?pid=428256719&channel=2050001&t=pdd2&pkg=com.diwavip.h5"],
+            ["SPIN LUCKY", "https://i.ibb.co/Q7YCZLWP/Screenshot-20260814-041943.jpg", "https://www.earntp.com/m/jm9n7r"],
+            ["MAX RUMMY", "https://i.ibb.co/xKH8Zz6C/Screenshot-20260814-032014.jpg", "https://www.maxrummy66.com/?code=QUMWTJCMZ5N&t=1784912540"],
+            ["RANI SLOTS", "https://i.ibb.co/jZMq58Pc/Screenshot-20260814-063312.jpg", "https://www.earntp.com/m/jm9n7r"],
+            ["1GO PLUS", "https://i.ibb.co/PzV7FRHT/Screenshot-20260814-063537.jpg", "https://1go.plus/4h91q"],
+            ["RUMMY ULTRA", "https://i.ibb.co/pjWGb0ty/Screenshot-20260814-034858.jpg", "https://www.rummyultraa.com/?dl=5hrw1p"],
+            ["789 JACKPOTS", "https://i.ibb.co/5WV6Z60y/Screenshot-20260814-063848.jpg", "https://join789jackpots1.com/?code=XYUGRMBA44Y&t=1784907944"],
+            ["JAIHO WIN", "https://i.ibb.co/qFmG8b9q/Screenshot-20260814-041444.jpg", "https://www.jaihowin12.com/?code=1XNCQVU3XA5&t=1784914695"],
+            ["SLOTS SPIN", "https://i.ibb.co/0pSskjBY/Screenshot-20260814-032904.jpg", "https://slotsspinq.com/?code=XJB6LEBYG8R&t=1784908638"],
+            ["NETA VIP", "https://i.ibb.co/yBKhXW7S/Screenshot-20260814-032933.jpg", "https://neta3.vip/?code=DR0V69R7BGJ&t=1784915088"],
+            ["JAIHO 777 VIP", "https://i.ibb.co/xVcCbWY/1786669966384.jpg", "https://jaiho777agent.com?code=98X2D8Y3QGD&t=1784915217"],
+            ["DHAN GAME", "https://i.ibb.co/JRshnS3z/Screenshot-20260814-033641.jpg", "https://www.dhanwin365.com/?code=47TWH18LDKB&t=1784915487"],
+            ["DIWA GAME", "https://i.ibb.co/zVvgvPpL/Screenshot-20260814-040014.jpg", "https://diwagameshare.club?pid=345550936&channel=2010002&t=pdd2&pkg=com.diwagamewhx.app"],
+            ["BET 54 GAMES", "https://i.ibb.co/zWrDwLPt/Screenshot-20260814-033239.jpg", "https://www.earntp.com/gold/jm9n7r"],
+            ["ALL YONO APPS", "https://i.ibb.co/Qq9Zn7f/Screenshot-20260814-064907.jpg", "https://www.earntp.com/m/jm9n7r"],
+            ["T989 APPS", "https://i.ibb.co/bR8bB9qn/Screenshot-20260814-041927.jpg", "https://www.earntp.com/gold/jm9n7r"],
+            ["765 CLUB", "https://i.ibb.co/LDF3sXTx/Screenshot-20260814-065302.jpg", "https://765club.com/?id=637056077"],
+            ["MKM BET APK", "https://i.ibb.co/wZxK5XGr/Screenshot-20260814-032720.jpg", "https://www.earntp.com/m/jm9n7r"],
+            ["YN 777", "https://i.ibb.co/v6GbHJ95/Screenshot-20260814-040445.jpg", "https://www.y729.com/?code=4SWD98JQ8LU&t=1785588919"],
+            ["SPIN 777", "https://i.ibb.co/ccGr69gJ/Screenshot-20260814-033520.jpg", "https://spin777cc.com/?code=7V9ZG91PA4R&t=1785589035"],
+            ["RUMMY 888", "https://i.ibb.co/bMgzZNPd/Screenshot-20260814-033315.jpg", "https://rummy888vip43.com/?code=7WTEEW87DPM&t=1785589166"],
+            ["RUMMY 77", "https://i.ibb.co/BXKxwDX/Screenshot-20260814-035041.jpg", "https://www.earntp.com/m/jm9n7r"],
+            ["MQM BET", "https://i.ibb.co/nqbdMSST/Screenshot-20260814-035011.jpg", "https://4mqmshare.vip?pid=486385025&channel=2010001&pkg=com.mqm.bet"],
+            ["MAHA GAMES", "https://i.ibb.co/nNmMgR25/Screenshot-20260814-034026.jpg", "https://good-mahagames.com/?code=J24U9DHRWR8&t=1785589525"],
+            ["IND RUMMY", "https://i.ibb.co/BKSZbZMt/Screenshot-20260814-091502.jpg", "https://www.earntp.com/m/jm9n7r"],
+            ["Hi RUMMY", "https://i.ibb.co/27r99T47/Screenshot-20260814-091836.jpg", "https://joinhirummy.net/?code=RX35XQBCPC9&t=1785590074"],
+            ["JAIHO SPIN", "https://i.ibb.co/rfc5rdpv/Screenshot-20260814-041105.jpg", "https://18jaihospinpro.com/?code=U3VDD22Q&t=1785590326"],
+            ["JAIHO RUMMY", "https://i.ibb.co/TD7mQ4Qw/Screenshot-20260814-035539.jpg", "https://jaihoclud.com/?code=E744HJRF6W7&t=1785590487"],
+            ["YONO SLOTS", "https://i.ibb.co/TDF7VJ1w/Screenshot-20260814-092416.jpg", "https://www.yonoslotsm.com/?code=KU899FV2GFY&t=1785590595"],
+            ["Diwa Win", "https://i.ibb.co/XfXsfDrh/Screenshot-20260814-032430.jpg", "https://diwawinshare.tech?pid=528544053&channel=2010002&pkg=com.diwawin002.app"],
+            ["RUMBLE RUMMY", "https://i.ibb.co/S7VgC8Cr/Screenshot-20260814-035804.jpg", "https://www.rumblerummy111.vip/?code=VX9H1GEM5EL&t=1785590916"],
+            ["YONO VIP", "https://i.ibb.co/zTH4HqXT/Screenshot-20260814-041418.jpg", "https://uonovipfast.com/?code=3crTKB9H7ND&t=1785591034"]
+        ];
+        const pages = {
+            about: ["About", "About this directory", "This page contains the 74 original app listings supplied for the project.", ["74 apps", "Original images", "Original names"]],
+            contact: ["Contact", "Contact", "For questions about an individual listing, use the support or contact option provided by that app.", ["Listing help", "Provider support", "Direct destination"]],
+            disclaimer: ["Disclaimer", "Disclaimer", "Offers, eligibility, availability and withdrawal terms can change. Review the destination's current terms before using any app.", [
+                "Terms can change", "Check current details", "Play responsibly"
+            ]],
+            privacy: ["Privacy Policy", "Privacy Policy", "This directory does not request account details. External destinations may have their own privacy policies and data practices.", [
+                "Privacy", "External providers", "Data practices"
+            ]]
+        };
+        const gift = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8H7.5a2.5 2.5 0 1 1 0-5C10.2 3 12 8 12 8Zm0 0h4.5a2.5 2.5 0 1 0 0-5C13.8 3 12 8 12 8Z"/></svg>';
+        const cube = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m21 8-9-5-9 5 9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8M12 13v8"/></svg>';
+        const bonusIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z"/><path d="m9 12 2 2 4-4"/></svg>';
+        const wallet = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H20v14H5.5A2.5 2.5 0 0 1 3 16.5v-9Z"/><path d="M3 8h17M16 13h4"/><circle cx="16" cy="13" r=".7" fill="currentColor"/></svg>';
+        const down = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14"/></svg>';
+        const esc = v => String(v).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" } [c]));
+
+        // ---------- improved content generation with unique tags ----------
+        function getAppContent(i) {
+            const name = apps[i][0];
+            const lower = name.toLowerCase();
+
+            // Detect category
+            let category = 'general';
+            if (lower.includes('rummy')) category = 'rummy';
+            else if (lower.includes('slot')) category = 'slots';
+            else if (lower.includes('spin')) category = 'spin';
+            else if (lower.includes('teen patti')) category = 'teenpatti';
+            else if (lower.includes('ludo')) category = 'ludo';
+            else if (lower.includes('bingo')) category = 'bingo';
+            else if (lower.includes('jackpot')) category = 'slots';
+            else if (lower.includes('777')) category = 'slots';
+            else if (lower.includes('game')) category = 'general';
+            else if (lower.includes('arcade')) category = 'general';
+            else if (lower.includes('vip')) category = 'general';
+
+            // Enriched category-specific tag pools (more than 30 each to ensure uniqueness)
+            const catPools = {
+                rummy: [
+                    "Classic Rummy", "13 Cards Game", "Pool Rummy", "Points Rummy", "Deal Rummy",
+                    "Multiplayer Rummy", "Tournament Mode", "Cash Games", "Skill Based", "Quick Play",
+                    "Real Money", "Safe & Secure", "24/7 Tables", "Joker Cards", "Pure Sequence",
+                    "Impure Sequence", "Set Formation", "Drop Option", "Showdown", "Bonus Rummy",
+                    "High Stakes", "Practice Mode", "Private Tables", "Leaderboard", "Daily Tournaments",
+                    "Refer & Earn", "Instant Withdrawal", "Rummy Variants", "Classic Deck", "Online Rummy"
+                ],
+                slots: [
+                    "Slot Machine", "Spin to Win", "Jackpot Slots", "Bonus Rounds", "High RTP",
+                    "Progressive Jackpot", "Classic Slots", "Video Slots", "Mega Wins", "Free Spins",
+                    "Wild Symbols", "Scatter Symbols", "Multiplier", "Gamble Feature", "Auto Play",
+                    "Quick Spin", "Theme Slots", "Daily Bonuses", "VIP Slots", "New Slots",
+                    "Lucky Spins", "Mystery Bonus", "Jackpot Hunt", "Slot Tournaments", "Reel Action",
+                    "Mobile Slots", "Casino Experience", "Big Payouts", "Exclusive Slots", "Spin Streak"
+                ],
+                spin: [
+                    "Spin Wheel", "Lucky Spin", "Bonus Spins", "Daily Spin", "Free Spin",
+                    "Spin & Win", "Reward Spin", "Instant Win", "Multiplier Spin", "Jackpot Spin",
+                    "Quick Spin", "Spin Streak", "Fortune Wheel", "Lucky Numbers", "Spin Challenge",
+                    "VIP Spin", "Reward Wheel", "Mega Spin", "Spin Tokens", "Daily Reward",
+                    "Spin Bonus", "Gold Spin", "Silver Spin", "Platinum Spin", "Spin Frenzy",
+                    "Spin Party", "Spin & Score", "Spin Master", "Lucky Spin", "Spin Royale"
+                ],
+                teenpatti: [
+                    "Teen Patti", "Indian Poker", "3 Cards", "Blind Play", "Showdown",
+                    "Side Bets", "Multiplayer", "Live Table", "Real Cash", "Tournament",
+                    "Joker", "Muflis", "AK47", "Best of Four", "Royal Pair",
+                    "High Card", "Pair", "Color", "Trail", "Pure Sequence",
+                    "Blind Bet", "See Bet", "Pack Option", "Side Show", "Private Tables",
+                    "Beginner Mode", "High Stakes", "Daily Tournaments", "Leaderboard", "Quick Game"
+                ],
+                ludo: [
+                    "Ludo Game", "Board Game", "Roll Dice", "Multiplayer Ludo", "Classic Ludo",
+                    "Quick Play", "Family Fun", "Online Ludo", "Tournament", "Dice Game",
+                    "Star Token", "Home Run", "Blocking", "Safe Zone", "Fast Ludo",
+                    "Real Money Ludo", "Chat", "Private Room", "Global Players", "Daily Rewards",
+                    "Ludo King", "Ludo Queen", "Dice Roll", "Token Race", "Home Stretch",
+                    "Ludo Championship", "Team Ludo", "Ludo Variants", "Quick Roll", "Ludo Party"
+                ],
+                bingo: [
+                    "Bingo Game", "Number Fun", "Jackpot Bingo", "Social Bingo", "Quick Bingo",
+                    "Multiplayer Bingo", "Bonus Bingo", "Patterns", "House Win", "Coverall",
+                    "1-2-3 Bingo", "Speed Bingo", "Free Bingo", "Chat Bingo", "Daily Bingo",
+                    "Special Bingo", "Cash Prizes", "Big Wins", "Community", "New Cards",
+                    "Bingo Hall", "Lucky Numbers", "Bingo Blitz", "Bingo Balls", "Line Bingo",
+                    "X Pattern", "Full House", "Bingo Bonanza", "VIP Bingo", "Bingo Night"
+                ],
+                general: [
+                    "Arcade Game", "Casual Play", "Addictive", "Engaging", "Easy to Play",
+                    "Time Pass", "Fun Game", "Mobile Game", "HD Graphics", "Smooth Gameplay",
+                    "Fast Loading", "No Ads", "Offline Mode", "Online Mode", "Leaderboard",
+                    "Achievements", "Daily Rewards", "Social Sharing", "Regular Updates", "Community",
+                    "Challenging", "Relaxing", "Family Friendly", "Quick Sessions", "Global Leaderboards",
+                    "Skill Based", "Action Packed", "Immersive", "High Score", "Fun Challenges"
+                ]
+            };
+
+            // Generic quality descriptors (fallback)
+            const genericPool = [
+                "Secure", "Fast", "Easy", "Reliable", "Trusted", "24/7 Support", "No Lag",
+                "HD Graphics", "Smooth", "Instant", "Free", "Rewards", "Daily", "Live",
+                "Multiplayer", "Social", "Fun", "Exciting", "Thrilling", "Engaging",
+                "Addictive", "Classic", "Modern", "Premium", "Popular", "High Quality",
+                "User Friendly", "Quick Install", "Safe", "Verified", "Official", "Real"
+            ];
+
+            // Select category pool
+            const catPool = catPools[category] || catPools.general;
+            // Combine and ensure uniqueness
+            const allCandidates = catPool.concat(genericPool);
+            // Deterministic shuffle
+            let seed = i * 1009 + 777;
+            function seededShuffle(arr) {
+                const a = arr.slice();
+                for (let j = a.length - 1; j > 0; j--) {
+                    seed = (seed * 48271) % 2147483647;
+                    const k = seed % (j + 1);
+                    [a[j], a[k]] = [a[k], a[j]];
+                }
+                return a;
+            }
+            const shuffled = seededShuffle(allCandidates);
+            // Remove duplicates
+            const unique = [];
+            const seen = new Set();
+            for (let tag of shuffled) {
+                if (!seen.has(tag)) {
+                    unique.push(tag);
+                    seen.add(tag);
+                }
+            }
+            // Remove all Information Tags from original app details pages as requested.
+            const tags = [];
+
+            // Generate description (same as before, but we can keep it)
+            const descTemplates = {
+                rummy: [
+                    `{name} is a premier online rummy platform offering a variety of game formats including Points Rummy, Pool Rummy, and Deals Rummy.`,
+                    `With a large community of players, you can enjoy real-money games and tournaments 24/7.`,
+                    `The app features a sleek interface, quick matchmaking, and secure transactions.`,
+                    `Whether you are a beginner or a pro, {name} provides a fair and thrilling gaming experience.`
+                ],
+                slots: [
+                    `{name} brings the excitement of a real casino to your fingertips with a wide range of slot machines and progressive jackpots.`,
+                    `Spin the reels and enjoy bonus rounds, free spins, and multipliers for huge wins.`,
+                    `The app is optimized for mobile play with stunning graphics and smooth animations.`,
+                    `Daily bonuses and promotions keep the action fresh and rewarding.`
+                ],
+                spin: [
+                    `{name} is the ultimate spin game where luck meets fun.`,
+                    `Test your luck with the wheel of fortune and win exciting prizes every day.`,
+                    `The game offers multiple spin modes, bonuses, and instant rewards.`,
+                    `Simple to play, yet highly addictive – spin your way to victory!`
+                ],
+                teenpatti: [
+                    `{name} is a popular Indian card game that brings the classic Teen Patti experience to your mobile.`,
+                    `Play with friends or challenge players worldwide in real-time matches.`,
+                    `The game includes all variations like Joker, Muflis, and AK47, ensuring endless entertainment.`,
+                    `With secure payments and fair play, {name} is a trusted platform for card game lovers.`
+                ],
+                ludo: [
+                    `{name} reinvents the classic board game for the digital age.`,
+                    `Roll the dice, move your tokens, and race to the home base before your opponents.`,
+                    `Enjoy multiplayer matches with friends or join global tournaments.`,
+                    `The game features vibrant graphics, smooth controls, and daily challenges.`
+                ],
+                bingo: [
+                    `{name} offers a fun and social bingo experience with multiple game modes.`,
+                    `Mark your numbers, complete patterns, and win big prizes.`,
+                    `Play with people from around the world in real-time bingo rooms.`,
+                    `The app is easy to use and packed with bonuses and special events.`
+                ],
+                general: [
+                    `{name} is an engaging and entertaining game that offers hours of fun.`,
+                    `With intuitive controls and captivating gameplay, it suits players of all ages.`,
+                    `The app is regularly updated with new features and content.`,
+                    `Enjoy a seamless gaming experience with high-quality graphics and sound.`
+                ]
+            };
+
+            const template = descTemplates[category] || descTemplates.general;
+            const descParts = template.map(s => s.replace(/\{name\}/g, name));
+            let descSeed = i * 27 + 131;
+            function seededShuffleArray(arr) {
+                const a = arr.slice();
+                for (let j = a.length - 1; j > 0; j--) {
+                    descSeed = (descSeed * 48271) % 2147483647;
+                    const k = descSeed % (j + 1);
+                    [a[j], a[k]] = [a[k], a[j]];
+                }
+                return a;
+            }
+            const shuffledDesc = seededShuffleArray(descParts);
+            let description = shuffledDesc.join(' ');
+            // Ensure enough words
+            const minWords = 120;
+            const wordCount = description.split(/\s+/).length;
+            if (wordCount < minWords) {
+                const extra = [
+                    `The game is designed to be user-friendly and accessible to everyone.`,
+                    `Enjoy seamless performance and quick loading times on all devices.`,
+                    `Join a vibrant community of players and compete for top rankings.`,
+                    `With regular updates and new features, {name} never gets old.`,
+                    `The app ensures a secure and fair gaming environment for all users.`
+                ];
+                const extraShuffled = seededShuffleArray(extra);
+                let extraText = '';
+                let idx = 0;
+                while (description.split(/\s+/).length < minWords && idx < extraShuffled.length) {
+                    extraText += ' ' + extraShuffled[idx].replace(/\{name\}/g, name);
+                    idx++;
+                }
+                description += extraText;
+            }
+            description = description.trim();
+
+            return { description, tags };
+        }
+
+        // ---------- end content generation ----------
+
+        // Bonus logic unchanged
+        const bonusValues = (() => {
+            const base = Array.from({ length: 47 }, (_, n) => 20 + n * 5);
+            let seed = 24681357;
+            for (let i = base.length - 1; i > 0; i--) {
+                seed = (seed * 48271) % 2147483647;
+                const j = seed % (i + 1);
+                [base[i], base[j]] = [base[j], base[i]];
+            }
+            const second = base.slice();
+            for (let i = second.length - 1; i > 0; i--) {
+                seed = (seed * 69621) % 2147483647;
+                const j = seed % (i + 1);
+                [second[i], second[j]] = [second[j], second[i]];
+            }
+            return base.concat(second);
+        })();
+        function bonusFor(i) { return bonusValues[i % bonusValues.length] }
+
+        function uniquePermutation(count, i) {
+            const base = Array.from({length: count}, (_, idx) => idx);
+            const p = base.slice();
+            let x = (i + 1) * 7919;
+            for (let j = p.length - 1; j > 0; j--) {
+                x = (x * 48271) % 2147483647;
+                const k = x % (j + 1);
+                [p[j], p[k]] = [p[k], p[j]];
+            }
+            return p;
+        }
+
+        function renderHome() {
+            const cards = document.createElement('section');
+            cards.className = 'container cards';
+            apps.forEach(([name, image, download], i) => {
+                const card = document.createElement('article');
+                card.className = 'card';
+                card.style.animationDelay = `${Math.min(i*12,360)}ms`;
+                card.innerHTML = `
+              <span class="number">${i+1}</span>
+              <div class="image"><img src="${esc(image)}" alt="${esc(name)} app image" loading="${i<8?'eager':'lazy'}" decoding="async"></div>
+              <div class="details">
+                <h2 class="name">${esc(name)}</h2>
+                <div class="meta">
+                  <div class="meta-line bonus">
+                    <span class="bonus-label">${gift}<span>Sign Up Bonus</span><strong class="bonus-value">₹${bonusFor(i)}</strong></span>
+                  </div>
+                  <div class="meta-line">${wallet}<span>Min. Withdraw 100</span></div>
+                </div>
+              </div>
+              <a class="download" href="#app=${i}" data-detail="${i}" aria-label="Open ${esc(name)} details">${down}<span>Download</span></a>
+            `;
+                card.querySelector('[data-detail]').addEventListener('click', e => { e.preventDefault();
+                    openDetail(i) });
+                cards.appendChild(card);
+            });
+            const tags = document.createElement('section');
+            tags.className = 'home-tags page';
+            tags.innerHTML =
+                `<p class="eyebrow">74 APP TAGS</p><h2>All 74 Apps</h2><div class="tags">${apps.map(([name])=>`<span class="tag">${esc(name)}</span>`).join('')}</div>`;
+            document.getElementById('content').replaceChildren(cards, tags);
+        }
+
+        function renderInfo(page) { const p = pages[page];
+            document.getElementById('content').innerHTML =
+                `<section class="page"><p class="eyebrow">${esc(p[0])}</p><h1>${esc(p[1])}</h1><p>${esc(p[2])}</p><div class="info-list">${p[3].map(t=>`<span class="info-tag">${esc(t)}</span>`).join('')}</div></section>` }
+
+        function detailDownloads(i) { return 64565 + i * 1373 }
+
+        function detailSize(i) { return (30 + ((i * 37) % 699) / 10).toFixed(1) }
+
+        function detailBonus(i) { return bonusFor(i) }
+        const detailRatings = Array.from({ length: apps.length }, (_, i) => (3.50 + ((i * 17) % 150) / 100).toFixed(2));
+
+        function detailRating(i) { return detailRatings[i] }
+        const detailVersions = Array.from({ length: apps.length }, (_, i) => `${1+((i*7)%9)}.${((i*3)%10)}`);
+
+        function detailVersion(i) { return detailVersions[i] }
+        const starSvg =
+            `<svg class="detail-stars" viewBox="0 0 120 24" aria-hidden="true"><g fill="none" stroke="#197957" stroke-width="2" stroke-linejoin="round"><path fill="#197957" d="M12 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9L12 2.5Z"/><path fill="#197957" d="M36 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L36 17.3l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9L36 2.5Z"/><path fill="#197957" d="M60 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L60 17.3l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9L60 2.5Z"/><path fill="#197957" d="M84 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L84 17.3l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9L84 2.5Z"/><path d="M108 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9L108 2.5Z"/></g></svg>`;
+
+        function animateCounter(el, target, duration) {
+            const start = Math.max(1000, target - Math.floor(target * 0.28));
+            const startTime = performance.now();
+            const step = (now) => {
+                const progress = Math.min(1, (now - startTime) / duration);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.floor(start + (target - start) * eased);
+                el.textContent = current + '+';
+                if (progress < 1) requestAnimationFrame(step);
+                else { el.textContent = target + '+';
+                    el.classList.add('animating');
+                    setTimeout(() => el.classList.remove('animating'), 500); }
+            };
+            requestAnimationFrame(step);
+        }
+
+        function renderDetail(i) {
+            const [name, image, download] = apps[i];
+            const content = getAppContent(i);
+            const tags = content.tags;
+            const desc = content.description;
+            // Shuffle tag order for display
+            const order = uniquePermutation(tags.length, i);
+            const sortedTags = order.map(idx => tags[idx]);
+
+            const related = apps.map((a, j) => ({ a, j })).filter(x => x.j !== i);
+            let seed = (i + 1) * 1009;
+            for (let j = related.length - 1; j > 0; j--) { seed = (seed * 48271) % 2147483647;
+                const k = seed % (j + 1);
+                [related[j], related[k]] = [related[k], related[j]]; }
+            const downloadCount = detailDownloads(i);
+
+            const tagsHtml = sortedTags.map(t => `<span class="detail-tag">${esc(t)}</span>`).join('');
+
+            document.getElementById('content').innerHTML = `
+            <section class="detail-page page" data-app="${i}">
+              <a class="back-link" href="#">← Back to All Apps</a>
+              <div class="detail-hero">
+                <div class="detail-image"><img src="${esc(image)}" alt="${esc(name)} app image" decoding="async"></div>
+                <div class="detail-heading">
+                  <h1>${esc(name)}</h1>
+                  <div class="detail-rating" aria-label="${detailRating(i)} out of 5 stars">${starSvg}<span class="rating-number">${detailRating(i)}</span></div>
+                  <div class="detail-update">Last Updated: Today <span class="detail-version">Version: ${detailVersion(i)}</span></div>
+                </div>
+              </div>
+              <div class="detail-stats">
+                <span><strong class="detail-stat-value"><span class="counter-number" data-target="${downloadCount}">${downloadCount}+</span></strong><span class="detail-stat-label">${down} Downloads</span></span>
+                <span><strong class="detail-stat-value">${detailSize(i)} MB</strong><span class="detail-stat-label">${cube} Size</span></span>
+                <span class="detail-stat-bonus"><strong class="detail-stat-value">₹${detailBonus(i)}</strong><span class="detail-stat-label">${bonusIcon} Bonus</span></span>
+              </div>
+              <a class="detail-download" href="${esc(download)}" target="_blank" rel="noopener noreferrer">${down}<span>Download ${esc(name)}</span></a>
+<div class="app-trust-card">
+<div class="app-trust-item safe-item"><svg class="app-trust-svg" viewBox="0 0 64 64"><path d="M32 4 L55 14 V29 C55 45 46 56 32 61 C18 56 9 45 9 29 V14 L32 4 Z" fill="#27B96D"/><path d="M21 32 L28 39 L43 24" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="app-trust-text">100% Safe Verify</span></div>
+<div class="app-trust-item official-item"><svg class="app-trust-svg" viewBox="0 0 64 64"><path d="M32 4 L38 9 L46 8 L49 16 L57 19 L55 27 L61 32 L55 38 L57 46 L49 49 L46 57 L38 55 L32 61 L26 55 L18 57 L15 49 L7 46 L9 38 L3 32 L9 27 L7 19 L15 16 L18 8 L26 9 Z" fill="#7A8798"/><path d="M21 32 L28 39 L43 24" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="app-trust-text">Official App</span></div>
+<div class="app-trust-item android-item"><svg class="app-trust-svg android-svg" viewBox="0 0 64 64"><path d="M23 14 L18 7" stroke="#8BC34A" stroke-width="3" stroke-linecap="round"/><path d="M41 14 L46 7" stroke="#8BC34A" stroke-width="3" stroke-linecap="round"/><path d="M17 28 C17 17 23 11 32 11 C41 11 47 17 47 28 Z" fill="#8BC34A"/><rect x="17" y="30" width="30" height="22" rx="3" fill="#8BC34A"/><rect x="10" y="30" width="5" height="20" rx="2.5" fill="#8BC34A"/><rect x="49" y="30" width="5" height="20" rx="2.5" fill="#8BC34A"/><rect x="22" y="52" width="6" height="9" rx="3" fill="#8BC34A"/><rect x="36" y="52" width="6" height="9" rx="3" fill="#8BC34A"/><circle cx="26" cy="21" r="2" fill="#fff"/><circle cx="38" cy="21" r="2" fill="#fff"/></svg><span class="app-trust-text">Android Instant</span></div>
+</div>
+
+              <section class="unique-tags" aria-label="Information tags">
+                <p class="eyebrow">Information Tags</p>
+                <p class="detail-description">${esc(desc)}</p>
+                <div class="tag-grid">
+                  ${tagsHtml}
+                </div>
+              </section>
+              <section class="related-section">
+                <h2>Related Games Apps</h2>
+                <div class="related-grid">${related.map(({a,j},idx)=>{
+                  const [rname,rimage]=a;
+                  return `<article class="card" style="animation:none">
+                    <span class="number">${idx+1}</span>
+                    <div class="image"><img src="${esc(rimage)}" alt="${esc(rname)} app image" loading="lazy" decoding="async"></div>
+                    <div class="details"><h2 class="name">${esc(rname)}</h2><div class="meta"><div class="meta-line bonus"><span class="bonus-label">${gift}<span>Sign Up Bonus</span><strong class="bonus-value">₹${bonusFor(j)}</strong></span></div><div class="meta-line">${wallet}<span>Min. Withdraw 100</span></div></div></div>
+                    <a class="download" href="#app=${j}" data-related="${j}" aria-label="Open ${esc(rname)} details">${down}<span>Download</span></a>
+                  </article>`;
+                }).join('')}</div>
+              </section>
+            </section>
+          `;
+            document.querySelector('.back-link').addEventListener('click', e => { e.preventDefault();
+                setPage('home') });
+            document.querySelectorAll('[data-related]').forEach(el => el.addEventListener('click', e => { e.preventDefault();
+                openDetail(Number(el.dataset.related)) }));
+
+            const counterEl = document.querySelector('.counter-number');
+            if (counterEl) {
+                const target = parseInt(counterEl.dataset.target, 10);
+                if (!isNaN(target)) {
+                    counterEl.textContent = target + '+';
+                    setTimeout(() => animateCounter(counterEl, target, 700), 120);
+                }
+            }
+        }
+
+        function openDetail(i) { location.hash = `app=${i}`;
+            renderDetail(i);
+            document.querySelectorAll('[data-page]').forEach(b => b.classList.toggle('active', b.dataset.page === 'home'));
+            window.scrollTo({ top: 0, behavior: 'smooth' }) }
+
+        const scrollTopButton = document.getElementById('scrollTop');
+        function getScrollPosition() {
+            return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        }
+        function updateScrollTopVisibility() {
+            if (!scrollTopButton) return;
+            scrollTopButton.classList.toggle('show', getScrollPosition() > 80);
+        }
+        window.addEventListener('scroll', updateScrollTopVisibility, { passive: true });
+        document.addEventListener('scroll', updateScrollTopVisibility, { passive: true, capture: true });
+        window.addEventListener('resize', updateScrollTopVisibility, { passive: true });
+        if (scrollTopButton) scrollTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        });
+        updateScrollTopVisibility();
+
+        function setPage(page) {
+            if (page === 'home') { history.pushState({}, '', location.pathname + location.search);
+                renderHome(); } else { history.pushState({}, '', `#${page}`);
+                renderInfo(page); }
+            document.querySelectorAll('[data-page]').forEach(b => b.classList.toggle('active', b.dataset.page === page));
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function route() {
+            const hash = location.hash.replace(/^#/, '');
+            const m = hash.match(/^app=(\d+)$/);
+            if (m) { const i = Number(m[1]); if (i >= 0 && i < apps.length) { renderDetail(i);
+                    document.querySelectorAll('[data-page]').forEach(b => b.classList.toggle('active', b.dataset.page === 'home'));
+                    return; } }
+            if (['about', 'contact', 'disclaimer', 'privacy'].includes(hash)) { renderInfo(hash);
+                document.querySelectorAll('[data-page]').forEach(b => b.classList.toggle('active', b.dataset.page === hash));
+                return; }
+            renderHome();
+            document.querySelectorAll('[data-page]').forEach(b => b.classList.toggle('active', b.dataset.page === 'home'));
+        }
+        document.querySelectorAll('[data-page]').forEach(b => b.addEventListener('click', () => setPage(b.dataset.page)));
+        window.addEventListener('popstate', route);
+        window.addEventListener('hashchange', route);
+        route();
+    </script>
+</body>
+</html>
